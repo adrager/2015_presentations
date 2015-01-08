@@ -1,0 +1,418 @@
+\documentclass{beamer}
+
+\usetheme[secheader]{Boadilla}
+\setbeamertemplate{footline} {
+  %\leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hspace*{2ex}\insertshortauthor~~(adraeger@cern.ch)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshorttitle,~
+    \insertshortdate{}\hspace*{1em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[percent]{overpic}
+\usepackage{tikz}
+%\usetikzlibrary{positioning,fit,shapes.arrows,shapes.geometric,shapes.misc,shapes.multipart,calc,shadows}
+\tikzstyle{every picture}+=[remember picture]
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{wasysym}
+\usepackage{marvosym}
+\graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
+
+\input{definitions.tex}
+\newcommand{\lib}[1]{\tiny #1}
+
+% Title etc
+\title[RA2/b Meeting]{Status Lost-Lepton Method phys14 Samples}
+\subtitle{Combining Single Muon and Electron Control Sample\\ Efficiency Studies}
+\author[Arne-Rasmus~Dr\"ager]{
+  Arne-Rasmus~Dr\"ager (Uni Hamburg)
+}
+\date[October 31, 2014]{October 31, 2014
+  \vskip1cm
+  \begin{center}
+    \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
+    \hskip8cm
+    \includegraphics[height=1.5cm]{CMSlogo.jpeg}
+  \end{center}
+}
+
+% pdflatex packages
+\hypersetup{bookmarks=true}
+\hypersetup{unicode=false}
+\hypersetup{pdftitle={Islated Tracks}}
+\hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
+
+
+\begin{document}
+% ==================================================
+% --------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+% --------------------------------------------------
+
+\section{Lepton Veto}
+\subsection{Motivation}
+\begin{frame}
+\frametitle{Motivation}
+\begin{itemize}
+  \item   Choosing fine granularity of search bins in \HT, \MHT, \NJets and BTags challenges methods relaying on control samples (CS)
+  \item   The `classical` lost-lepton method relayed on a single muon control sample selected and predicting for each search bin
+  \item   In 8\tev the dominant uncertainty for some of the most sensitive bins was statistics of $\mu$ CS
+  \item   Same restriction expected for 13\tev
+  \item   Idea: Use also single electron CS for prediction
+  \item   Reduction of uncertainty ~$\sqrt{2}$
+\end{itemize} 
+\end{frame}
+
+% --------------------------------------------------
+
+\subsection{ControlSamples}
+\begin{frame}
+\tiny
+\begin{tabular}{lrrr}
+\toprule
+
+                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\ 
+\midrule
+                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $661.9\pm6.8$&             $627.6\pm6.7$&               $1289.5\pm16.4$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &             $281.5\pm4.0$&             $265.3\pm3.9$&                 $546.9\pm9.6$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $50.4\pm1.4$&              $48.6\pm1.3$&                  $99.0\pm3.3$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $4.9\pm0.3$&               $5.1\pm0.4$&                  $10.0\pm0.8$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $90.9\pm2.0$&              $83.2\pm1.9$&                 $174.0\pm4.8$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $46.5\pm1.4$&              $44.1\pm1.2$&                  $90.5\pm3.2$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &              $15.7\pm0.7$&              $16.2\pm0.8$&                  $31.8\pm1.8$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $7.7\pm0.4$&               $7.8\pm0.5$&                  $15.4\pm1.1$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $37.7\pm1.2$&              $34.1\pm1.0$&                  $71.8\pm2.8$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $20.6\pm0.9$&              $20.7\pm0.9$&                  $41.3\pm2.1$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $7.5\pm0.5$&               $6.8\pm0.5$&                  $14.4\pm1.2$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $5.1\pm0.3$&               $4.8\pm0.3$&                   $9.9\pm0.8$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &              $13.0\pm0.6$&              $11.9\pm0.7$&                  $24.9\pm1.5$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $7.4\pm0.5$&               $7.7\pm0.5$&                  $15.2\pm1.2$ \\ 
+      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $5.2\pm0.4$&               $4.3\pm0.3$&                   $9.5\pm0.9$ \\ 
+       BTag\_0\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $9.4\pm0.6$&               $7.7\pm0.5$&                  $17.1\pm1.4$ \\ 
+       BTag\_0\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $9.0\pm0.5$&               $7.4\pm0.4$&                  $16.3\pm1.1$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &              $34.1\pm2.0$&              $29.1\pm1.8$&                  $63.2\pm4.6$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &               $8.0\pm0.9$&               $6.8\pm0.8$&                  $14.8\pm2.1$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.4\pm0.1$&               $0.4\pm0.1$&                   $0.8\pm0.3$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $14.6\pm1.1$&              $13.1\pm1.1$&                  $27.8\pm2.7$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &               $5.4\pm0.6$&               $5.0\pm0.6$&                  $10.4\pm1.5$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.2\pm0.2$&               $1.6\pm0.3$&                   $2.8\pm0.6$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &               $7.8\pm0.7$&               $6.7\pm0.7$&                  $14.5\pm1.8$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $4.2\pm0.5$&               $3.8\pm0.5$&                   $8.0\pm1.3$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.6\pm0.3$&               $1.4\pm0.2$&                   $3.0\pm0.6$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $3.6\pm0.5$&               $3.0\pm0.4$&                   $6.7\pm1.2$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $1.6\pm0.3$&               $1.2\pm0.2$&                   $2.8\pm0.7$ \\ 
+      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $0.9\pm0.1$&               $0.9\pm0.2$&                   $1.8\pm0.4$ \\ 
+       BTag\_0\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $2.3\pm0.3$&               $2.2\pm0.3$&                   $4.5\pm0.8$ \\ 
+       BTag\_0\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.8\pm0.4$&               $2.2\pm0.3$&                   $5.0\pm0.8$ \\ 
+    BTag\_0\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $1.2\pm0.4$&               $0.9\pm0.4$&                   $2.2\pm1.0$ \\ 
+    BTag\_0\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $1.4\pm0.4$&               $2.3\pm0.6$&                   $3.7\pm1.1$ \\ 
+    BTag\_0\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $1.2\pm0.3$&               $1.2\pm0.4$&                   $2.5\pm0.8$ \\ 
+    BTag\_0\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $0.4\pm0.2$&               $0.4\pm0.2$&                   $0.8\pm0.4$ \\ 
+     BTag\_0\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $1.0\pm0.3$&               $1.0\pm0.3$&                   $1.9\pm0.6$ \\ 
+
+\bottomrule 
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\tiny
+\begin{tabular}{lrrr}
+\toprule
+
+                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\ 
+\midrule
+                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $515.7\pm8.1$&             $474.8\pm7.7$&                $990.5\pm19.2$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &             $171.2\pm4.3$&             $159.7\pm4.2$&                $330.9\pm10.4$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $22.2\pm1.3$&              $20.8\pm1.2$&                  $43.0\pm3.1$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $2.6\pm0.4$&               $1.6\pm0.2$&                   $4.1\pm0.9$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $71.8\pm2.7$&              $61.0\pm2.5$&                 $132.8\pm6.4$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $31.8\pm1.7$&              $24.9\pm1.5$&                  $56.6\pm4.0$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &               $8.3\pm0.8$&               $7.5\pm0.7$&                  $15.8\pm1.8$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $3.1\pm0.4$&               $2.9\pm0.3$&                   $6.0\pm0.9$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $29.2\pm1.7$&              $25.7\pm1.5$&                  $54.9\pm3.9$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $15.3\pm1.2$&              $10.7\pm1.0$&                  $25.9\pm2.7$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $4.1\pm0.5$&               $3.7\pm0.5$&                   $7.9\pm1.2$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $2.5\pm0.4$&               $1.7\pm0.2$&                   $4.2\pm0.8$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &               $7.9\pm0.8$&               $7.8\pm0.8$&                  $15.7\pm1.9$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $4.2\pm0.5$&               $4.5\pm0.6$&                   $8.7\pm1.3$ \\ 
+      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $2.4\pm0.3$&               $2.1\pm0.3$&                   $4.5\pm0.7$ \\ 
+       BTag\_1\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $5.4\pm0.6$&               $5.3\pm0.6$&                  $10.7\pm1.5$ \\ 
+       BTag\_1\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $5.4\pm0.6$&               $4.7\pm0.5$&                  $10.1\pm1.3$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &              $74.4\pm3.3$&              $64.1\pm3.1$&                 $138.5\pm7.9$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &              $11.7\pm1.3$&              $13.8\pm1.4$&                  $25.5\pm3.2$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.5\pm0.2$&               $0.5\pm0.2$&                   $1.0\pm0.5$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $28.6\pm2.0$&              $27.3\pm2.0$&                  $55.8\pm4.8$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &              $11.3\pm1.2$&               $7.6\pm1.0$&                  $19.0\pm2.8$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.6\pm0.4$&               $1.4\pm0.4$&                   $3.0\pm0.9$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &              $16.6\pm1.5$&              $14.6\pm1.4$&                  $31.2\pm3.6$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $7.2\pm1.0$&               $5.9\pm0.9$&                  $13.1\pm2.2$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.9\pm0.4$&               $1.3\pm0.3$&                   $3.2\pm1.0$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $4.6\pm0.7$&               $4.7\pm0.7$&                   $9.3\pm1.8$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $3.2\pm0.7$&               $2.8\pm0.6$&                   $6.1\pm1.5$ \\ 
+      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.3\pm0.3$&               $0.9\pm0.3$&                   $2.2\pm0.8$ \\ 
+       BTag\_1\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $4.4\pm0.7$&               $3.0\pm0.6$&                   $7.4\pm1.6$ \\ 
+       BTag\_1\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $4.3\pm0.7$&               $2.7\pm0.5$&                   $7.1\pm1.6$ \\ 
+    BTag\_1\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $2.5\pm0.6$&               $1.3\pm0.5$&                   $3.8\pm1.4$ \\ 
+    BTag\_1\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $3.8\pm0.8$&               $2.9\pm0.7$&                   $6.8\pm1.8$ \\ 
+    BTag\_1\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $3.0\pm0.7$&               $2.0\pm0.5$&                   $5.0\pm1.5$ \\ 
+    BTag\_1\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $2.5\pm0.6$&               $1.8\pm0.5$&                   $4.4\pm1.4$ \\ 
+     BTag\_1\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $1.8\pm0.5$&               $2.8\pm0.6$&                   $4.6\pm1.2$ \\ 
+
+\bottomrule 
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\tiny
+\begin{tabular}{lrrr}
+\toprule
+
+                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\ 
+\midrule
+                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $358.8\pm7.4$&             $307.0\pm6.8$&                $665.8\pm17.5$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &              $92.8\pm3.7$&              $68.3\pm3.1$&                 $161.1\pm8.5$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $10.3\pm1.2$&               $7.2\pm1.0$&                  $17.5\pm2.7$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $0.3\pm0.1$&               $0.8\pm0.3$&                   $1.1\pm0.4$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $45.6\pm2.6$&              $38.1\pm2.3$&                  $83.7\pm6.1$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $20.9\pm1.7$&              $15.2\pm1.5$&                  $36.1\pm4.0$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &               $5.8\pm0.9$&               $4.2\pm0.7$&                  $10.0\pm2.0$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $1.2\pm0.4$&               $0.5\pm0.2$&                   $1.7\pm0.8$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $19.7\pm1.7$&              $15.3\pm1.5$&                  $35.0\pm3.9$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $10.3\pm1.2$&               $5.6\pm0.8$&                  $15.9\pm2.7$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $1.6\pm0.4$&               $1.9\pm0.5$&                   $3.5\pm1.1$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $1.1\pm0.3$&               $0.8\pm0.3$&                   $1.9\pm0.8$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &               $6.0\pm0.9$&               $3.7\pm0.7$&                   $9.7\pm2.0$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $2.5\pm0.6$&               $2.2\pm0.5$&                   $4.7\pm1.4$ \\ 
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.1\pm0.3$&               $1.5\pm0.4$&                   $2.6\pm0.9$ \\ 
+  BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $3.5\pm0.7$&               $3.3\pm0.7$&                   $6.8\pm1.6$ \\ 
+  BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.6\pm0.5$&               $1.6\pm0.4$&                   $4.1\pm1.2$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &             $101.1\pm4.0$&              $77.2\pm3.5$&                 $178.3\pm9.3$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &              $15.3\pm1.5$&              $12.4\pm1.4$&                  $27.8\pm3.6$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.6\pm0.3$&               $1.0\pm0.4$&                   $1.6\pm0.8$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $44.8\pm2.6$&              $35.5\pm2.4$&                  $80.2\pm6.2$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &              $13.9\pm1.5$&               $6.9\pm1.0$&                  $20.8\pm3.2$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.8\pm0.5$&               $1.5\pm0.5$&                   $3.3\pm1.2$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &              $22.8\pm1.9$&              $16.8\pm1.6$&                  $39.6\pm4.3$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $8.1\pm1.1$&               $5.7\pm0.9$&                  $13.8\pm2.5$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.5\pm0.5$&               $1.2\pm0.4$&                   $2.7\pm1.1$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $7.3\pm1.1$&               $6.1\pm1.0$&                  $13.4\pm2.5$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $3.6\pm0.7$&               $2.4\pm0.6$&                   $5.9\pm1.7$ \\ 
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.4\pm0.4$&               $0.9\pm0.4$&                   $2.4\pm1.0$ \\ 
+  BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $6.1\pm1.0$&               $4.5\pm0.8$&                  $10.6\pm2.2$ \\ 
+  BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.0\pm0.5$&               $2.1\pm0.5$&                   $4.0\pm1.2$ \\ 
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $1.6\pm0.5$&               $2.8\pm0.7$&                   $4.4\pm1.3$ \\ 
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $7.5\pm1.1$&               $5.9\pm1.0$&                  $13.4\pm2.5$ \\ 
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $8.4\pm1.2$&               $7.8\pm1.1$&                  $16.2\pm2.7$ \\ 
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $4.7\pm0.9$&               $3.6\pm0.7$&                   $8.3\pm2.0$ \\ 
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $3.0\pm0.7$&               $2.8\pm0.6$&                   $5.8\pm1.6$ \\ 
+\bottomrule 
+\end{tabular}
+\end{frame}
+
+% --------------------------------------------------
+
+\subsection{Efficiencies}
+\begin{frame}
+\frametitle{Parametrization of Efficiencies}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+     \begin{itemize}
+
+
+        \item Isolation 
+   \begin{itemize}
+    \item \HT \MHT \NJets (\BTags)
+   \end{itemize}
+   \item Reconstruction 
+   \begin{itemize}
+    \item \HT \MHT \NJets (\BTags)
+   \end{itemize}
+   \item Acceptance 
+   \begin{itemize}
+    \item \MHT \NJets (\BTags)
+   \end{itemize}
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+        \begin{itemize}
+   \item Purity (only electron CS)
+   \begin{itemize}
+    \item \MHT \NJets 
+   \end{itemize}
+      \item Di-lep contribution
+   \begin{itemize}
+    \item \MHT \NJets 
+   \end{itemize}
+   \item Di-lep Efficiency
+   \begin{itemize}
+    \item \NJets 
+   \end{itemize}
+   \item \mt cut Efficiency
+   \begin{itemize}
+    \item \NJets 
+   \end{itemize}
+  \end{itemize}
+      \centering
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item The current parametrization was motivated/optimized in 2012 (no \BTags consider)
+   \item Right now it is either a good closure in \NJets or in \BTags both is possible for 4D binning of isolation and reconstruction but not preferable!
+ \end{itemize}
+\end{frame}
+\subsection{Closure}
+\begin{frame}
+\frametitle{Muon \& Electron Closure Test}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+\frametitle{Current ongoing work:} 
+   \begin{itemize}
+    \item Check dependency of each efficiency on search variables. If independent take inclusive
+    \item Check alternative ansatz: $\Delta R$ and relative $p_{T}$ to closest jet did not show good closure
+    \item Main problem: lack of statistics and insufficient description of environment
+    \item Different ansatz: Take something similar to relative $p_{T}$ and $\Delta R$: Activity around lepton
+    \item Advantage: Efficiencies can be obtained for isolation and reconstruction from data using tag and prob!
+    \item Even if closure is not perfect might still be within statistical precision of closure test\\ (Keep in mind 2012 up to 40\% non closure uncertainty used)
+   \end{itemize}
+
+
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Amount of events rejected by lepton/isolated track veto}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.90\textwidth]{figures/Performance/IsoTrackStudies__MTW__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.90\textwidth]{figures/Performance/IsoTrackStudies__NVtx__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+      \centering
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item  Resolution good enough for \mt cut and no influence of pileup visible.
+  \end{itemize}
+\end{frame}
+% --------------------------------------------------
+
+\subsection{Efficiency}
+\begin{frame}
+\frametitle{Muon Efficiency}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Electron Efficiency}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Elec.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Elec.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Elec.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Elec.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Tau Efficiency}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__MHT__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__MTW__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+% --------------------------------------------------
+\section{Conclusion}
+\begin{frame}
+ \begin{itemize}
+  \item Isolated Track shows better performance than isolated muon and electron veto
+  \item Lepton Veto rejection:$46167.5$ (QCD false rejection: $31.3 $)
+  \item Iso. Track rejection:$56369,6$ false $3475.5$ (6\%) (QCD false rejection: $84.8 $)
+  \item Purity at around 6\%
+  \item Estimatino method for both lost lepton and had tau would need to be modified significantly
+ \end{itemize}
+
+\end{frame}
+
+
+\section{Backup}
+\begin{frame}
+  \begin{center}
+    {\Large Additional Material}
+  \end{center}
+\end{frame}
+
+
+
+\setcounter{framenumber}{16}
+
+\end{document}
