@@ -33,7 +33,7 @@
 
 % Title etc
 \title[RA2/b Meeting]{Status Lost-Lepton Method phys14 Samples}
-\subtitle{Combining Single Muon and Electron Control Sample\\ Efficiency Studies}
+\subtitle{Combining Single Muon and Electron Control Sample\\ Efficiency Variables Studies}
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager (Uni Hamburg)
 }
@@ -63,18 +63,928 @@
 
 % --------------------------------------------------
 
-\section{Lepton Veto}
-\subsection{Motivation}
+\section{Closure Studies}
+
+
+\subsection{Efficiencies}
 \begin{frame}
-\frametitle{Motivation}
-\begin{itemize}
-  \item   Choosing fine granularity of search bins in \HT, \MHT, \NJets and BTags challenges methods relaying on control samples (CS)
-  \item   The `classical` lost-lepton method relayed on a single muon control sample selected and predicting for each search bin
-  \item   In 8\tev the dominant uncertainty for some of the most sensitive bins was statistics of $\mu$ CS
-  \item   Same restriction expected for 13\tev
-  \item   Idea: Use also single electron CS for prediction
-  \item   Reduction of uncertainty ~$\sqrt{2}$
-\end{itemize} 
+ \frametitle{Parametrization Problem}
+ \begin{itemize}
+  \item Previous choice of search variables as parametrization of lepton efficiencies good closure, but not ideal
+  \begin{itemize}
+   \item Not directly related to lepton properties
+   \item Can not be derived from data $\rightarrow$ Need to rely on MC and use in different variables efficiencies from Tag and Probe for validation (delta R and rel \pt lepton to closest jet)
+  \end{itemize}
+  \item The former used delta R and rel \pt of lepton can not fully capture the kinematics because:
+  \begin{itemize}
+   \item Lost-leptons due to delta R in the range of isolation definition (0.3) of lepton have very small control sample (isolation criteria \~ delta R \pt definition) which also means very low efficiency
+   \item When going to low statistics search bins (a few single isolated leptons) statistics of small delta R (with low efficiency $\rightarrow$ high prediction) insufficient $\rightarrow$ underprediction
+   \item Bad closure!
+  \end{itemize}
+  \item When using 4D binned analysis either \BTags or \NJets show bad closure when using 3D binned lep efficiencies
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Solving Parametrization Problem: Idea}
+ \begin{itemize}
+  \item Try to move back to more lepton based parametrization of efficiencies
+  \begin{itemize}
+   \item Need to cope with low statistics and extension to 4D search binning
+  \end{itemize}
+  \item Approach:
+  \begin{itemize}
+   \item Define variable not orthogonal and not fully correlated with isolation criteria which captures the event kinematics in a broader spectrum than just the closest jet
+   \item Define activity around lepton with relatively large cone $\Delta R=1.0$
+  \end{itemize}
+  \item Muon activity:
+  \begin{itemize}
+   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedEMFraction + ChargedHadFraction) $ 
+  \end{itemize}
+    \item Electron activity:
+  \begin{itemize}
+   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedHadFraction) $ 
+  \end{itemize}
+      \item IsoTrack activity:
+  \begin{itemize}
+   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (NeutralEMFraction + PhotonEFraction) $ 
+  \end{itemize}
+  \item Activity is strongly correlated to jet activity around lepton and with sum over large delta R captures event in broader perspective (helps at low stat regions!?)
+ \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Parametrization of Efficiencies}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+     \begin{itemize}
+
+
+        \item Isolation 
+   \begin{itemize}
+    \item \HT \MHT \NJets (\BTags)
+   \end{itemize}
+   \item Reconstruction 
+   \begin{itemize}
+    \item \HT \MHT \NJets (\BTags)
+   \end{itemize}
+   \item Acceptance 
+   \begin{itemize}
+    \item \MHT \NJets (\BTags)
+   \end{itemize}
+   \item Purity (only electron CS)
+   \begin{itemize}
+    \item \MHT \NJets 
+   \end{itemize}
+      \item Di-lep contribution
+   \begin{itemize}
+    \item \MHT \NJets 
+   \end{itemize}
+   \item Di-lep Efficiency
+   \begin{itemize}
+    \item \NJets 
+   \end{itemize}
+   \item \mt cut Efficiency
+   \begin{itemize}
+    \item \NJets 
+   \end{itemize}
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+             \begin{itemize}
+
+
+        \item Isolation 
+   \begin{itemize}
+    \item Lep \pt Activity
+   \end{itemize}
+   \item Reconstruction 
+   \begin{itemize}
+    \item Activity
+   \end{itemize}
+   \item Acceptance 
+   \begin{itemize}
+    \item \HT \NJets
+   \end{itemize}
+   \item Purity (only electron CS)
+   \begin{itemize}
+    \item \MHT \NJets 
+   \end{itemize}
+      \item Di-lep contribution
+   \begin{itemize}
+    \item \NJets 
+   \end{itemize}
+   \item Di-lep Efficiency
+   \begin{itemize}
+    \item \NJets 
+   \end{itemize}
+   \item \mt cut Efficiency
+   \begin{itemize}
+    \item Activity 
+   \end{itemize}
+     \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+\subsection{Closure}
+\begin{frame}
+ \begin{center}
+    {\Large Closure Muon Control Sample}
+  \end{center}
+\end{frame}
+\begin{frame}
+\frametitle{Muon Control Sample: Closure Test \HT \& \MHT}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__HT__MuPrMTWDiLep_vs_MCEx__Baseline.pdf}\put(100,60){\rotatebox{-90}{\scriptsize Old Parametrization Variables}}
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__MHT__MuPrMTWDiLep_vs_MCEx__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__HT__MuPrMTWDiLep_vs_MCEx__Baseline.pdf} \put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__MHT__MuPrMTWDiLep_vs_MCEx__Baseline}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Muon Control Sample: Closure Test \NJets \& \BTags}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__BTags__MuPrMTWDiLep_vs_MCEx__Baseline.pdf} \put(100,60){\rotatebox{-90}{\scriptsize Old Parametrization Variables}}
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__NJets__MuPrMTWDiLep_vs_MCEx__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__BTags__MuPrMTWDiLep_vs_MCEx__Baseline.pdf}  \put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}
+      \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__NJets__MuPrMTWDiLep_vs_MCEx__Baseline}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \begin{center}
+    {\Large Closure Eletron Control Sample}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Electron Control Sample: Closure Test \HT \& \MHT}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__HT__ElecPrMTWDiLep_vs_MCEx__Baseline.pdf}\put(100,60){\rotatebox{-90}{\scriptsize Old Parametrization Variables}}
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__MHT__ElecPrMTWDiLep_vs_MCEx__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__HT__ElecPrMTWDiLep_vs_MCEx__Baseline.pdf}  \put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}   \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__MHT__ElecPrMTWDiLep_vs_MCEx__Baseline}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Electron Control Sample Closure Test \NJets \& \BTags}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__BTags__ElecPrMTWDiLep_vs_MCEx__Baseline.pdf} \put(100,60){\rotatebox{-90}{\scriptsize Old Parametrization Variables}}
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_Old_Parametrization/Closure__NJets__ElecPrMTWDiLep_vs_MCEx__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__BTags__ElecPrMTWDiLep_vs_MCEx__Baseline.pdf}  \put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}   \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure__NJets__ElecPrMTWDiLep_vs_MCEx__Baseline}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+ \begin{center}
+    {\Large Combined Electron and Muon Control Sample Closure}
+  \end{center}
+\end{frame}
+\begin{frame}
+\frametitle{Muon \& Elec Control Sample Combined Closure}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure_Combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+     \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure_Combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure_Combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/Closure_New_Parametrization/Closure_Combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \begin{center}
+    {\Large Separate Closure Muon Control Sample}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Muon Control Sample: Remaining Non-Closure $\mu$ Iso}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_MuCSPrIso__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_MuCSPrIso__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExIso_vs_MuCSPrIso__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExIso_vs_MuCSPrIso__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Muon Control Sample: Remaining Non-Closure $\mu$ Reco}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_MuCSPrReco__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_MuCSPrReco__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExReco_vs_MuCSPrReco__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExReco_vs_MuCSPrReco__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Muon Control Sample: Remaining Non-Closure $\mu$ Acc}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExAcc_vs_MuCSPrAcc__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExAcc_vs_MuCSPrAcc__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Muon Control Sample: Remaining Non-Closure e Acc}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Muon Control Sample: Remaining Non-Closure e Reco}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_MuCSPrReco__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_MuCSPrReco__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExReco_vs_MuCSPrReco__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExReco_vs_MuCSPrReco__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Muon Control Sample: Remaining Non-Closure e Iso}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_MuCSPrIso__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_MuCSPrIso__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExIso_vs_MuCSPrIso__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExIso_vs_MuCSPrIso__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \begin{center}
+    {\Large Separate Closure Eletron Control Sample}
+  \end{center}
+\end{frame}
+
+
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Iso}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Reco}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Acc}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure e Acc}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure e Reco}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure e Iso}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \begin{center}
+    {\Large Efficiencies: Muon}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ iso}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoBTag1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoActivity.pdf} \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\mu$ iso used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuIsoPTActivity.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ reco}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoBTag1D.pdf}      \end{overpic}
+         \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoActivity.pdf} \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\mu$ reco used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuRecoActivity.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ acc}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccMHT1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccActivity.pdf} \end{overpic}
+      \centering
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccBTag1D.pdf}      \end{overpic}
+\begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccPT.pdf}      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\mu$ acc used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuAccHTNJets.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ Purity}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityMHT1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityActivity.pdf} \end{overpic}
+      \centering
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityBTag1D.pdf}      \end{overpic}
+\begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityPT.pdf}      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \begin{center}
+    {\Large $\mu$ purity not corrected for!}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ \mt-cut}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWMHT1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWActivity.pdf} \end{overpic}
+      \centering
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWBTag1D.pdf}      \end{overpic}
+\begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWPT.pdf}      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{$\mu$ \mt-cut used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuMTWPTActivity.pdf} 
+     \end{overpic}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{$\mu$ di lep contribution to control sample}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionMHT1D.pdf}      \end{overpic}
+            \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionBTag1D.pdf}      \end{overpic}
+      \centering
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{$\mu$ di lep contribution used parametization and binnning}
+\centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf} 
+     \end{overpic}
+\end{frame}
+
+
+
+
+\begin{frame}
+ \begin{center}
+    {\Large Efficiencies: Electron}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{e iso}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoBTag1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoActivity.pdf} \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{e iso used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecIsoPTActivity.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{e reco}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoBTag1D.pdf}      \end{overpic}
+         \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoActivity.pdf} \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{e reco used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecRecoActivity.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{e acc}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccMHT1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccActivity.pdf} \end{overpic}
+      \centering
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccBTag1D.pdf}      \end{overpic}
+\begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccPT.pdf}      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{e acc used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecAccHTNJets.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{e Purity}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityMHT1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityActivity.pdf} \end{overpic}
+      \centering
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityBTag1D.pdf}      \end{overpic}
+\begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityPT.pdf}      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{e purity used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecPurity.pdf} 
+     \end{overpic}
+\end{frame}
+
+\begin{frame}
+\frametitle{e \mt-cut}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWMHT1D.pdf}      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWActivity.pdf} \end{overpic}
+      \centering
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWBTag1D.pdf}      \end{overpic}
+\begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWPT.pdf}      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{e \mt-cut used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecMTWPTActivity.pdf} 
+     \end{overpic}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{e di lep contribution to control sample}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionHT1D.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionNJets1D.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionMHT1D.pdf}      \end{overpic}
+            \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionBTag1D.pdf}      \end{overpic}
+      \centering
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{e di lep contribution used parametization and binnning}
+\centering
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionNJets1D.pdf} 
+     \end{overpic}
+\end{frame}
+
+
+
+% --------------------------------------------------
+% --------------------------------------------------
+\section{Conclusion}
+\begin{frame}
+ \begin{itemize}
+ \item Problem with parametrization following either \NJets or \BTags search bin definition can be solved by using more lepton relevant based variables
+ \item Updated parametrization of isolation, reconstruction, \mt-cut and di-lep contribution using \pt and activity around lepton shows reasonable closure for all search variables
+ \item Further improvement and studies necessary. Especially non-closure in \NJets arising from out of acceptance leptons can be further improved
+ \item Work on extension of method using isolated tracks ongoing
+ \end{itemize}
+
+\end{frame}
+
+
+\section{Backup}
+\begin{frame}
+  \begin{center}
+    {\Large Additional Material}
+  \end{center}
 \end{frame}
 
 % --------------------------------------------------
@@ -227,192 +1137,6 @@
 \end{frame}
 
 % --------------------------------------------------
-
-\subsection{Efficiencies}
-\begin{frame}
-\frametitle{Parametrization of Efficiencies}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-     \begin{itemize}
-
-
-        \item Isolation 
-   \begin{itemize}
-    \item \HT \MHT \NJets (\BTags)
-   \end{itemize}
-   \item Reconstruction 
-   \begin{itemize}
-    \item \HT \MHT \NJets (\BTags)
-   \end{itemize}
-   \item Acceptance 
-   \begin{itemize}
-    \item \MHT \NJets (\BTags)
-   \end{itemize}
-     \end{itemize}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-        \begin{itemize}
-   \item Purity (only electron CS)
-   \begin{itemize}
-    \item \MHT \NJets 
-   \end{itemize}
-      \item Di-lep contribution
-   \begin{itemize}
-    \item \MHT \NJets 
-   \end{itemize}
-   \item Di-lep Efficiency
-   \begin{itemize}
-    \item \NJets 
-   \end{itemize}
-   \item \mt cut Efficiency
-   \begin{itemize}
-    \item \NJets 
-   \end{itemize}
-  \end{itemize}
-      \centering
-    \end{column}
-  \end{columns}
-  \begin{itemize}
-   \item The current parametrization was motivated/optimized in 2012 (no \BTags consider)
-   \item Right now it is either a good closure in \NJets or in \BTags both is possible for 4D binning of isolation and reconstruction but not preferable!
- \end{itemize}
-\end{frame}
-\subsection{Closure}
-\begin{frame}
-\frametitle{Muon \& Electron Closure Test}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
-     \end{overpic}
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
-    \end{column}
-  \end{columns}
-\end{frame}
-\begin{frame}
-\frametitle{Current ongoing work:} 
-   \begin{itemize}
-    \item Check dependency of each efficiency on search variables. If independent take inclusive
-    \item Check alternative ansatz: $\Delta R$ and relative $p_{T}$ to closest jet did not show good closure
-    \item Main problem: lack of statistics and insufficient description of environment
-    \item Different ansatz: Take something similar to relative $p_{T}$ and $\Delta R$: Activity around lepton
-    \item Advantage: Efficiencies can be obtained for isolation and reconstruction from data using tag and prob!
-    \item Even if closure is not perfect might still be within statistical precision of closure test\\ (Keep in mind 2012 up to 40\% non closure uncertainty used)
-   \end{itemize}
-
-
-\end{frame}
-
-% --------------------------------------------------
-\begin{frame}
-\frametitle{Amount of events rejected by lepton/isolated track veto}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/Performance/IsoTrackStudies__MTW__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/Performance/IsoTrackStudies__NVtx__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
-     \end{overpic}
-      \centering
-    \end{column}
-  \end{columns}
-  \begin{itemize}
-   \item  Resolution good enough for \mt cut and no influence of pileup visible.
-  \end{itemize}
-\end{frame}
-% --------------------------------------------------
-
-\subsection{Efficiency}
-\begin{frame}
-\frametitle{Muon Efficiency}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
-     \end{overpic}
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
-    \end{column}
-  \end{columns}
-\end{frame}
-% --------------------------------------------------
-\begin{frame}
-\frametitle{Electron Efficiency}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Elec.pdf}
-     \end{overpic}
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Elec.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Elec.pdf}     \end{overpic}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Elec.pdf}     \end{overpic}
-    \end{column}
-  \end{columns}
-\end{frame}
-% --------------------------------------------------
-\begin{frame}
-\frametitle{Tau Efficiency}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}
-     \end{overpic}
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__MHT__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}     \end{overpic}
-      \centering
-      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__MTW__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}     \end{overpic}
-    \end{column}
-  \end{columns}
-\end{frame}
-% --------------------------------------------------
-\section{Conclusion}
-\begin{frame}
- \begin{itemize}
-  \item Isolated Track shows better performance than isolated muon and electron veto
-  \item Lepton Veto rejection:$46167.5$ (QCD false rejection: $31.3 $)
-  \item Iso. Track rejection:$56369,6$ false $3475.5$ (6\%) (QCD false rejection: $84.8 $)
-  \item Purity at around 6\%
-  \item Estimatino method for both lost lepton and had tau would need to be modified significantly
- \end{itemize}
-
-\end{frame}
-
-
-\section{Backup}
-\begin{frame}
-  \begin{center}
-    {\Large Additional Material}
-  \end{center}
-\end{frame}
-
-
 
 \setcounter{framenumber}{16}
 
