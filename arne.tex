@@ -37,7 +37,7 @@
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager (Uni Hamburg)
 }
-\date[October 31, 2014]{October 31, 2014
+\date[January 15, 2014]{January 15, 2014
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -77,9 +77,9 @@
   \end{itemize}
   \item The former used delta R and rel \pt of lepton can not fully capture the kinematics because:
   \begin{itemize}
-   \item Lost-leptons due to delta R in the range of isolation definition (0.3) of lepton have very small control sample (isolation criteria \~ delta R \pt definition) which also means very low efficiency
+   \item Lost-leptons due to delta R in the range of isolation definition (0.3) of lepton have very small control sample (isolation criteria delta R \pt definition) which also means very low efficiency
    \item When going to low statistics search bins (a few single isolated leptons) statistics of small delta R (with low efficiency $\rightarrow$ high prediction) insufficient $\rightarrow$ underprediction
-   \item Bad closure!
+   \item Problematic for fine search binning!
   \end{itemize}
   \item When using 4D binned analysis either \BTags or \NJets show bad closure when using 3D binned lep efficiencies
  \end{itemize}
@@ -121,7 +121,10 @@
   \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
+     Old
      \begin{itemize}
+
+
 
 
         \item Isolation 
@@ -140,15 +143,15 @@
    \begin{itemize}
     \item \MHT \NJets 
    \end{itemize}
-      \item Di-lep contribution
+      \item Di-lep contamination
    \begin{itemize}
     \item \MHT \NJets 
    \end{itemize}
-   \item Di-lep Efficiency
+   \item Di-lep efficiency
    \begin{itemize}
     \item \NJets 
    \end{itemize}
-   \item \mt cut Efficiency
+   \item \mt cut efficiency
    \begin{itemize}
     \item \NJets 
    \end{itemize}
@@ -156,6 +159,7 @@
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
+      New
              \begin{itemize}
 
 
@@ -169,21 +173,21 @@
    \end{itemize}
    \item Acceptance 
    \begin{itemize}
-    \item \HT \NJets
+    \item \BTags \NJets
    \end{itemize}
    \item Purity (only electron CS)
    \begin{itemize}
     \item \MHT \NJets 
    \end{itemize}
-      \item Di-lep contribution
+      \item Di-lep contamination
    \begin{itemize}
     \item \NJets 
    \end{itemize}
-   \item Di-lep Efficiency
+   \item Di-lep efficiency
    \begin{itemize}
     \item \NJets 
    \end{itemize}
-   \item \mt cut Efficiency
+   \item \mt cut efficiency
    \begin{itemize}
     \item Activity 
    \end{itemize}
@@ -312,6 +316,40 @@
   \end{center}
 \end{frame}
 
+\subsection{Lost Lepton equations (reminder)}
+\begin{frame}
+ \begin{equation}
+ \rm !ISO^{\mu} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}} 
+    %%   \rm !ISO^{\mu}} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}} 
+\label{eq:isolation_muon}
+\end{equation}
+\begin{equation}
+ {\rm !Reco^{\mu}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}} \cdot \frac{1-\epsilon_{\rm Reco}^{\mu}}{\epsilon_{\rm Reco}^{\mu}}
+\label{eq:reconstruction_muon}
+\end{equation}
+\begin{equation}
+ {\rm !Acc^{\mu}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1}{\epsilon_{\rm Reco}^{\mu}} \cdot \frac{1-\epsilon^{\mu}_{Acc}}{\epsilon^{\mu}_{Acc}}
+\label{eq:acceptance_muon}
+\end{equation}
+\begin{equation}
+{\rm !Acc^{e}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1}{\epsilon_{\rm Reco}^{\mu}}  \cdot \frac{1 - \epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}
+ \label{eq:elec_acc}
+\end{equation}
+\begin{equation}
+{\rm !Reco^{e}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1-\epsilon_{\rm Reco}^{e}}{\epsilon_{\rm Reco}^{\mu}}  \cdot \frac{\epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}
+ \label{eq:elec_reco}
+\end{equation}
+\begin{equation}
+{\rm !ISO^{e}} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{e}}{\epsilon_{\rm ISO}^{\mu}} \cdot \frac{\epsilon^{e}_{Reco}}{\epsilon^{\mu}_{Reco}} \cdot \frac{\epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}
+\label{eq:elec_iso}
+\end{equation}
+\begin{itemize}
+ \item Keep in mind the dependency of each step! Non-Closure propagates to all following precitions!
+\end{itemize}
+
+\end{frame}
+\subsection{Muon CS Separate Closure}
+
 \begin{frame}
  \frametitle{Muon Control Sample: Remaining Non-Closure $\mu$ Iso}
    \begin{columns}
@@ -330,8 +368,6 @@
     \end{column}
   \end{columns}
 \end{frame}
-
-
 \begin{frame}
  \frametitle{Muon Control Sample: Remaining Non-Closure $\mu$ Reco}
    \begin{columns}
@@ -431,7 +467,7 @@
   \end{columns}
 \end{frame}
 
-
+\subsection{Electron CS Separate Closure}
 \begin{frame}
  \begin{center}
     {\Large Separate Closure Eletron Control Sample}
@@ -439,43 +475,65 @@
 \end{frame}
 
 
-
-
 \begin{frame}
- \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Iso}
+ \frametitle{Elec Control Sample: Remaining Non-Closure e Iso}
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
     \end{column}
   \end{columns}
 \end{frame}
 
 
+
 \begin{frame}
- \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Reco}
+ \frametitle{Elec Control Sample: Remaining Non-Closure e Reco}
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+ \frametitle{Elec Control Sample: Remaining Non-Closure e Acc}
+   \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
     \end{column}
   \end{columns}
 \end{frame}
@@ -501,65 +559,49 @@
 \end{frame}
 
 
+
+
 \begin{frame}
- \frametitle{Elec Control Sample: Remaining Non-Closure e Acc}
+ \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Reco}
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
     \end{column}
   \end{columns}
 \end{frame}
 
 
+
 \begin{frame}
- \frametitle{Elec Control Sample: Remaining Non-Closure e Reco}
+ \frametitle{Elec Control Sample: Remaining Non-Closure $\mu$ Iso}
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__MHT__MuExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
       \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__NJets__MuExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
     \end{column}
   \end{columns}
 \end{frame}
 
-
-\begin{frame}
- \frametitle{Elec Control Sample: Remaining Non-Closure e Iso}
-   \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
-     \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__MHT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
-      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__NJets__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}     \end{overpic}
-    \end{column}
-  \end{columns}
-\end{frame}
-
+\subsection{Muon Efficiencies}
 \begin{frame}
  \begin{center}
     {\Large Efficiencies: Muon}
@@ -661,7 +703,7 @@
 \begin{frame}
  \frametitle{$\mu$ acc used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuAccHTNJets.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuAccBTagNJets.pdf} 
      \end{overpic}
 \end{frame}
 
@@ -754,7 +796,7 @@
 
 
 \begin{frame}
- \frametitle{$\mu$ di lep contribution used parametization and binnning}
+ \frametitle{$\mu$ di lep contamination used parametization and binnning}
 \centering
       \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf} 
      \end{overpic}
@@ -762,7 +804,7 @@
 
 
 
-
+\subsection{Electron Efficiencies}
 \begin{frame}
  \begin{center}
     {\Large Efficiencies: Electron}
@@ -864,7 +906,7 @@
 \begin{frame}
  \frametitle{e acc used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecAccHTNJets.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecAccBTagNJets.pdf} 
      \end{overpic}
 \end{frame}
 
@@ -971,9 +1013,10 @@
 \section{Conclusion}
 \begin{frame}
  \begin{itemize}
- \item Problem with parametrization following either \NJets or \BTags search bin definition can be solved by using more lepton relevant based variables
+ \item Problem with parametrization following either \NJets or \BTags search bin definition can be improved by using more lepton relevant based variables
  \item Updated parametrization of isolation, reconstruction, \mt-cut and di-lep contribution using \pt and activity around lepton shows reasonable closure for all search variables
  \item Further improvement and studies necessary. Especially non-closure in \NJets arising from out of acceptance leptons can be further improved
+ \item Closure test for each of the 100 search bins needs to be studied!
  \item Work on extension of method using isolated tracks ongoing
  \end{itemize}
 
@@ -1138,6 +1181,6 @@
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{16}
+\setcounter{framenumber}{54}
 
 \end{document}
