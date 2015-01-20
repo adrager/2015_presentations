@@ -1,0 +1,25 @@
+\begin{picture}(0,0)%
+\includegraphics{js_Smearing.pstex}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(12299,4008)(1498,-4045)
+\put(13051,-3811){\makebox(0,0)[lb]{\smash{{\SetFigFont{41}{49.2}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\slash\mkern-12mu{E}_{T}$}%
+}}}}
+\put(10951,-661){\makebox(0,0)[lb]{\smash{{\SetFigFont{41}{49.2}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textbf{$\slash\mkern-12mu{E}_{T}$-prediction}}%
+}}}}
+\put(7501,-3811){\makebox(0,0)[lb]{\smash{{\SetFigFont{41}{49.2}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Response}%
+}}}}
+\put(3751,-3811){\makebox(0,0)[lb]{\smash{{\SetFigFont{41}{49.2}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\slash\mkern-12mu{E}_{T}$}%
+}}}}
+\put(1801,-661){\makebox(0,0)[lb]{\smash{{\SetFigFont{41}{49.2}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textbf{QCD events}}%
+}}}}
+\put(5851,-661){\makebox(0,0)[lb]{\smash{{\SetFigFont{41}{49.2}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\textbf{Resolution function}}%
+}}}}
+\end{picture}%

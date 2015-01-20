@@ -1,0 +1,23 @@
+\begin{picture}(0,0)%
+\includegraphics{js_DeltaPhi_vs_MET.pstex}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(6840,5445)(2119,-7273)
+\put(7801,-7111){\makebox(0,0)[lb]{\smash{{\SetFigFont{34}{40.8}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\slash\mkern-12mu{E}_{T}$}%
+}}}}
+\put(2551,-5161){\rotatebox{90.0}{\makebox(0,0)[lb]{\smash{{\SetFigFont{34}{40.8}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}min $\Delta\phi(\text{jets},\slash\mkern-12mu E_{T})$}%
+}}}}}
+\put(4201,-6061){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}smear function}%
+}}}}
+\put(3601,-5611){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}Region used to extract }%
+}}}}
+\put(4951,-3961){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}Signal region}%
+}}}}
+\end{picture}%

@@ -1,0 +1,525 @@
+\documentclass{beamer}
+
+\usetheme[secheader]{Boadilla}
+\setbeamertemplate{footline} {
+  %\leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hspace*{2ex}\insertshortauthor~~(adraeger@cern.ch)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshorttitle,~
+    \insertshortdate{}\hspace*{1em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[percent]{overpic}
+\usepackage{tikz}
+\usetikzlibrary{positioning,fit,shapes.arrows,shapes.geometric,shapes.misc,shapes.multipart,calc,shadows}
+\tikzstyle{every picture}+=[remember picture]
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{wasysym}
+\graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
+
+\input{definitions.tex}
+
+% Title etc
+\title[CMSDAS 2015 BARI]{Search for New Physics\\ in the Multijet and \met Final State}
+\subtitle{Long Exercise, CMSDAS 2015, Bari}
+\author[Arne-Rasmus~Dr\"ager]{\underline{Arne-Rasmus~Dr\"ager}\inst{1}, Dr.~Tai~Sakuma\inst{2}}
+\institute{
+  \inst{1} University of Hamburg, \inst{2}  University of Bristol (GB)
+}
+\date{January 2015}
+
+% \author[Matthias~Schr\"oder]{\underlineArne-Rasmus~Dr\"ager}\inst{1},Dr.~Tai~Sakuma\inst{2}}
+% \institute{
+%   \inst{1} University of Hamburg, \inst{1} University of Bristol (GB)\inst{2}
+% }
+
+% pdflatex packages
+\hypersetup{bookmarks=true}
+\hypersetup{pdftitle={CMSDAS 2015 BARI}}
+\hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
+\hypersetup{bookmarks=true}
+
+
+\begin{document}
+% ==================================================
+% --------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --------------------------------------------------
+
+\section{Supersymmetry}
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{What We Know}
+  \begin{columns}
+    \begin{column}{0.49\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/fig3.pdf}\\
+    \end{column}
+    \begin{column}{0.51\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/fig4.pdf}\\
+    \end{column}
+  \end{columns}
+  \begin{block}{}
+    \centering
+    \textbf{The Standard Model is completed \checkmark}
+  \end{block}
+\end{frame}
+
+% ---------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{What We Don't Know}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \visible<2->{
+        \includegraphics[height=2.5cm]{figures/leonard.jpeg}
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \visible<3->{
+        \centering
+        \includegraphics[height=2.5cm]{figures/sheldon.jpg}
+      }
+    \end{column}
+  \end{columns}
+  \vskip0.3cm
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \visible<2->{
+        \centering
+        \includegraphics[width=0.55\textwidth]{susy/PlanckUniverse.png}\\
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \visible<3->{
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures/fig3.pdf}
+        \includegraphics[width=0.42\textwidth]{figures/fig4.pdf}
+      }
+    \end{column}
+  \end{columns}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \visible<2->{
+        \centering
+        \structure{What are those 95\%?}
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \visible<3->{
+        \centering
+        \structure{Why is the Higgs mass so small?}
+      }
+    \end{column}
+  \end{columns}
+  \vskip0.3cm
+  \visible<4->{
+    \begin{block}{}
+      \centering
+      \textbf{The Standard Model is not sufficient --- an extension is required!}
+    \end{block}
+  }
+\end{frame}
+
+% ---------------------------------------------------------------------------------
+\begin{frame}[t]
+  \frametitle{Supersymmetry (SUSY)}
+  \begin{block}{}
+    \begin{itemize}
+    \item Symmetry between fermions and bosons
+    \item Requires introduction of new particles
+    \end{itemize}
+  \end{block}
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{susy/Particles_MSSM.png}
+  \end{center}
+  \vskip-0.3cm
+  \begin{itemize}
+  \item Minimal Supersymmetric Standard Model (MSSM)
+    \begin{itemize}
+    \item One superpartner to each SM particle (+extended Higgs sector)
+    \item R-parity conservation: lightest supersymmetric particle (LSP) is stable
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Supersymmetry (SUSY)}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.49\textwidth]{figures/fig3.pdf}
+      \includegraphics[width=0.51\textwidth]{figures/fig4.pdf}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{susy/PlanckUniverse.png}\\
+    \end{column}
+  \end{columns}    
+  \begin{columns}
+    \begin{column}{0.49\textwidth}
+      \begin{block}{}
+        \centering
+        \textbf{Solves `Hierarchy Problem' without fine-tuning}
+      \end{block}
+    \end{column}
+    \begin{column}{0.02\textwidth}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{block}{}
+        \centering
+        \textbf{Stable LSP is excellent Dark Matter candidate\emptybox{11pt}}
+      \end{block}
+    \end{column}
+  \end{columns}  
+  \vskip0.5cm
+  \begin{itemize}
+  \item No SUSY particles observed yet
+  \item SUSY has to be broken, heavy SUSY particles
+  \end{itemize}
+\end{frame}
+
+
+\section{Analysis Motivation}
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{Motivation: Jets + \met Final State}
+  \begin{itemize}
+  \item Generic, inclusive search for new physics
+  \item Motivated by R-parity conserving \susy
+    \begin{itemize}
+    \item Large cross section for $\tilde{g}\tilde{g}$, $\tilde{g}\tilde{q}$, $\tilde{q}\tilde{q}$ pair-production in many scenarios
+    \item Decay into coloured \sm particles and stable LSP
+    \end{itemize}
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{susy/SUSY-XS-LHC2012-LPCC.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \only<1>{
+        \centering
+        \includegraphics[width=\textwidth]{susy/Sketch_All-HadronicSUSYDiagram_NoText.pdf}
+      }
+      \only<2->{
+        \centering
+        \includegraphics[width=\textwidth]{susy/Sketch_All-HadronicSUSYDiagram.pdf}
+      }
+    \end{column}
+  \end{columns}
+  \visible<2->{
+    \begin{block}{}
+      \centering
+      \textbf{Several \textcolor{oochart12}{high-\pt jets} and \textcolor{oochart11}{large missing transverse momentum}}
+    \end{block}
+  }
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{Sensitive Variables}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{susy/Sketch_All-HadronicSUSYDiagram.pdf}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{block}{}
+        \textcolor{oochart12}{Visible energy}
+        \begin{equation*}
+          \HT = \sum_{\text{jets}} \left|\ptvec\right|
+        \end{equation*}
+      \end{block}
+      \begin{block}{}
+        \textcolor{oochart11}{Energy of undetected particles}
+        \begin{equation*}
+          \MHT = \big|-\sum_{\text{jets}} \ptvec \big|
+        \end{equation*}
+      \end{block}
+    \end{column}
+  \end{columns}    
+\end{frame}
+
+\section{Event Selection}
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{A SUSY Event?}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/EvtDisplay_176548_914_1619053694_HT2577_MHT212_RhoPhi.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/EvtDisplay_176548_914_1619053694_HT2577_MHT212_3D.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{The Overwhelming Standard Model}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{lhc/crosssections2009_v2.pdf}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+      \item<2-> SM background processes
+        \begin{itemize}
+        \item<2-> QCD
+        \item<2-> $\text{W}(\rightarrow l\nu)\,+\,\text{jets}$
+        \item<2-> $\text{Z}(\rightarrow\nu\bar{\nu})\,+\,\text{jets}$
+        \item<2-> \ttbar ($\text{W}(\rightarrow l\nu)$)
+        \end{itemize}
+      \item<3-> Baseline event selection
+        \begin{itemize}
+        \item<3-> $\MHT > 200\gev$
+        \item<3-> $\ge3$ jets, $HT > 500\gev$
+        \item<3-> Veto of events with isolated $e$, $\mu$
+        \item<3-> $\Delta\phi(\mht,\text{jet}[1,2,3]) > [0.5,0.5,0.3]$
+        \end{itemize}
+      \end{itemize}
+    \end{column}    
+  \end{columns}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}[T]
+  \frametitle{After the Baseline Selection}
+  \only<1>{
+    \begin{columns}
+      \begin{column}{0.333\textwidth}
+        \centering
+        \begin{overpic}[width=\textwidth]{figures/RA2-2012-NoSig__HT__Data_vs_QCD+TTbar+ZJets+WJets__baseline.pdf}
+          \put(25,40){\textcolor{white}{\large \bf MC}}
+        \end{overpic}
+      \end{column}
+      \begin{column}{0.333\textwidth}
+        \centering
+        \begin{overpic}[width=\textwidth]{figures/RA2-2012-NoSig__MHT__Data_vs_QCD+TTbar+ZJets+WJets__baseline.pdf}
+          \put(25,40){\textcolor{white}{\large \bf MC}}
+        \end{overpic}
+      \end{column}
+      \begin{column}{0.333\textwidth}
+        \centering
+        \begin{overpic}[width=\textwidth]{figures/RA2-2012-NoSig__NJets__Data_vs_QCD+TTbar+ZJets+WJets__baseline.pdf}
+          \put(25,40){\textcolor{white}{\large \bf MC}}
+        \end{overpic}
+      \end{column}
+    \end{columns}
+  }
+  \only<2->{
+    \begin{columns}
+      \begin{column}{0.333\textwidth}
+        \centering
+        \begin{overpic}[width=\textwidth]{figures/RA2-2012__HT__Data_vs_QCD+TTbar+ZJets+WJets__baseline.pdf}
+          \put(25,40){\textcolor{white}{\large \bf MC}}
+        \end{overpic}
+      \end{column}
+      \begin{column}{0.333\textwidth}
+        \centering
+        \begin{overpic}[width=\textwidth]{figures/RA2-2012__MHT__Data_vs_QCD+TTbar+ZJets+WJets__baseline.pdf}
+          \put(25,40){\textcolor{white}{\large \bf MC}}
+        \end{overpic}
+      \end{column}
+      \begin{column}{0.333\textwidth}
+        \centering
+        \begin{overpic}[width=\textwidth]{figures/RA2-2012__NJets__Data_vs_QCD+TTbar+ZJets+WJets__baseline.pdf}
+          \put(25,40){\textcolor{white}{\large \bf MC}}
+        \end{overpic}
+      \end{column}
+    \end{columns}
+  }
+  \only<1-2>{
+    \begin{itemize}
+    \item[\solidsquare{black}]<1-2> SM expectation (from MC simulation)
+    \item[\solidline{black}]<2> Possible signal (from MC simulation)
+    \end{itemize}
+    \only<2>{
+      \begin{block}{}
+        \centering
+        \textbf{Precise understanding of background distributions is essential}
+      \end{block}
+    }
+  }
+  \only<3->{
+    \begin{itemize}
+    \item Want sensitivity to many possible signal topologies
+    \item 36 search regions in \HT, \MHT, and \NJets on top of baseline selection
+    \end{itemize}
+  }
+  \visible<3->{
+    \begin{columns}[T]
+      \begin{column}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{susy/T2.pdf}\\
+        {\small \textbf{high-\MHT} region: high \pt(LSP)}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{susy/T1.pdf}\\
+        {\small \textbf{low-\MHT} region: many jets}
+      \end{column}
+    \end{columns}
+  }
+\end{frame}
+
+\section{Background Prediction}
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{Key Feature of the Analysis}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{figures/NoMC.png}
+  \end{center}
+  \begin{block}{}
+    \centering
+    \textbf{Measurement of the \sm background from data}
+  \end{block}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{Data-Based Background Prediction}
+  Simple example: $\text{Z}(\rightarrow\nu\bar{\nu})\,+\,\text{jets}$ from $\text{Z}(\rightarrow \mu\mu)\,+\,\text{jets}$ data
+  \begin{itemize}
+  \item Expect Z decay to be independent of rest of event
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \centering
+      \only<1>{
+        \includegraphics[width=0.9\textwidth]{ra2/Sketch_ZToInv.pdf}\\
+      }
+      \only<2->{
+        \includegraphics[width=0.9\textwidth]{ra2/Sketch_ZToInvFromMuMu.pdf}\\
+      }
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{}
+        \begin{enumerate}
+        \item Remove muons from event
+        \item Recompute \HT, \MHT, \NJets
+        \item Apply baseline selection
+        \item Fill distributions for surviving events
+        \end{enumerate}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \visible<3->{
+    \begin{itemize}
+    \item[\smiley{}] Advantage: hard-to-predict kinematic properties of event from data
+      \begin{itemize}
+      \item \NJets and \pt(jets), \ie \HT, \MHT
+      \end{itemize}
+    \end{itemize}
+  }
+  \visible<4->{
+    \begin{itemize}
+    \item Corrections (event weights!)
+      \begin{itemize}
+      \item BR($\text{Z}\rightarrow \nu\nu$) / BR($\text{Z}\rightarrow \mu\mu$)
+      \item Kinematic acceptance and reconstruction efficiency of muons
+      \item Trigger efficiency of $\text{Z}(\rightarrow \mu\mu)\,+\,\text{jets}$ events
+      \end{itemize}
+    \end{itemize}
+  }
+  \visible<5->{
+    \begin{itemize}
+    \item[\frownie{}] Drawback: statistical precision, $\text{BR}(\text{Z}\rightarrow \nu\nu) < \text{BR}(\text{Z}\rightarrow \mu\mu)$
+    \end{itemize}
+  }
+\end{frame}
+
+\section{Interpretation of the Results}
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{How to Interpret the Results}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/RA2DataVsEstimatedBkg.pdf}
+  \end{center}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{95\%-CL Limits on CMSSM Parameters}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figures/cMSSM_Mzero_Mhalf_Exclusion.pdf}
+  \end{center}
+\end{frame}
+
+% --------------------------------------------------
+\begin{frame}
+  \frametitle{A Word of Warning}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{figures/BeamHalo-195378_143135036_141_3DTower.png}\\
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{figures/BeamHalo-195378_143135036_141_Lego.png}\\
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+  \item Searches typically look in extreme phase-space regions, \eg high \MHT
+  \item Fake signal events due to rare effects become extremely important
+    \begin{itemize}
+    \item Misreconstruction, detector noise, dead channels
+    \item Beam-background events
+    \end{itemize}
+  \end{itemize}
+  \begin{block}{}
+    \center
+    \textbf{Careful selection of high-quality events is essential}
+  \end{block}
+\end{frame}
+
+\section{The Exercise}
+% --------------------------------------------------
+\begin{frame}[t]
+  \frametitle{The Exercise}
+  \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/SUSYExersice2015BARI}
+  \vskip0.5cm
+  \begin{itemize}
+  \item First Part:
+    \begin{itemize}
+    \item Investigating the properties of data, SM background, and signal processes
+    \item Understanding the event selection
+    \item Understanding the data-based background prediction methods
+    \end{itemize}
+  \item Second Part:
+  \begin{itemize}
+    \item Prediction of the \wpj and \ttbar backgrounds
+    \item Combining the results and comparing to data
+    \end{itemize}
+    \item End:
+    \begin{itemize}
+    \item Preparing the presentation
+    \item Result presentation
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% --------------------------------------------------
+
+
+
+
+%\setcounter{framenumber}{18}
+
+\end{document}
