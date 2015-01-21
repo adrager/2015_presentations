@@ -33,12 +33,12 @@
 \newcommand{\lib}[1]{\tiny #1}
 
 % Title etc
-\title[RA2/b Meeting]{RA2/b \\ Status of Lost-Lepton Method \\ \& \ttbar, \wpj Background Rejection Studies }
+\title[Inc. SUSY searches Meeting]{Status Report from RA2/b \\ Lost-Lepton Background Estimation Methods \\ \& \ttbar, \wpj Background Rejection Studies }
 \subtitle{using phys14 Samples}
 \author[Arne-Rasmus~Dr\"ager]{
-  Arne-Rasmus~Dr\"ager (Uni Hamburg)
+  Arne-Rasmus~Dr\"ager (Uni Hamburg) \\ on behalf of the RA2/b team
 }
-\date[January 15, 2014]{January 15, 2014
+\date[January 23, 2015]{January 23, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -50,7 +50,7 @@
 % pdflatex packages
 \hypersetup{bookmarks=true}
 \hypersetup{unicode=false}
-\hypersetup{pdftitle={Islated Tracks}}
+\hypersetup{pdftitle={Lost-Lepton RA2/b}}
 \hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
 
 
@@ -67,7 +67,7 @@
 
 
 \begin{frame}
-  \frametitle{Lost-lepton suppression}
+  \frametitle{Lost-lepton Motivation}
   \begin{figure}
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
@@ -83,19 +83,14 @@
   \end{figure}
   \begin{itemize}
   \item RA2/b: inclusive hadronic analyses targeting gluino production (T1tttt, T1bbbb, T1qqqq)
-  \item In most bins, main background is top, W+jet events with lost lepton
-  \item T1tttt events have leptons $\sim 70 \%$ of the time--but many
-    of these are lost as well and end up in our ``hadronic'' search region
-  \item Goals   
-    \begin{itemize}
-    \item Understand lepton composition (e/mu from W,
-      hadronic/leptonic tau, dilepton) of lost-lepton BG (ttbar,
-      W+jets) and signal (T1tttt)
-    \item Test methods for suppressing these backgrounds: isolated track veto, single-prong tau veto.
-    \end{itemize}
+  \item In most sensitive bins, main background is \ttbar, \wpj events with lost lepton
+  \item T1tttt events have leptons $\sim 70 \%$ of the time
+  \begin{itemize}
+   \item Are rejected if any lepton passes isolation definition
+   \item Enter control sample for background estimation methods
+  \end{itemize}  
   \end{itemize}
 \end{frame}
-
 
 \begin{frame}
 \frametitle{Baseline selection}
@@ -112,15 +107,31 @@
  \item $\NJets\ge 4$, \HT jets
  \item $\BTags$ CSVM ($>0.814$), $\pt>30\gev$
  \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
- \item Isolated electron \& muon veto
- \item (Isolated-Track veto)
+\item Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
+    \item Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
+      (\Delta R<0.3) < 0.33 / 0.38$
+      \item Under study:
+      \begin{itemize}
+
+
+    \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
+      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV â (no neutral isolation yet)
+    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
+      \end{itemize}
 \end{itemize}
 % \begin{block}{}
 % \centering
-% \Large 
+% \Large
 % \end{block}
 \end{frame}
-\section{Lost-Lepton}
+
+\section{Classical Lost-Lepton Method}
+\begin{frame}
+  \begin{center}
+    {\Large
+     Classical Lost-Lepton Prediction Method }
+  \end{center}
+\end{frame}
 \subsection{Basic concept}
 \begin{frame}
   \frametitle{Mainly \ttbar and \wpj events where prompt electrons or muons are lost}
@@ -132,9 +143,9 @@
       \begin{itemize}
       \item Select a control sample (CS) of exactly one well isolated \\electron, $\mu$ within the acceptance
         \begin{itemize}
-        \item Weight each CS event according to efficiencies for each identification step 
+        \item Weight each CS event according to efficiencies for each identification step
         \item Predict expected di-leptonic \ttbar contribution to lost-lepton background independently using the same single $e,\mu$ control sample (about 1\%)
-        \item Combine independent prediction from single electron and $\mu$ each 1/2 to final prediction of lost-leptons 
+        \item Combine independent prediction from single electron and $\mu$ for final prediction of lost-leptons
         \end{itemize}
       \end{itemize}
 \end{frame}
@@ -146,10 +157,10 @@
  \item Suppress contamination by requiring trans. mass $\mt < 100 \gev$ \\
 \end{itemize}
 \vspace{0.5cm}
-\hspace{0.5cm}$m_{T} = \sqrt{2 \cdot p_{T}(\mu)\cdot \met (1 - \cos(\Delta \Phi))}$
+\hspace{0.5cm}$m_{T} = \sqrt{2 \cdot p_{T}(\mu/e)\cdot \met (1 - \cos(\Delta \Phi))}$
 
   \begin{columns}
-    \begin{column}{0.4\textwidth}
+    \begin{column}{0.5\textwidth}
 
       \begin{itemize}
       \item Removes about 10\% of e/$\mu$ CS due to:
@@ -160,14 +171,14 @@
         \end{itemize}
       \begin{centering}
       \end{centering}
-      \item Correction for as a function of lep $p_{T}$ \& activity
+      \item Correction for as a function of lepton $p_{T}$ \& activity around the lepton (motivation \& definition on the next slides)
       \end{itemize}
       \vspace{0.3cm}
     \end{column}
-    \begin{column}{0.6\textwidth}
+    \begin{column}{0.5\textwidth}
       \centering
     %  \begin{overpic}[width=0.8\textwidth]{figures/lost-lepton/ControlSample__MTW__MCPrMTWDiLepTTbar+MCPrMTWDiLepW__mu_control_sample.pdf}
-       \begin{overpic}[width=0.8\textwidth]{figures/control-sample/ControlSample_Combined_searchbins__MTW__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+       \begin{overpic}[width=0.95\textwidth]{figures/control-sample/ControlSample_Combined_searchbins__MTW__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
        \put(53.93,83){\color{black}\line(0,-1){67}}
     %\put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
       \end{overpic}
@@ -185,7 +196,7 @@
    \begin{itemize}
   \item In order to achieve good closure well parametrized and binned efficiency maps needed!
   \item Classical approach of $\Delta R$ \& lepton \pt \/ jet \pt suffers from strong variation of efficiency
-  \item Sever problem when deploying method in low statistical regions which are our search regions (hand full of events)
+  \item Severe problem when applying method in low statistical regions most sensitive search regions (hand full of events)
  \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
@@ -194,53 +205,57 @@
      \small  Typical $\mu$ isolation efficiency
    \begin{overpic}[width=1.\textwidth]{figures/efficiencies/8TeV/DataTAPmuIso.pdf}
      \end{overpic} \\
-      \centering
+      
  Example: Region with 3 gen but only 1 CS event \\
-   \begin{overpic} [width=0.48\textwidth]{figures/deltaRLowStat.pdf}
+   \begin{overpic} [width=0.45\textwidth]{figures/deltaRLowStat.pdf}
      \end{overpic}
-     \begin{overpic} [width=0.48\textwidth]{figures/deltaRLowStatReco.pdf}
+     \begin{overpic} [width=0.45\textwidth]{figures/deltaRLowStatReco.pdf}
      \end{overpic} \\
-    Control sample lepton in high eff. region  $\rightarrow$ low weight $\rightarrow$ underprediction
+    Here: Control sample lepton in high eff. region\\  $\rightarrow$ low weight $\rightarrow$ underprediction
  
   \end{column}
  \end{columns}
+ \begin{itemize}
+  \item Low statistics in control sample combined with strong variation in efficiency leads to high uncertainties in most sensitive bins
+ \end{itemize}
+
 
 \end{frame}
 
 \begin{frame}
- \frametitle{Solving parametization problem (attempt)}
+ \frametitle{Solving parametrization problem (first attempt)}
  \begin{itemize}
-  \item In 8TeV RA2 used efficiencies binned in search variables following closely search region definition.
+  \item In 8TeV RA2 used efficiencies binned in search variables following closely search region definition
   \begin{itemize}
    \item Good closure
-   \item Relativley high statistical uncertainties on efficiency maps
+   \item Relatively high statistical uncertainties on efficiency maps
    \item Could not be obtained from data only indirect validation via Tag \& Probe method
   \end{itemize}
-  \item Ansatz: Lepton \pt together with activity ($A$) around the lepton in a larger fixed cone size
+  \item Ansatz: Lepton \pt together with activity ($A$) around the lepton in a larger fixed cone size (replace $\Delta R$)
   \begin{itemize}
    \item 'Average' over $\Delta R$ capture event activity in a more broader picture. More activity in event more likely to lose lepton
    \item Can in principle be obtained from data. % Capability of capturing kinematic differences between \Zmumu and \wpj, \ttbar need to be evaluated
-   \item Lose some event information but more resistant to low statistics region problem
+   \item Integrate over some event information but gain more resistance to low statistics region fluctuations
   \end{itemize}
    \item Muon activity:
   \begin{itemize}
-   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedEMFraction + ChargedHadFraction) $ 
+   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedEMFraction + ChargedHadFraction) $
   \end{itemize}
     \item Electron activity:
   \begin{itemize}
-   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedHadFraction) $ 
+   \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedHadFraction) $
   \end{itemize}
   \end{itemize}
 
 %  \begin{block}{}
 %  \centering
-%  \Large First tests using this new variable for the reconstruction and isoaltion efficiencies
+%  \Large First tests using this new variable for the reconstruction and isolation efficiencies
 %  \end{block}
 \end{frame}
 
 %--------------------------------------------------------------------
 
-
+\subsection{Closure Test}
 \begin{frame}
 
 
@@ -267,31 +282,108 @@
   \end{columns}
   \begin{itemize}
   \item $\HT > 500 \gev$ , $\MHT>200 \gev$, $\NJets\ge 3$ , $\Delta\Phi_{1,2,3}>$0.5, 0.5, 0.3
-   \item Reasonable closre (exp $3862.1 \pm 17.9$, pred $3742.9 \pm 27.4$)
+   \item Reasonable closure (exp $3862.1 \pm 17.9$, pred $3742.9 \pm 27.4$)
   \end{itemize}
 
+
+ 
+\end{frame}
+  \begin{frame}
+  \begin{center}
+    {
+     \large Extension of Classical Lost-Lepton Method:\\ \Large Extrapolation from low to high \MHT regions}
+  \end{center}
+\end{frame}
+\section{Extrapolation Method}
+\begin{frame}
+ \begin{itemize}
+  \item Idea:
+  \begin{itemize}
+  \item Lost-lepton method limited by single lepton control sample statistics in some high \MHT search regions
+   \item Reduce statistical uncertainties in high \MHT regions by extrapolating from medium to high \MHT regions using W decay helicity distributions (well known physics $\rightarrow$ MC reliable).
+  \end{itemize}
+
+ \end{itemize}
+ \begin{center}
+ 
+
+
+\begin{overpic}[width=0.85\textwidth]{figures/LostLeptonExtraPolationScatch.png}
+%       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+      \end{overpic}
+       \end{center}
+       \begin{itemize}
+ \item Concept:
+ \begin{itemize}
+  \item Use single lepton data control sample to measure $\pt(W)$ spectrum
+  \item Use cos($\Delta \Theta_{T}$) distribution from MC to predict lost-lepton \MHT spectrum
+ \end{itemize}
+
+\end{itemize}
 \end{frame}
 \begin{frame}
- \frametitle{}
+ \frametitle{Status of extrapolation technique}
+ \begin{columns}
+  \begin{column}{0.6\textwidth}
+  \begin{itemize}
+   \item Use classic lost-lepton method to estimate background at medium \MHT [200,500] and \MHT ratio as a function of cos($\Delta \Theta_{T}$) to extrapolate to high \MHT    
+   \item First try shows good closure at high search regions
+   \item Increase in control sample statistics up to a factor of 4 to 7 in respect to single lepton estimation method
+   \item Uncertainties need to evaluated and compared to classical method to judge on the gain
+  \end{itemize}
+
+   
+  \end{column}
+  \begin{column}{0.4\textwidth}
+   \begin{overpic}[width=0.90\textwidth]{figures/LostLeptonHelicityPlot.png}
+      \end{overpic}\\
+         \begin{overpic}[width=0.90\textwidth]{figures/LostLeptonExtrapolationClosure.png}
+      \end{overpic}\\
+  \end{column}
+
+
+ \end{columns}
+
+\end{frame}
+
+
+
+
+\subsection{Conclusion}
+\begin{frame}
+ \frametitle{Lost-Lepton Methods Conclusion}
  \begin{itemize}
- \item Classical lost-lepton method status:
+ \item Classic lost-lepton method:
  \begin{itemize}
   \item Extension of lost-lepton method from using single $\mu$ to combining with single $e$ control sample works nicely
   \item Huge improvement of statistical uncertainty $\sqrt{2}$ (largest uncertainty in many very sensitive bins at 8 TeV data)
-  \item Studies ongoing of parametization of efficiencies exploring different variables
+  \item Studies ongoing of parametrization of efficiencies exploring different variables
  \end{itemize}
+ \item Lost-lepton extrapolation method:
+ \begin{itemize}
+  \item Attempt of decreasing statistical uncertainty in some of the most sensitive bins by extrapolating from high to low stat. region
+  \item First attempt shows good closure
+  \item Gain in respect to classical lost-lepton method statistics by a factor of 4-7 for relevant bins
+  \item Uncertainties need to be evaluated and compared with classical lost-lepton approach to judge on expected improvement
  \end{itemize}
- \Large If i have time I will include closure plot for all search bins
+
+ \end{itemize}
 
 \end{frame}
 
 
-
-
+\section{Optimization Studies}
+  \begin{frame}
+  \begin{center}
+    {
+     \large Optimization Studies on \ttbar \& \wpj background event rejection}
+  \end{center}
+\end{frame}
+\subsection{Introduction}
 \begin{frame}
   \frametitle{Event selection and object definitions}
   \begin{itemize}
-  \item Baseline selection: $H_{T}^{\mathrm{miss}}>200$ GeV,
+  \item Baseline selection: $\MHT>200$ GeV,
     $H_{T}>500$ GeV, $\geq4$ jets, $\geq2$ CSVM,
     $\Delta\hat{\phi}_{\mathrm{min}}>4$, no electrons or muons
   \item Object definitions:
@@ -301,19 +393,19 @@
       (\Delta R<0.3) < 0.33 / 0.38$
     \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
       chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV â (no neutral isolation yet)
-    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates 
+    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
       \begin{itemize}
       \item Strong ttbar rejection, $\sim~6\%$ QCD fake rate -- \href{https://indico.cern.ch/event/334949/contribution/1/material/slides/0.pdf}{see studies}
       \end{itemize}
 
     \end{itemize}
-  \item All of the definitions can and will be re-optminized for this
+  \item All of the definitions can and will be re-optimized for this
     analysis in Run II.
   \end{itemize}
 \end{frame}
-
+\subsection{Optimization}
 \begin{frame}
-  \frametitle{Lepton compositon at truth level}
+  \frametitle{Lepton composition at truth level}
   \begin{columns}[c] % the "c" option specifies center vertical alignment
     \column{.5\textwidth} % column designated by a command
     After baseline selection, more than $\sim60\%$ of $t\bar{t}$
@@ -327,27 +419,31 @@
       \includegraphics[width=1.2\textwidth]{figures/jacks_Studies/lepton_piechart_t1tttt_1500_100_baseline_117}
     \end{figure}
   \end{columns}
-  \begin{itemize} 
-  \item Try to reject more $t\bar{t}$ BG with
+  \begin{itemize}
+  \item Try to reject more $t\bar{t}$ \wpj BG with
     \begin{itemize}
     \item Single-prong tau veto
     \item Isolated track veto
     \end{itemize}
-  \item For each object, try computing $m_T(i,\; E_{T}^{\mathrm{miss}})$--should be cut off at 100 in
-    single-$l$ $(W)$ events
+  \item For each object, compute and cut at $m_T(W) <100 \gev$
+  \begin{itemize}
+   \item Good efficiency for SM events
+   \item Strong rejection of expected signal events
+  \end{itemize}
+
   \item Can we save signal by not vetoing events with taus/tracks
     with $m_T>100$ GeV?
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Using $m_T(l,\; E_{T}^{\mathrm{miss}})$ to save signal}
+  \frametitle{Using $m_T(W)$ to save signal}
   \begin{itemize}
   \item We know that events with 1 true lepton and one source of MET
-    ($W\rightarrow l\nu$ decay) should obey
-  \item If we only reject events with ``lost lepton candidates'' (taus or
+    ($W\rightarrow l\nu$ decay) are efficiently selected with $m_T<100$ GeV (90\%)
+  \item If we only reject events with single isolated e or $\mu$ (taus or
     tracks) satisfying the above (or $m_T<100$), can we save any signal?
-    How much ttbar would we keep?
+    How much \ttbar \wpj would we keep?
   \item This idea also suggested by \href{https://indico.cern.ch/event/339666/session/2/contribution/50/material/slides/0.pdf}{Jason Gran / MT2 group}
   \end{itemize}
   \begin{figure}[h]
@@ -357,7 +453,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Lepton event rejection cutflow $(5\mathrm{fb}^{-1})$}
+  \frametitle{Lepton event rejection cut flow $(5\mathrm{fb}^{-1})$}
   \begin{columns}[c] % the "c" option specifies center vertical alignment
     \column{.7\textwidth}
     \begin{figure}[h]
@@ -381,13 +477,14 @@
     \includegraphics[width=\textwidth]{figures/jacks_Studies/rejection_slide}
   \end{figure}
 \end{frame}
-
+\subsection{Conclusion}
 \begin{frame}
   \frametitle{Track veto: conclusions}
   \begin{itemize}
   \item Isolated track veto with $m_T<100$ restriction shows great
     improvement in sensitivity $(10-15\%)$ gain in
-    $S/\sqrt{B}$--will use this for Phys14 on top of standard
+    $S/\sqrt{B}$
+    \item Will be used for Phys14 on top of standard
     $e/\mu$ veto.
   \item Want to further reduce hadronic $\tau$ background:
     \begin{itemize}
@@ -397,10 +494,29 @@
       help to characterize $\tau$ decays.
     \end{itemize}
   \item $\tau$ veto may also be useful at some point.
+  \item Lost-lepton background estimation methods are being extended for isolated track veto
   \end{itemize}
 \end{frame}
 
 
+
+
+
+
+
+
+
+
+% --------------------------------------------------
+% --------------------------------------------------
+
+
+\section{Backup}
+\begin{frame}
+  \begin{center}
+    {\Large Additional Material}
+  \end{center}
+\end{frame}
 
 \begin{frame}
 \frametitle{Parametrization of Efficiencies}
@@ -413,33 +529,33 @@
 
 
 
-        \item Isolation 
+        \item Isolation
    \begin{itemize}
     \item \HT \MHT \NJets (\BTags)
    \end{itemize}
-   \item Reconstruction 
+   \item Reconstruction
    \begin{itemize}
     \item \HT \MHT \NJets (\BTags)
    \end{itemize}
-   \item Acceptance 
+   \item Acceptance
    \begin{itemize}
     \item \MHT \NJets (\BTags)
    \end{itemize}
    \item Purity (only electron CS)
    \begin{itemize}
-    \item \MHT \NJets 
+    \item \MHT \NJets
    \end{itemize}
       \item Di-lep contamination
    \begin{itemize}
-    \item \MHT \NJets 
+    \item \MHT \NJets
    \end{itemize}
    \item Di-lep efficiency
    \begin{itemize}
-    \item \NJets 
+    \item \NJets
    \end{itemize}
    \item \mt cut efficiency
    \begin{itemize}
-    \item \NJets 
+    \item \NJets
    \end{itemize}
      \end{itemize}
     \end{column}
@@ -449,67 +565,38 @@
              \begin{itemize}
 
 
-        \item Isolation 
+        \item Isolation
    \begin{itemize}
     \item Lep \pt Activity
    \end{itemize}
-   \item Reconstruction 
+   \item Reconstruction
    \begin{itemize}
     \item Activity
    \end{itemize}
-   \item Acceptance 
+   \item Acceptance
    \begin{itemize}
     \item \BTags \NJets
    \end{itemize}
    \item Purity (only electron CS)
    \begin{itemize}
-    \item \MHT \NJets 
+    \item \MHT \NJets
    \end{itemize}
       \item Di-lep contamination
    \begin{itemize}
-    \item \NJets 
+    \item \NJets
    \end{itemize}
    \item Di-lep efficiency
    \begin{itemize}
-    \item \NJets 
+    \item \NJets
    \end{itemize}
    \item \mt cut efficiency
    \begin{itemize}
-    \item Activity 
+    \item Activity
    \end{itemize}
      \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
-
-
-
-
-
-
-% --------------------------------------------------
-% --------------------------------------------------
-\section{Conclusion}
-\begin{frame}
- \begin{itemize}
- \item Problem with parametrization following either \NJets or \BTags search bin definition can be improved by using more lepton relevant based variables
- \item Updated parametrization of isolation, reconstruction, \mt-cut and di-lep contribution using \pt and activity around lepton shows reasonable closure for all search variables
- \item Further improvement and studies necessary. Especially non-closure in \NJets arising from out of acceptance leptons can be further improved
- \item Closure test for each of the 100 search bins needs to be studied!
- \item Work on extension of method using isolated tracks ongoing
- \end{itemize}
-
-\end{frame}
-
-
-\section{Backup}
-\begin{frame}
-  \begin{center}
-    {\Large Additional Material}
-  \end{center}
-\end{frame}
-
-
 \subsection{Closure}
 \begin{frame}
  \begin{center}
@@ -634,8 +721,8 @@
 \subsection{Lost Lepton equations (reminder)}
 \begin{frame}
  \begin{equation}
- \rm !ISO^{\mu} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}} 
-    %%   \rm !ISO^{\mu}} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}} 
+ \rm !ISO^{\mu} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}}
+    %%   \rm !ISO^{\mu}} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}}
 \label{eq:isolation_muon}
 \end{equation}
 \begin{equation}
@@ -670,9 +757,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_MuCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_MuCSPrIso__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_MuCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_MuCSPrIso__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -688,9 +775,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_MuCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_MuCSPrReco__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_MuCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_MuCSPrReco__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -708,9 +795,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExAcc_vs_MuCSPrAcc__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExAcc_vs_MuCSPrAcc__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -728,9 +815,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_MuCSPrAcc__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -748,9 +835,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_MuCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_MuCSPrReco__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_MuCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_MuCSPrReco__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -768,9 +855,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_MuCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_MuCSPrIso__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_MuCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_MuCSPrIso__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -795,9 +882,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_ElecCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExIso_vs_ElecCSPrIso__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -816,9 +903,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExReco_vs_ElecCSPrReco__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -839,9 +926,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__HT__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Elec_Closure_test__BTags__ElecExAcc_vs_ElecCSPrAcc__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -859,9 +946,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExAcc_vs_ElecCSPrAcc__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -881,9 +968,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExReco_vs_ElecCSPrReco__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_ElecCSPrReco__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExReco_vs_ElecCSPrReco__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -902,9 +989,9 @@
    \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__HT__MuExIso_vs_ElecCSPrIso__Baseline.pdf}
      \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_ElecCSPrIso__Baseline.pdf} 
+      \begin{overpic}[width=0.70\textwidth]{figures/separate_closure/Mu_Closure_test__BTags__MuExIso_vs_ElecCSPrIso__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -928,9 +1015,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuIsoNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -952,7 +1039,7 @@
 \begin{frame}
  \frametitle{$\mu$ iso used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuIsoPTActivity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuIsoPTActivity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -961,9 +1048,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuRecoNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -985,7 +1072,7 @@
 \begin{frame}
  \frametitle{$\mu$ reco used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuRecoActivity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuRecoActivity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -994,9 +1081,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuAccNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1018,7 +1105,7 @@
 \begin{frame}
  \frametitle{$\mu$ acc used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuAccBTagNJets.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuAccBTagNJets.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1027,9 +1114,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuPurityNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1060,9 +1147,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuMTWNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1085,7 +1172,7 @@
 \begin{frame}
  \frametitle{$\mu$ \mt-cut used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuMTWPTActivity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/MuMTWPTActivity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1095,9 +1182,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1113,7 +1200,7 @@
 \begin{frame}
  \frametitle{$\mu$ di lep contamination used parametization and binnning}
 \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/MuDiLepContributionNJets1D.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1131,9 +1218,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecIsoNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1155,7 +1242,7 @@
 \begin{frame}
  \frametitle{e iso used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecIsoPTActivity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecIsoPTActivity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1164,9 +1251,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecRecoNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1188,7 +1275,7 @@
 \begin{frame}
  \frametitle{e reco used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecRecoActivity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecRecoActivity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1197,9 +1284,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecAccNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1221,7 +1308,7 @@
 \begin{frame}
  \frametitle{e acc used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecAccBTagNJets.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecAccBTagNJets.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1230,9 +1317,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecPurityNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1255,7 +1342,7 @@
 \begin{frame}
  \frametitle{e purity used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecPurity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecPurity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1264,9 +1351,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecMTWNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1289,7 +1376,7 @@
 \begin{frame}
  \frametitle{e \mt-cut used parametization and binnning}
 \centering
-      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecMTWPTActivity.pdf} 
+      \begin{overpic}[width=0.90\textwidth]{figures/efficiencies/ElecMTWPTActivity.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1299,9 +1386,9 @@
    \begin{columns}
     \begin{column}{0.33\textwidth}
      \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionHT1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionHT1D.pdf}
      \end{overpic}
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionNJets1D.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -1317,7 +1404,7 @@
 \begin{frame}
  \frametitle{e di lep contribution used parametization and binnning}
 \centering
-      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionNJets1D.pdf} 
+      \begin{overpic}[width=1.00\textwidth]{figures/efficiencies/ElecDiLepContributionNJets1D.pdf}
      \end{overpic}
 \end{frame}
 
@@ -1332,29 +1419,29 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\ 
+                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\
 \midrule
-                                         Baseline &           $3844.8\pm17.9$&           $1848.2\pm10.7$&           $1852.2\pm11.8$&               $3700.4\pm26.7$ \\ 
-     B\_0\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $822.6\pm6.8$&             $387.9\pm3.7$&             $399.1\pm4.1$&                 $787.0\pm9.3$ \\ 
-     B\_0\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $223.9\pm2.9$&             $118.6\pm1.8$&             $125.7\pm2.0$&                 $244.3\pm4.5$ \\ 
-     B\_0\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $34.4\pm1.1$&              $17.4\pm0.6$&              $16.9\pm0.5$&                  $34.3\pm1.4$ \\ 
-      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $42.8\pm1.2$&              $23.3\pm0.7$&              $24.8\pm0.8$&                  $48.1\pm1.8$ \\ 
-      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $4.0\pm0.4$&               $2.8\pm0.2$&               $3.2\pm0.3$&                   $6.0\pm0.6$ \\ 
-      B\_0\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $4.0\pm0.3$&               $2.1\pm0.2$&               $2.2\pm0.1$&                   $4.3\pm0.4$ \\ 
-     B\_0\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $61.2\pm2.4$&              $30.4\pm1.3$&              $30.7\pm1.5$&                  $61.1\pm3.3$ \\ 
-     B\_0\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $42.1\pm1.7$&              $27.9\pm1.2$&              $27.4\pm1.3$&                  $55.2\pm3.0$ \\ 
-     B\_0\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.2$&               $1.0\pm0.2$&               $1.1\pm0.2$&                   $2.0\pm0.4$ \\ 
-      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $9.7\pm0.8$&               $7.0\pm0.6$&               $7.0\pm0.6$&                  $14.0\pm1.4$ \\ 
-      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.7\pm0.2$&               $0.6\pm0.1$&               $0.7\pm0.2$&                   $1.3\pm0.3$ \\ 
-      B\_0\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.1$&               $0.2\pm0.0$&               $0.3\pm0.1$&                   $0.5\pm0.1$ \\ 
-   B\_0\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $1.8\pm0.4$&               $1.5\pm0.3$&               $1.7\pm0.3$&                   $3.1\pm0.8$ \\ 
-   B\_0\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $7.4\pm0.8$&               $4.7\pm0.5$&               $3.8\pm0.5$&                   $8.5\pm1.2$ \\ 
-   B\_0\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.2\pm0.1$&               $0.1\pm0.0$&               $0.1\pm0.1$&                   $0.2\pm0.1$ \\ 
-    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.5$&               $1.6\pm0.3$&               $1.5\pm0.3$&                   $3.2\pm0.7$ \\ 
-    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.2\pm0.1$&               $0.1\pm0.0$&               $0.0\pm0.0$&                   $0.1\pm0.1$ \\ 
-    B\_0\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+                                         Baseline &           $3844.8\pm17.9$&           $1848.2\pm10.7$&           $1852.2\pm11.8$&               $3700.4\pm26.7$ \\
+     B\_0\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $822.6\pm6.8$&             $387.9\pm3.7$&             $399.1\pm4.1$&                 $787.0\pm9.3$ \\
+     B\_0\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $223.9\pm2.9$&             $118.6\pm1.8$&             $125.7\pm2.0$&                 $244.3\pm4.5$ \\
+     B\_0\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $34.4\pm1.1$&              $17.4\pm0.6$&              $16.9\pm0.5$&                  $34.3\pm1.4$ \\
+      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $42.8\pm1.2$&              $23.3\pm0.7$&              $24.8\pm0.8$&                  $48.1\pm1.8$ \\
+      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $4.0\pm0.4$&               $2.8\pm0.2$&               $3.2\pm0.3$&                   $6.0\pm0.6$ \\
+      B\_0\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $4.0\pm0.3$&               $2.1\pm0.2$&               $2.2\pm0.1$&                   $4.3\pm0.4$ \\
+     B\_0\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $61.2\pm2.4$&              $30.4\pm1.3$&              $30.7\pm1.5$&                  $61.1\pm3.3$ \\
+     B\_0\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $42.1\pm1.7$&              $27.9\pm1.2$&              $27.4\pm1.3$&                  $55.2\pm3.0$ \\
+     B\_0\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.2$&               $1.0\pm0.2$&               $1.1\pm0.2$&                   $2.0\pm0.4$ \\
+      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $9.7\pm0.8$&               $7.0\pm0.6$&               $7.0\pm0.6$&                  $14.0\pm1.4$ \\
+      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.7\pm0.2$&               $0.6\pm0.1$&               $0.7\pm0.2$&                   $1.3\pm0.3$ \\
+      B\_0\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.1$&               $0.2\pm0.0$&               $0.3\pm0.1$&                   $0.5\pm0.1$ \\
+   B\_0\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $1.8\pm0.4$&               $1.5\pm0.3$&               $1.7\pm0.3$&                   $3.1\pm0.8$ \\
+   B\_0\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $7.4\pm0.8$&               $4.7\pm0.5$&               $3.8\pm0.5$&                   $8.5\pm1.2$ \\
+   B\_0\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.2\pm0.1$&               $0.1\pm0.0$&               $0.1\pm0.1$&                   $0.2\pm0.1$ \\
+    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.5$&               $1.6\pm0.3$&               $1.5\pm0.3$&                   $3.2\pm0.7$ \\
+    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.2\pm0.1$&               $0.1\pm0.0$&               $0.0\pm0.0$&                   $0.1\pm0.1$ \\
+    B\_0\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
 
-\bottomrule 
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1363,28 +1450,28 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\ 
+                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\
 \midrule
-     B-1\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $654.1\pm8.4$&             $296.8\pm4.7$&             $302.6\pm5.3$&                $599.4\pm11.8$ \\ 
-      B-1\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $175.0\pm4.1$&              $84.3\pm2.6$&              $80.4\pm2.8$&                 $164.7\pm6.4$ \\ 
-      B-1\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $14.4\pm1.1$&               $6.2\pm0.6$&               $6.3\pm0.6$&                  $12.6\pm1.4$ \\ 
-       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $29.3\pm1.6$&              $15.3\pm1.1$&              $15.6\pm1.3$&                  $30.9\pm2.8$ \\ 
-       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $2.5\pm0.4$&               $1.9\pm0.4$&               $1.1\pm0.2$&                   $3.0\pm0.8$ \\ 
-       B-1\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $1.9\pm0.3$&               $0.7\pm0.1$&               $0.5\pm0.1$&                   $1.1\pm0.3$ \\ 
-      B-1\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &             $105.1\pm3.6$&              $61.0\pm2.2$&              $52.8\pm2.3$&                 $113.8\pm5.4$ \\ 
-      B-1\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $74.0\pm2.9$&              $45.8\pm2.0$&              $44.1\pm2.2$&                  $89.9\pm4.9$ \\ 
-      B-1\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.4\pm0.4$&               $1.0\pm0.2$&               $0.9\pm0.3$&                   $1.8\pm0.6$ \\ 
-       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $18.0\pm1.4$&              $10.2\pm1.0$&              $11.7\pm1.2$&                  $21.9\pm2.5$ \\ 
-       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.3\pm0.4$&               $1.0\pm0.3$&               $1.0\pm0.3$&                   $1.9\pm0.7$ \\ 
-       B-1\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.2$&               $0.1\pm0.0$&               $0.0\pm0.0$&                   $0.1\pm0.1$ \\ 
-    B-1\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $8.9\pm1.1$&               $4.1\pm0.6$&               $4.1\pm0.6$&                   $8.2\pm1.4$ \\ 
-    B-1\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $20.3\pm1.6$&              $10.8\pm0.9$&              $10.5\pm1.1$&                  $21.4\pm2.3$ \\ 
-    B-1\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.2$ \\ 
-     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $6.8\pm0.9$&               $4.0\pm0.6$&               $3.4\pm0.6$&                   $7.3\pm1.4$ \\ 
-     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.4\pm0.2$&               $0.4\pm0.2$&               $0.3\pm0.1$&                   $0.6\pm0.4$ \\ 
-     B-1\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+     B-1\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $654.1\pm8.4$&             $296.8\pm4.7$&             $302.6\pm5.3$&                $599.4\pm11.8$ \\
+      B-1\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $175.0\pm4.1$&              $84.3\pm2.6$&              $80.4\pm2.8$&                 $164.7\pm6.4$ \\
+      B-1\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $14.4\pm1.1$&               $6.2\pm0.6$&               $6.3\pm0.6$&                  $12.6\pm1.4$ \\
+       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $29.3\pm1.6$&              $15.3\pm1.1$&              $15.6\pm1.3$&                  $30.9\pm2.8$ \\
+       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $2.5\pm0.4$&               $1.9\pm0.4$&               $1.1\pm0.2$&                   $3.0\pm0.8$ \\
+       B-1\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $1.9\pm0.3$&               $0.7\pm0.1$&               $0.5\pm0.1$&                   $1.1\pm0.3$ \\
+      B-1\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &             $105.1\pm3.6$&              $61.0\pm2.2$&              $52.8\pm2.3$&                 $113.8\pm5.4$ \\
+      B-1\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $74.0\pm2.9$&              $45.8\pm2.0$&              $44.1\pm2.2$&                  $89.9\pm4.9$ \\
+      B-1\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.4\pm0.4$&               $1.0\pm0.2$&               $0.9\pm0.3$&                   $1.8\pm0.6$ \\
+       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $18.0\pm1.4$&              $10.2\pm1.0$&              $11.7\pm1.2$&                  $21.9\pm2.5$ \\
+       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.3\pm0.4$&               $1.0\pm0.3$&               $1.0\pm0.3$&                   $1.9\pm0.7$ \\
+       B-1\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.2$&               $0.1\pm0.0$&               $0.0\pm0.0$&                   $0.1\pm0.1$ \\
+    B-1\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $8.9\pm1.1$&               $4.1\pm0.6$&               $4.1\pm0.6$&                   $8.2\pm1.4$ \\
+    B-1\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $20.3\pm1.6$&              $10.8\pm0.9$&              $10.5\pm1.1$&                  $21.4\pm2.3$ \\
+    B-1\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.2$ \\
+     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $6.8\pm0.9$&               $4.0\pm0.6$&               $3.4\pm0.6$&                   $7.3\pm1.4$ \\
+     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.4\pm0.2$&               $0.4\pm0.2$&               $0.3\pm0.1$&                   $0.6\pm0.4$ \\
+     B-1\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
 
-\bottomrule 
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1394,29 +1481,29 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\ 
+                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\
 \midrule
-     B\_2\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $402.1\pm7.0$&             $187.5\pm4.2$&             $179.8\pm4.6$&                $367.3\pm10.5$ \\ 
-     B\_2\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $107.5\pm3.6$&              $50.0\pm2.3$&              $48.0\pm2.5$&                  $98.1\pm5.8$ \\ 
-     B\_2\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $5.0\pm0.7$&               $2.9\pm0.5$&               $2.6\pm0.6$&                   $5.4\pm1.2$ \\ 
-      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $16.9\pm1.4$&               $7.5\pm0.9$&               $6.7\pm1.0$&                  $14.2\pm2.3$ \\ 
-      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $1.1\pm0.4$&               $0.3\pm0.1$&               $0.8\pm0.4$&                   $1.1\pm0.5$ \\ 
-      B\_2\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.5\pm0.2$&               $0.1\pm0.0$&               $0.2\pm0.1$&                   $0.3\pm0.1$ \\ 
-     B\_2\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $89.9\pm3.4$&              $48.2\pm2.0$&              $50.6\pm2.3$&                  $98.8\pm5.0$ \\ 
-     B\_2\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $66.2\pm2.9$&              $41.1\pm2.0$&              $38.5\pm2.1$&                  $79.6\pm4.9$ \\ 
-     B\_2\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.4$&               $0.5\pm0.2$&               $0.8\pm0.4$&                   $1.4\pm0.6$ \\ 
-      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $15.7\pm1.4$&               $9.6\pm1.0$&               $8.6\pm1.1$&                  $18.2\pm2.5$ \\ 
-      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.0\pm0.3$&               $0.7\pm0.3$&               $0.6\pm0.3$&                   $1.3\pm0.7$ \\ 
-      B\_2\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&               $0.1\pm0.1$&               $0.1\pm0.1$&                   $0.2\pm0.2$ \\ 
-   B\_2\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $9.4\pm1.1$&               $3.6\pm0.5$&               $3.2\pm0.5$&                   $6.8\pm1.2$ \\ 
-   B\_2\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $21.1\pm1.6$&              $11.8\pm1.0$&              $11.5\pm1.1$&                  $23.2\pm2.5$ \\ 
-   B\_2\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.1$ \\ 
-    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $7.8\pm1.0$&               $4.5\pm0.7$&               $4.0\pm0.7$&                   $8.5\pm1.6$ \\ 
-    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.3\pm0.2$&               $0.4\pm0.2$&               $0.2\pm0.1$&                   $0.6\pm0.5$ \\ 
-    B\_2\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+     B\_2\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $402.1\pm7.0$&             $187.5\pm4.2$&             $179.8\pm4.6$&                $367.3\pm10.5$ \\
+     B\_2\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $107.5\pm3.6$&              $50.0\pm2.3$&              $48.0\pm2.5$&                  $98.1\pm5.8$ \\
+     B\_2\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $5.0\pm0.7$&               $2.9\pm0.5$&               $2.6\pm0.6$&                   $5.4\pm1.2$ \\
+      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $16.9\pm1.4$&               $7.5\pm0.9$&               $6.7\pm1.0$&                  $14.2\pm2.3$ \\
+      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $1.1\pm0.4$&               $0.3\pm0.1$&               $0.8\pm0.4$&                   $1.1\pm0.5$ \\
+      B\_2\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.5\pm0.2$&               $0.1\pm0.0$&               $0.2\pm0.1$&                   $0.3\pm0.1$ \\
+     B\_2\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $89.9\pm3.4$&              $48.2\pm2.0$&              $50.6\pm2.3$&                  $98.8\pm5.0$ \\
+     B\_2\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $66.2\pm2.9$&              $41.1\pm2.0$&              $38.5\pm2.1$&                  $79.6\pm4.9$ \\
+     B\_2\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.4$&               $0.5\pm0.2$&               $0.8\pm0.4$&                   $1.4\pm0.6$ \\
+      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $15.7\pm1.4$&               $9.6\pm1.0$&               $8.6\pm1.1$&                  $18.2\pm2.5$ \\
+      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.0\pm0.3$&               $0.7\pm0.3$&               $0.6\pm0.3$&                   $1.3\pm0.7$ \\
+      B\_2\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&               $0.1\pm0.1$&               $0.1\pm0.1$&                   $0.2\pm0.2$ \\
+   B\_2\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $9.4\pm1.1$&               $3.6\pm0.5$&               $3.2\pm0.5$&                   $6.8\pm1.2$ \\
+   B\_2\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $21.1\pm1.6$&              $11.8\pm1.0$&              $11.5\pm1.1$&                  $23.2\pm2.5$ \\
+   B\_2\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.1$ \\
+    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $7.8\pm1.0$&               $4.5\pm0.7$&               $4.0\pm0.7$&                   $8.5\pm1.6$ \\
+    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.3\pm0.2$&               $0.4\pm0.2$&               $0.2\pm0.1$&                   $0.6\pm0.5$ \\
+    B\_2\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
 
 
-\bottomrule 
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1427,29 +1514,29 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\ 
+                                                Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Combined Pre.  \\
 \midrule
-     B>=3\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &              $64.6\pm2.8$&              $29.8\pm1.7$&              $26.0\pm1.9$&                  $55.8\pm4.3$ \\ 
-     B>=3\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &              $19.9\pm1.6$&              $10.2\pm1.1$&               $8.5\pm1.1$&                  $18.8\pm2.7$ \\ 
-     B>=3\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $0.4\pm0.2$&               $0.5\pm0.3$&               $0.3\pm0.2$&                   $0.8\pm0.6$ \\ 
-      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &               $3.4\pm0.6$&               $1.8\pm0.5$&               $0.9\pm0.3$&                   $2.7\pm1.0$ \\ 
-      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-      B>=3\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-     B>=3\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $26.0\pm1.8$&              $12.7\pm1.1$&              $10.7\pm1.1$&                  $23.4\pm2.5$ \\ 
-     B>=3\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $20.8\pm1.6$&              $11.5\pm1.1$&              $10.2\pm1.1$&                  $21.6\pm2.7$ \\ 
-     B>=3\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $4.5\pm0.7$&               $2.3\pm0.5$&               $1.6\pm0.5$&                   $4.0\pm1.2$ \\ 
-      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.5\pm0.3$&               $0.2\pm0.1$&               $0.1\pm0.1$&                   $0.3\pm0.3$ \\ 
-      B>=3\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.1\pm0.1$&                   $0.1\pm0.1$ \\ 
-   B>=3\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $2.8\pm0.6$&               $1.6\pm0.3$&               $1.9\pm0.4$&                   $3.5\pm0.9$ \\ 
-   B>=3\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $9.2\pm1.1$&               $6.0\pm0.8$&               $4.0\pm0.6$&                  $10.0\pm1.8$ \\ 
-   B>=3\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.2$ \\ 
-    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.6$&               $2.3\pm0.5$&               $1.4\pm0.4$&                   $3.7\pm1.1$ \\ 
-    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-    B>=3\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+     B>=3\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &              $64.6\pm2.8$&              $29.8\pm1.7$&              $26.0\pm1.9$&                  $55.8\pm4.3$ \\
+     B>=3\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &              $19.9\pm1.6$&              $10.2\pm1.1$&               $8.5\pm1.1$&                  $18.8\pm2.7$ \\
+     B>=3\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $0.4\pm0.2$&               $0.5\pm0.3$&               $0.3\pm0.2$&                   $0.8\pm0.6$ \\
+      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &               $3.4\pm0.6$&               $1.8\pm0.5$&               $0.9\pm0.3$&                   $2.7\pm1.0$ \\
+      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+      B>=3\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+     B>=3\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $26.0\pm1.8$&              $12.7\pm1.1$&              $10.7\pm1.1$&                  $23.4\pm2.5$ \\
+     B>=3\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $20.8\pm1.6$&              $11.5\pm1.1$&              $10.2\pm1.1$&                  $21.6\pm2.7$ \\
+     B>=3\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $4.5\pm0.7$&               $2.3\pm0.5$&               $1.6\pm0.5$&                   $4.0\pm1.2$ \\
+      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.5\pm0.3$&               $0.2\pm0.1$&               $0.1\pm0.1$&                   $0.3\pm0.3$ \\
+      B>=3\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.1\pm0.1$&                   $0.1\pm0.1$ \\
+   B>=3\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $2.8\pm0.6$&               $1.6\pm0.3$&               $1.9\pm0.4$&                   $3.5\pm0.9$ \\
+   B>=3\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $9.2\pm1.1$&               $6.0\pm0.8$&               $4.0\pm0.6$&                  $10.0\pm1.8$ \\
+   B>=3\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.2$ \\
+    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.6$&               $2.3\pm0.5$&               $1.4\pm0.4$&                   $3.7\pm1.1$ \\
+    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+    B>=3\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\
 
 
-\bottomrule 
+\bottomrule
 \end{tabular}
 \end{frame}
 % --------------------------------------------------
@@ -1467,28 +1554,28 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\ 
+                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\
 \midrule
-                                         Baseline &           $3844.8\pm17.9$&           $1702.1\pm8.4$&           $1521.9\pm7.8$&               $3224.0\pm19.9$ \\ 
-     B\_0\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $822.6\pm6.8$&            $418.5\pm3.5$&            $388.5\pm3.3$&                 $807.0\pm8.3$ \\ 
-     B\_0\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $223.9\pm2.9$&            $111.6\pm1.4$&            $104.9\pm1.3$&                 $216.5\pm3.3$ \\ 
-     B\_0\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $34.4\pm1.1$&             $19.8\pm0.5$&             $18.0\pm0.5$&                  $37.8\pm1.2$ \\ 
-      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $42.8\pm1.2$&             $20.7\pm0.5$&             $19.7\pm0.5$&                  $40.4\pm1.3$ \\ 
-      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $4.0\pm0.4$&              $2.7\pm0.2$&              $2.5\pm0.2$&                   $5.2\pm0.4$ \\ 
-      B\_0\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $4.0\pm0.3$&              $2.4\pm0.2$&              $2.3\pm0.1$&                   $4.8\pm0.4$ \\ 
-     B\_0\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $61.2\pm2.4$&             $34.9\pm1.3$&             $31.3\pm1.2$&                  $66.2\pm3.0$ \\ 
-     B\_0\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $42.1\pm1.7$&             $26.9\pm1.0$&             $23.3\pm0.9$&                  $50.2\pm2.2$ \\ 
-     B\_0\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.2$&              $1.2\pm0.1$&              $1.2\pm0.2$&                   $2.4\pm0.4$ \\ 
-      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $9.7\pm0.8$&              $6.3\pm0.4$&              $5.4\pm0.4$&                  $11.7\pm1.0$ \\ 
-      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.7\pm0.2$&              $0.6\pm0.1$&              $0.7\pm0.1$&                   $1.2\pm0.2$ \\ 
-      B\_0\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.1$&              $0.3\pm0.0$&              $0.3\pm0.1$&                   $0.6\pm0.1$ \\ 
-   B\_0\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $1.8\pm0.4$&              $1.6\pm0.3$&              $2.0\pm0.3$&                   $3.6\pm0.7$ \\ 
-   B\_0\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $7.4\pm0.8$&              $5.5\pm0.5$&              $4.0\pm0.4$&                   $9.5\pm1.1$ \\ 
-   B\_0\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.2\pm0.1$&              $0.1\pm0.1$&              $0.2\pm0.1$&                   $0.3\pm0.2$ \\ 
-    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.5$&              $1.8\pm0.3$&              $1.4\pm0.2$&                   $3.2\pm0.6$ \\ 
-    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.2\pm0.1$&              $0.2\pm0.1$&              $0.0\pm0.0$&                   $0.2\pm0.1$ \\ 
-    B\_0\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-\bottomrule 
+                                         Baseline &           $3844.8\pm17.9$&           $1702.1\pm8.4$&           $1521.9\pm7.8$&               $3224.0\pm19.9$ \\
+     B\_0\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $822.6\pm6.8$&            $418.5\pm3.5$&            $388.5\pm3.3$&                 $807.0\pm8.3$ \\
+     B\_0\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $223.9\pm2.9$&            $111.6\pm1.4$&            $104.9\pm1.3$&                 $216.5\pm3.3$ \\
+     B\_0\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $34.4\pm1.1$&             $19.8\pm0.5$&             $18.0\pm0.5$&                  $37.8\pm1.2$ \\
+      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $42.8\pm1.2$&             $20.7\pm0.5$&             $19.7\pm0.5$&                  $40.4\pm1.3$ \\
+      B\_0\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $4.0\pm0.4$&              $2.7\pm0.2$&              $2.5\pm0.2$&                   $5.2\pm0.4$ \\
+      B\_0\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $4.0\pm0.3$&              $2.4\pm0.2$&              $2.3\pm0.1$&                   $4.8\pm0.4$ \\
+     B\_0\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $61.2\pm2.4$&             $34.9\pm1.3$&             $31.3\pm1.2$&                  $66.2\pm3.0$ \\
+     B\_0\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $42.1\pm1.7$&             $26.9\pm1.0$&             $23.3\pm0.9$&                  $50.2\pm2.2$ \\
+     B\_0\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.2$&              $1.2\pm0.1$&              $1.2\pm0.2$&                   $2.4\pm0.4$ \\
+      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $9.7\pm0.8$&              $6.3\pm0.4$&              $5.4\pm0.4$&                  $11.7\pm1.0$ \\
+      B\_0\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.7\pm0.2$&              $0.6\pm0.1$&              $0.7\pm0.1$&                   $1.2\pm0.2$ \\
+      B\_0\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.1$&              $0.3\pm0.0$&              $0.3\pm0.1$&                   $0.6\pm0.1$ \\
+   B\_0\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $1.8\pm0.4$&              $1.6\pm0.3$&              $2.0\pm0.3$&                   $3.6\pm0.7$ \\
+   B\_0\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $7.4\pm0.8$&              $5.5\pm0.5$&              $4.0\pm0.4$&                   $9.5\pm1.1$ \\
+   B\_0\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.2\pm0.1$&              $0.1\pm0.1$&              $0.2\pm0.1$&                   $0.3\pm0.2$ \\
+    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.5$&              $1.8\pm0.3$&              $1.4\pm0.2$&                   $3.2\pm0.6$ \\
+    B\_0\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.2\pm0.1$&              $0.2\pm0.1$&              $0.0\pm0.0$&                   $0.2\pm0.1$ \\
+    B\_0\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1497,27 +1584,27 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\ 
+                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\
 \midrule
-      B-1\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $654.1\pm8.4$&            $286.3\pm3.9$&            $261.1\pm3.8$&                 $547.4\pm9.4$ \\ 
-      B-1\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $175.0\pm4.1$&             $67.4\pm1.7$&             $58.5\pm1.6$&                 $125.9\pm4.1$ \\ 
-      B-1\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $14.4\pm1.1$&              $6.5\pm0.5$&              $5.7\pm0.4$&                  $12.2\pm1.1$ \\ 
-       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $29.3\pm1.6$&             $11.3\pm0.7$&              $9.7\pm0.6$&                  $21.0\pm1.6$ \\ 
-       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $2.5\pm0.4$&              $1.3\pm0.2$&              $0.9\pm0.1$&                   $2.2\pm0.5$ \\ 
-       B-1\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $1.9\pm0.3$&              $0.7\pm0.1$&              $0.5\pm0.1$&                   $1.2\pm0.2$ \\ 
-      B-1\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &             $105.1\pm3.6$&             $65.6\pm2.0$&             $50.6\pm1.7$&                 $116.2\pm4.7$ \\ 
-      B-1\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $74.0\pm2.9$&             $41.2\pm1.5$&             $32.6\pm1.4$&                  $73.7\pm3.6$ \\ 
-      B-1\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.4\pm0.4$&              $1.2\pm0.2$&              $0.7\pm0.2$&                   $1.9\pm0.5$ \\ 
-       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $18.0\pm1.4$&              $8.1\pm0.7$&              $7.3\pm0.6$&                  $15.4\pm1.6$ \\ 
-       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.3\pm0.4$&              $0.9\pm0.2$&              $0.6\pm0.2$&                   $1.4\pm0.5$ \\ 
-       B-1\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.2$&              $0.1\pm0.0$&              $0.0\pm0.0$&                   $0.1\pm0.1$ \\ 
-    B-1\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $8.9\pm1.1$&              $4.5\pm0.5$&              $4.5\pm0.5$&                   $9.1\pm1.3$ \\ 
-    B-1\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $20.3\pm1.6$&             $10.3\pm0.8$&              $8.7\pm0.7$&                  $19.0\pm1.9$ \\ 
-    B-1\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&              $0.1\pm0.1$&              $0.0\pm0.0$&                   $0.1\pm0.1$ \\ 
-     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $6.8\pm0.9$&              $3.4\pm0.4$&              $2.2\pm0.4$&                   $5.6\pm1.0$ \\ 
-     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.4\pm0.2$&              $0.2\pm0.1$&              $0.3\pm0.1$&                   $0.5\pm0.3$ \\ 
-     B-1\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-\bottomrule 
+      B-1\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $654.1\pm8.4$&            $286.3\pm3.9$&            $261.1\pm3.8$&                 $547.4\pm9.4$ \\
+      B-1\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $175.0\pm4.1$&             $67.4\pm1.7$&             $58.5\pm1.6$&                 $125.9\pm4.1$ \\
+      B-1\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &              $14.4\pm1.1$&              $6.5\pm0.5$&              $5.7\pm0.4$&                  $12.2\pm1.1$ \\
+       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $29.3\pm1.6$&             $11.3\pm0.7$&              $9.7\pm0.6$&                  $21.0\pm1.6$ \\
+       B-1\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $2.5\pm0.4$&              $1.3\pm0.2$&              $0.9\pm0.1$&                   $2.2\pm0.5$ \\
+       B-1\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $1.9\pm0.3$&              $0.7\pm0.1$&              $0.5\pm0.1$&                   $1.2\pm0.2$ \\
+      B-1\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &             $105.1\pm3.6$&             $65.6\pm2.0$&             $50.6\pm1.7$&                 $116.2\pm4.7$ \\
+      B-1\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $74.0\pm2.9$&             $41.2\pm1.5$&             $32.6\pm1.4$&                  $73.7\pm3.6$ \\
+      B-1\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.4\pm0.4$&              $1.2\pm0.2$&              $0.7\pm0.2$&                   $1.9\pm0.5$ \\
+       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $18.0\pm1.4$&              $8.1\pm0.7$&              $7.3\pm0.6$&                  $15.4\pm1.6$ \\
+       B-1\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.3\pm0.4$&              $0.9\pm0.2$&              $0.6\pm0.2$&                   $1.4\pm0.5$ \\
+       B-1\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.3\pm0.2$&              $0.1\pm0.0$&              $0.0\pm0.0$&                   $0.1\pm0.1$ \\
+    B-1\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $8.9\pm1.1$&              $4.5\pm0.5$&              $4.5\pm0.5$&                   $9.1\pm1.3$ \\
+    B-1\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $20.3\pm1.6$&             $10.3\pm0.8$&              $8.7\pm0.7$&                  $19.0\pm1.9$ \\
+    B-1\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&              $0.1\pm0.1$&              $0.0\pm0.0$&                   $0.1\pm0.1$ \\
+     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $6.8\pm0.9$&              $3.4\pm0.4$&              $2.2\pm0.4$&                   $5.6\pm1.0$ \\
+     B-1\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.4\pm0.2$&              $0.2\pm0.1$&              $0.3\pm0.1$&                   $0.5\pm0.3$ \\
+     B-1\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1526,26 +1613,26 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\ 
+                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\
 \midrule
-     B\_2\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $402.1\pm7.0$&            $157.9\pm3.1$&            $133.7\pm2.9$&                 $291.6\pm7.4$ \\ 
-     B\_2\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $107.5\pm3.6$&             $35.0\pm1.4$&             $29.7\pm1.3$&                  $64.7\pm3.4$ \\ 
-     B\_2\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $5.0\pm0.7$&              $2.3\pm0.3$&              $1.9\pm0.3$&                   $4.2\pm0.8$ \\ 
-      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $16.9\pm1.4$&              $4.7\pm0.5$&              $3.6\pm0.4$&                   $8.2\pm1.2$ \\ 
-      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $1.1\pm0.4$&              $0.3\pm0.1$&              $0.4\pm0.1$&                   $0.7\pm0.3$ \\ 
-      B\_2\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.5\pm0.2$&              $0.1\pm0.0$&              $0.2\pm0.1$&                   $0.3\pm0.1$ \\ 
-     B\_2\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $89.9\pm3.4$&             $49.0\pm1.8$&             $43.8\pm1.7$&                  $92.8\pm4.2$ \\ 
-     B\_2\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $66.2\pm2.9$&             $32.8\pm1.4$&             $27.1\pm1.3$&                  $59.9\pm3.4$ \\ 
-     B\_2\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.4$&              $0.6\pm0.2$&              $0.7\pm0.2$&                   $1.3\pm0.5$ \\ 
-      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $15.7\pm1.4$&              $6.2\pm0.6$&              $5.2\pm0.6$&                  $11.4\pm1.4$ \\ 
-      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.0\pm0.3$&              $0.4\pm0.2$&              $0.3\pm0.1$&                   $0.7\pm0.4$ \\ 
-      B\_2\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&              $0.1\pm0.1$&              $0.1\pm0.1$&                   $0.2\pm0.2$ \\ 
-   B\_2\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $9.4\pm1.1$&              $4.2\pm0.5$&              $3.7\pm0.5$&                   $7.9\pm1.2$ \\ 
-   B\_2\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $21.1\pm1.6$&             $10.6\pm0.8$&              $9.1\pm0.8$&                  $19.6\pm1.9$ \\ 
-   B\_2\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&              $0.1\pm0.1$&              $0.1\pm0.1$&                   $0.2\pm0.2$ \\ 
-    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $7.8\pm1.0$&              $3.4\pm0.5$&              $2.9\pm0.4$&                   $6.3\pm1.1$ \\ 
-    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.3\pm0.2$&              $0.2\pm0.1$&              $0.2\pm0.1$&                   $0.4\pm0.3$ \\ 
-    B\_2\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+     B\_2\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &             $402.1\pm7.0$&            $157.9\pm3.1$&            $133.7\pm2.9$&                 $291.6\pm7.4$ \\
+     B\_2\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &             $107.5\pm3.6$&             $35.0\pm1.4$&             $29.7\pm1.3$&                  $64.7\pm3.4$ \\
+     B\_2\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $5.0\pm0.7$&              $2.3\pm0.3$&              $1.9\pm0.3$&                   $4.2\pm0.8$ \\
+      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &              $16.9\pm1.4$&              $4.7\pm0.5$&              $3.6\pm0.4$&                   $8.2\pm1.2$ \\
+      B\_2\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $1.1\pm0.4$&              $0.3\pm0.1$&              $0.4\pm0.1$&                   $0.7\pm0.3$ \\
+      B\_2\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.5\pm0.2$&              $0.1\pm0.0$&              $0.2\pm0.1$&                   $0.3\pm0.1$ \\
+     B\_2\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $89.9\pm3.4$&             $49.0\pm1.8$&             $43.8\pm1.7$&                  $92.8\pm4.2$ \\
+     B\_2\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $66.2\pm2.9$&             $32.8\pm1.4$&             $27.1\pm1.3$&                  $59.9\pm3.4$ \\
+     B\_2\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $1.5\pm0.4$&              $0.6\pm0.2$&              $0.7\pm0.2$&                   $1.3\pm0.5$ \\
+      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &              $15.7\pm1.4$&              $6.2\pm0.6$&              $5.2\pm0.6$&                  $11.4\pm1.4$ \\
+      B\_2\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $1.0\pm0.3$&              $0.4\pm0.2$&              $0.3\pm0.1$&                   $0.7\pm0.4$ \\
+      B\_2\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&              $0.1\pm0.1$&              $0.1\pm0.1$&                   $0.2\pm0.2$ \\
+   B\_2\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $9.4\pm1.1$&              $4.2\pm0.5$&              $3.7\pm0.5$&                   $7.9\pm1.2$ \\
+   B\_2\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &              $21.1\pm1.6$&             $10.6\pm0.8$&              $9.1\pm0.8$&                  $19.6\pm1.9$ \\
+   B\_2\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&              $0.1\pm0.1$&              $0.1\pm0.1$&                   $0.2\pm0.2$ \\
+    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $7.8\pm1.0$&              $3.4\pm0.5$&              $2.9\pm0.4$&                   $6.3\pm1.1$ \\
+    B\_2\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.3\pm0.2$&              $0.2\pm0.1$&              $0.2\pm0.1$&                   $0.4\pm0.3$ \\
+    B\_2\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
 \end{tabular}
 \end{frame}
 
@@ -1554,27 +1641,27 @@
 \begin{tabular}{lrrrr}
 \toprule
 
-                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\ 
+                                                Selection  &          MCEx  &         ElecCS  &                     MuCS  &          Total CS  \\
 \midrule
-     B>=3\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &              $64.6\pm2.8$&             $23.8\pm1.2$&             $17.5\pm1.1$&                  $41.4\pm2.8$ \\ 
-     B>=3\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &              $19.9\pm1.6$&              $6.5\pm0.6$&              $4.6\pm0.5$&                  $11.1\pm1.5$ \\ 
-     B>=3\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $0.4\pm0.2$&              $0.3\pm0.1$&              $0.1\pm0.1$&                   $0.4\pm0.3$ \\ 
-      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &               $3.4\pm0.6$&              $1.2\pm0.3$&              $0.5\pm0.2$&                   $1.7\pm0.6$ \\ 
-      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-      B>=3\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-     B>=3\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $26.0\pm1.8$&             $11.9\pm0.9$&              $9.1\pm0.8$&                  $21.0\pm2.1$ \\ 
-     B>=3\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $20.8\pm1.6$&              $8.8\pm0.7$&              $7.0\pm0.7$&                  $15.8\pm1.7$ \\ 
-     B>=3\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $4.5\pm0.7$&              $1.5\pm0.3$&              $0.9\pm0.2$&                   $2.5\pm0.7$ \\ 
-      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.5\pm0.3$&              $0.1\pm0.1$&              $0.1\pm0.1$&                   $0.2\pm0.2$ \\ 
-      B>=3\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.1\pm0.1$&                   $0.1\pm0.1$ \\ 
-   B>=3\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $2.8\pm0.6$&              $1.7\pm0.3$&              $1.7\pm0.3$&                   $3.5\pm0.8$ \\ 
-   B>=3\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $9.2\pm1.1$&              $4.8\pm0.6$&              $3.1\pm0.4$&                   $7.9\pm1.3$ \\ 
-   B>=3\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&              $0.1\pm0.1$&              $0.0\pm0.0$&                   $0.1\pm0.1$ \\ 
-    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.6$&              $1.6\pm0.3$&              $1.0\pm0.2$&                   $2.6\pm0.7$ \\ 
-    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-    B>=3\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
-\bottomrule 
+     B>=3\_NJet\_4-6\_HT\_0500-0800\_MHT\_200-500 &              $64.6\pm2.8$&             $23.8\pm1.2$&             $17.5\pm1.1$&                  $41.4\pm2.8$ \\
+     B>=3\_NJet\_4-6\_HT\_0800-1200\_MHT\_200-500 &              $19.9\pm1.6$&              $6.5\pm0.6$&              $4.6\pm0.5$&                  $11.1\pm1.5$ \\
+     B>=3\_NJet\_4-6\_HT\_0500-1200\_MHT\_500-750 &               $0.4\pm0.2$&              $0.3\pm0.1$&              $0.1\pm0.1$&                   $0.4\pm0.3$ \\
+      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_200-500 &               $3.4\pm0.6$&              $1.2\pm0.3$&              $0.5\pm0.2$&                   $1.7\pm0.6$ \\
+      B>=3\_NJet\_4-6\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+      B>=3\_NJet\_4-6\_HT\_0800-Inf\_MHT\_750-Inf &               $0.1\pm0.1$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+     B>=3\_NJet\_7-8\_HT\_0500-0800\_MHT\_200-500 &              $26.0\pm1.8$&             $11.9\pm0.9$&              $9.1\pm0.8$&                  $21.0\pm2.1$ \\
+     B>=3\_NJet\_7-8\_HT\_0800-1200\_MHT\_200-500 &              $20.8\pm1.6$&              $8.8\pm0.7$&              $7.0\pm0.7$&                  $15.8\pm1.7$ \\
+     B>=3\_NJet\_7-8\_HT\_0500-1200\_MHT\_500-750 &               $0.1\pm0.1$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_200-500 &               $4.5\pm0.7$&              $1.5\pm0.3$&              $0.9\pm0.2$&                   $2.5\pm0.7$ \\
+      B>=3\_NJet\_7-8\_HT\_1200-Inf\_MHT\_500-750 &               $0.5\pm0.3$&              $0.1\pm0.1$&              $0.1\pm0.1$&                   $0.2\pm0.2$ \\
+      B>=3\_NJet\_7-8\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.1\pm0.1$&                   $0.1\pm0.1$ \\
+   B>=3\_NJet\_9-Inf\_HT\_0500-0800\_MHT\_200-500 &               $2.8\pm0.6$&              $1.7\pm0.3$&              $1.7\pm0.3$&                   $3.5\pm0.8$ \\
+   B>=3\_NJet\_9-Inf\_HT\_0800-1200\_MHT\_200-500 &               $9.2\pm1.1$&              $4.8\pm0.6$&              $3.1\pm0.4$&                   $7.9\pm1.3$ \\
+   B>=3\_NJet\_9-Inf\_HT\_0500-1200\_MHT\_500-750 &               $0.0\pm0.0$&              $0.1\pm0.1$&              $0.0\pm0.0$&                   $0.1\pm0.1$ \\
+    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_200-500 &               $2.9\pm0.6$&              $1.6\pm0.3$&              $1.0\pm0.2$&                   $2.6\pm0.7$ \\
+    B>=3\_NJet\_9-Inf\_HT\_1200-Inf\_MHT\_500-750 &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+    B>=3\_NJet\_9-Inf\_HT\_0800-Inf\_MHT\_750-Inf &               $0.0\pm0.0$&              $0.0\pm0.0$&              $0.0\pm0.0$&                   $0.0\pm0.0$ \\
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1591,47 +1678,47 @@
 \begin{tabular}{lrrr}
 \toprule
 
-                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\ 
+                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\
 \midrule
-                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $661.9\pm6.8$&             $627.6\pm6.7$&               $1289.5\pm16.4$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &             $281.5\pm4.0$&             $265.3\pm3.9$&                 $546.9\pm9.6$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $50.4\pm1.4$&              $48.6\pm1.3$&                  $99.0\pm3.3$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $4.9\pm0.3$&               $5.1\pm0.4$&                  $10.0\pm0.8$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $90.9\pm2.0$&              $83.2\pm1.9$&                 $174.0\pm4.8$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $46.5\pm1.4$&              $44.1\pm1.2$&                  $90.5\pm3.2$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &              $15.7\pm0.7$&              $16.2\pm0.8$&                  $31.8\pm1.8$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $7.7\pm0.4$&               $7.8\pm0.5$&                  $15.4\pm1.1$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $37.7\pm1.2$&              $34.1\pm1.0$&                  $71.8\pm2.8$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $20.6\pm0.9$&              $20.7\pm0.9$&                  $41.3\pm2.1$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $7.5\pm0.5$&               $6.8\pm0.5$&                  $14.4\pm1.2$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $5.1\pm0.3$&               $4.8\pm0.3$&                   $9.9\pm0.8$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &              $13.0\pm0.6$&              $11.9\pm0.7$&                  $24.9\pm1.5$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $7.4\pm0.5$&               $7.7\pm0.5$&                  $15.2\pm1.2$ \\ 
-      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $5.2\pm0.4$&               $4.3\pm0.3$&                   $9.5\pm0.9$ \\ 
-       BTag\_0\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $9.4\pm0.6$&               $7.7\pm0.5$&                  $17.1\pm1.4$ \\ 
-       BTag\_0\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $9.0\pm0.5$&               $7.4\pm0.4$&                  $16.3\pm1.1$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &              $34.1\pm2.0$&              $29.1\pm1.8$&                  $63.2\pm4.6$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &               $8.0\pm0.9$&               $6.8\pm0.8$&                  $14.8\pm2.1$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.4\pm0.1$&               $0.4\pm0.1$&                   $0.8\pm0.3$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $14.6\pm1.1$&              $13.1\pm1.1$&                  $27.8\pm2.7$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &               $5.4\pm0.6$&               $5.0\pm0.6$&                  $10.4\pm1.5$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.2\pm0.2$&               $1.6\pm0.3$&                   $2.8\pm0.6$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &               $7.8\pm0.7$&               $6.7\pm0.7$&                  $14.5\pm1.8$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $4.2\pm0.5$&               $3.8\pm0.5$&                   $8.0\pm1.3$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.6\pm0.3$&               $1.4\pm0.2$&                   $3.0\pm0.6$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $3.6\pm0.5$&               $3.0\pm0.4$&                   $6.7\pm1.2$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $1.6\pm0.3$&               $1.2\pm0.2$&                   $2.8\pm0.7$ \\ 
-      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $0.9\pm0.1$&               $0.9\pm0.2$&                   $1.8\pm0.4$ \\ 
-       BTag\_0\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $2.3\pm0.3$&               $2.2\pm0.3$&                   $4.5\pm0.8$ \\ 
-       BTag\_0\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.8\pm0.4$&               $2.2\pm0.3$&                   $5.0\pm0.8$ \\ 
-    BTag\_0\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $1.2\pm0.4$&               $0.9\pm0.4$&                   $2.2\pm1.0$ \\ 
-    BTag\_0\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $1.4\pm0.4$&               $2.3\pm0.6$&                   $3.7\pm1.1$ \\ 
-    BTag\_0\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $1.2\pm0.3$&               $1.2\pm0.4$&                   $2.5\pm0.8$ \\ 
-    BTag\_0\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $0.4\pm0.2$&               $0.4\pm0.2$&                   $0.8\pm0.4$ \\ 
-     BTag\_0\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $1.0\pm0.3$&               $1.0\pm0.3$&                   $1.9\pm0.6$ \\ 
+                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $661.9\pm6.8$&             $627.6\pm6.7$&               $1289.5\pm16.4$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &             $281.5\pm4.0$&             $265.3\pm3.9$&                 $546.9\pm9.6$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $50.4\pm1.4$&              $48.6\pm1.3$&                  $99.0\pm3.3$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $4.9\pm0.3$&               $5.1\pm0.4$&                  $10.0\pm0.8$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $90.9\pm2.0$&              $83.2\pm1.9$&                 $174.0\pm4.8$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $46.5\pm1.4$&              $44.1\pm1.2$&                  $90.5\pm3.2$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &              $15.7\pm0.7$&              $16.2\pm0.8$&                  $31.8\pm1.8$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $7.7\pm0.4$&               $7.8\pm0.5$&                  $15.4\pm1.1$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $37.7\pm1.2$&              $34.1\pm1.0$&                  $71.8\pm2.8$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $20.6\pm0.9$&              $20.7\pm0.9$&                  $41.3\pm2.1$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $7.5\pm0.5$&               $6.8\pm0.5$&                  $14.4\pm1.2$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $5.1\pm0.3$&               $4.8\pm0.3$&                   $9.9\pm0.8$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &              $13.0\pm0.6$&              $11.9\pm0.7$&                  $24.9\pm1.5$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $7.4\pm0.5$&               $7.7\pm0.5$&                  $15.2\pm1.2$ \\
+      BTag\_0\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $5.2\pm0.4$&               $4.3\pm0.3$&                   $9.5\pm0.9$ \\
+       BTag\_0\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $9.4\pm0.6$&               $7.7\pm0.5$&                  $17.1\pm1.4$ \\
+       BTag\_0\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $9.0\pm0.5$&               $7.4\pm0.4$&                  $16.3\pm1.1$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &              $34.1\pm2.0$&              $29.1\pm1.8$&                  $63.2\pm4.6$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &               $8.0\pm0.9$&               $6.8\pm0.8$&                  $14.8\pm2.1$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.4\pm0.1$&               $0.4\pm0.1$&                   $0.8\pm0.3$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $14.6\pm1.1$&              $13.1\pm1.1$&                  $27.8\pm2.7$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &               $5.4\pm0.6$&               $5.0\pm0.6$&                  $10.4\pm1.5$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.2\pm0.2$&               $1.6\pm0.3$&                   $2.8\pm0.6$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &               $7.8\pm0.7$&               $6.7\pm0.7$&                  $14.5\pm1.8$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $4.2\pm0.5$&               $3.8\pm0.5$&                   $8.0\pm1.3$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.6\pm0.3$&               $1.4\pm0.2$&                   $3.0\pm0.6$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $3.6\pm0.5$&               $3.0\pm0.4$&                   $6.7\pm1.2$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $1.6\pm0.3$&               $1.2\pm0.2$&                   $2.8\pm0.7$ \\
+      BTag\_0\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $0.9\pm0.1$&               $0.9\pm0.2$&                   $1.8\pm0.4$ \\
+       BTag\_0\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $2.3\pm0.3$&               $2.2\pm0.3$&                   $4.5\pm0.8$ \\
+       BTag\_0\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.8\pm0.4$&               $2.2\pm0.3$&                   $5.0\pm0.8$ \\
+    BTag\_0\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $1.2\pm0.4$&               $0.9\pm0.4$&                   $2.2\pm1.0$ \\
+    BTag\_0\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $1.4\pm0.4$&               $2.3\pm0.6$&                   $3.7\pm1.1$ \\
+    BTag\_0\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $1.2\pm0.3$&               $1.2\pm0.4$&                   $2.5\pm0.8$ \\
+    BTag\_0\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $0.4\pm0.2$&               $0.4\pm0.2$&                   $0.8\pm0.4$ \\
+     BTag\_0\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $1.0\pm0.3$&               $1.0\pm0.3$&                   $1.9\pm0.6$ \\
 
-\bottomrule 
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1640,47 +1727,47 @@
 \begin{tabular}{lrrr}
 \toprule
 
-                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\ 
+                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\
 \midrule
-                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $515.7\pm8.1$&             $474.8\pm7.7$&                $990.5\pm19.2$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &             $171.2\pm4.3$&             $159.7\pm4.2$&                $330.9\pm10.4$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $22.2\pm1.3$&              $20.8\pm1.2$&                  $43.0\pm3.1$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $2.6\pm0.4$&               $1.6\pm0.2$&                   $4.1\pm0.9$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $71.8\pm2.7$&              $61.0\pm2.5$&                 $132.8\pm6.4$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $31.8\pm1.7$&              $24.9\pm1.5$&                  $56.6\pm4.0$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &               $8.3\pm0.8$&               $7.5\pm0.7$&                  $15.8\pm1.8$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $3.1\pm0.4$&               $2.9\pm0.3$&                   $6.0\pm0.9$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $29.2\pm1.7$&              $25.7\pm1.5$&                  $54.9\pm3.9$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $15.3\pm1.2$&              $10.7\pm1.0$&                  $25.9\pm2.7$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $4.1\pm0.5$&               $3.7\pm0.5$&                   $7.9\pm1.2$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $2.5\pm0.4$&               $1.7\pm0.2$&                   $4.2\pm0.8$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &               $7.9\pm0.8$&               $7.8\pm0.8$&                  $15.7\pm1.9$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $4.2\pm0.5$&               $4.5\pm0.6$&                   $8.7\pm1.3$ \\ 
-      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $2.4\pm0.3$&               $2.1\pm0.3$&                   $4.5\pm0.7$ \\ 
-       BTag\_1\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $5.4\pm0.6$&               $5.3\pm0.6$&                  $10.7\pm1.5$ \\ 
-       BTag\_1\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $5.4\pm0.6$&               $4.7\pm0.5$&                  $10.1\pm1.3$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &              $74.4\pm3.3$&              $64.1\pm3.1$&                 $138.5\pm7.9$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &              $11.7\pm1.3$&              $13.8\pm1.4$&                  $25.5\pm3.2$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.5\pm0.2$&               $0.5\pm0.2$&                   $1.0\pm0.5$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $28.6\pm2.0$&              $27.3\pm2.0$&                  $55.8\pm4.8$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &              $11.3\pm1.2$&               $7.6\pm1.0$&                  $19.0\pm2.8$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.6\pm0.4$&               $1.4\pm0.4$&                   $3.0\pm0.9$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &              $16.6\pm1.5$&              $14.6\pm1.4$&                  $31.2\pm3.6$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $7.2\pm1.0$&               $5.9\pm0.9$&                  $13.1\pm2.2$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.9\pm0.4$&               $1.3\pm0.3$&                   $3.2\pm1.0$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $4.6\pm0.7$&               $4.7\pm0.7$&                   $9.3\pm1.8$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $3.2\pm0.7$&               $2.8\pm0.6$&                   $6.1\pm1.5$ \\ 
-      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.3\pm0.3$&               $0.9\pm0.3$&                   $2.2\pm0.8$ \\ 
-       BTag\_1\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $4.4\pm0.7$&               $3.0\pm0.6$&                   $7.4\pm1.6$ \\ 
-       BTag\_1\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $4.3\pm0.7$&               $2.7\pm0.5$&                   $7.1\pm1.6$ \\ 
-    BTag\_1\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $2.5\pm0.6$&               $1.3\pm0.5$&                   $3.8\pm1.4$ \\ 
-    BTag\_1\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $3.8\pm0.8$&               $2.9\pm0.7$&                   $6.8\pm1.8$ \\ 
-    BTag\_1\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $3.0\pm0.7$&               $2.0\pm0.5$&                   $5.0\pm1.5$ \\ 
-    BTag\_1\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $2.5\pm0.6$&               $1.8\pm0.5$&                   $4.4\pm1.4$ \\ 
-     BTag\_1\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $1.8\pm0.5$&               $2.8\pm0.6$&                   $4.6\pm1.2$ \\ 
+                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $515.7\pm8.1$&             $474.8\pm7.7$&                $990.5\pm19.2$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &             $171.2\pm4.3$&             $159.7\pm4.2$&                $330.9\pm10.4$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $22.2\pm1.3$&              $20.8\pm1.2$&                  $43.0\pm3.1$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $2.6\pm0.4$&               $1.6\pm0.2$&                   $4.1\pm0.9$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $71.8\pm2.7$&              $61.0\pm2.5$&                 $132.8\pm6.4$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $31.8\pm1.7$&              $24.9\pm1.5$&                  $56.6\pm4.0$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &               $8.3\pm0.8$&               $7.5\pm0.7$&                  $15.8\pm1.8$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $3.1\pm0.4$&               $2.9\pm0.3$&                   $6.0\pm0.9$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $29.2\pm1.7$&              $25.7\pm1.5$&                  $54.9\pm3.9$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $15.3\pm1.2$&              $10.7\pm1.0$&                  $25.9\pm2.7$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $4.1\pm0.5$&               $3.7\pm0.5$&                   $7.9\pm1.2$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $2.5\pm0.4$&               $1.7\pm0.2$&                   $4.2\pm0.8$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &               $7.9\pm0.8$&               $7.8\pm0.8$&                  $15.7\pm1.9$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $4.2\pm0.5$&               $4.5\pm0.6$&                   $8.7\pm1.3$ \\
+      BTag\_1\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $2.4\pm0.3$&               $2.1\pm0.3$&                   $4.5\pm0.7$ \\
+       BTag\_1\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $5.4\pm0.6$&               $5.3\pm0.6$&                  $10.7\pm1.5$ \\
+       BTag\_1\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $5.4\pm0.6$&               $4.7\pm0.5$&                  $10.1\pm1.3$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &              $74.4\pm3.3$&              $64.1\pm3.1$&                 $138.5\pm7.9$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &              $11.7\pm1.3$&              $13.8\pm1.4$&                  $25.5\pm3.2$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.5\pm0.2$&               $0.5\pm0.2$&                   $1.0\pm0.5$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $28.6\pm2.0$&              $27.3\pm2.0$&                  $55.8\pm4.8$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &              $11.3\pm1.2$&               $7.6\pm1.0$&                  $19.0\pm2.8$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.6\pm0.4$&               $1.4\pm0.4$&                   $3.0\pm0.9$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &              $16.6\pm1.5$&              $14.6\pm1.4$&                  $31.2\pm3.6$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $7.2\pm1.0$&               $5.9\pm0.9$&                  $13.1\pm2.2$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.9\pm0.4$&               $1.3\pm0.3$&                   $3.2\pm1.0$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $4.6\pm0.7$&               $4.7\pm0.7$&                   $9.3\pm1.8$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $3.2\pm0.7$&               $2.8\pm0.6$&                   $6.1\pm1.5$ \\
+      BTag\_1\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.3\pm0.3$&               $0.9\pm0.3$&                   $2.2\pm0.8$ \\
+       BTag\_1\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $4.4\pm0.7$&               $3.0\pm0.6$&                   $7.4\pm1.6$ \\
+       BTag\_1\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $4.3\pm0.7$&               $2.7\pm0.5$&                   $7.1\pm1.6$ \\
+    BTag\_1\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $2.5\pm0.6$&               $1.3\pm0.5$&                   $3.8\pm1.4$ \\
+    BTag\_1\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $3.8\pm0.8$&               $2.9\pm0.7$&                   $6.8\pm1.8$ \\
+    BTag\_1\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $3.0\pm0.7$&               $2.0\pm0.5$&                   $5.0\pm1.5$ \\
+    BTag\_1\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $2.5\pm0.6$&               $1.8\pm0.5$&                   $4.4\pm1.4$ \\
+     BTag\_1\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $1.8\pm0.5$&               $2.8\pm0.6$&                   $4.6\pm1.2$ \\
 
-\bottomrule 
+\bottomrule
 \end{tabular}
 \end{frame}
 
@@ -1689,51 +1776,51 @@
 \begin{tabular}{lrrr}
 \toprule
 
-                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\ 
+                                                Selection  &                   ElecCS  &                     MuCS  &          Total MC Control Sample  \\
 \midrule
-                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $358.8\pm7.4$&             $307.0\pm6.8$&                $665.8\pm17.5$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &              $92.8\pm3.7$&              $68.3\pm3.1$&                 $161.1\pm8.5$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $10.3\pm1.2$&               $7.2\pm1.0$&                  $17.5\pm2.7$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $0.3\pm0.1$&               $0.8\pm0.3$&                   $1.1\pm0.4$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $45.6\pm2.6$&              $38.1\pm2.3$&                  $83.7\pm6.1$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $20.9\pm1.7$&              $15.2\pm1.5$&                  $36.1\pm4.0$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &               $5.8\pm0.9$&               $4.2\pm0.7$&                  $10.0\pm2.0$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $1.2\pm0.4$&               $0.5\pm0.2$&                   $1.7\pm0.8$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $19.7\pm1.7$&              $15.3\pm1.5$&                  $35.0\pm3.9$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $10.3\pm1.2$&               $5.6\pm0.8$&                  $15.9\pm2.7$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $1.6\pm0.4$&               $1.9\pm0.5$&                   $3.5\pm1.1$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $1.1\pm0.3$&               $0.8\pm0.3$&                   $1.9\pm0.8$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &               $6.0\pm0.9$&               $3.7\pm0.7$&                   $9.7\pm2.0$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $2.5\pm0.6$&               $2.2\pm0.5$&                   $4.7\pm1.4$ \\ 
- BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.1\pm0.3$&               $1.5\pm0.4$&                   $2.6\pm0.9$ \\ 
-  BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $3.5\pm0.7$&               $3.3\pm0.7$&                   $6.8\pm1.6$ \\ 
-  BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.6\pm0.5$&               $1.6\pm0.4$&                   $4.1\pm1.2$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &             $101.1\pm4.0$&              $77.2\pm3.5$&                 $178.3\pm9.3$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &              $15.3\pm1.5$&              $12.4\pm1.4$&                  $27.8\pm3.6$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.6\pm0.3$&               $1.0\pm0.4$&                   $1.6\pm0.8$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $44.8\pm2.6$&              $35.5\pm2.4$&                  $80.2\pm6.2$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &              $13.9\pm1.5$&               $6.9\pm1.0$&                  $20.8\pm3.2$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.8\pm0.5$&               $1.5\pm0.5$&                   $3.3\pm1.2$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &              $22.8\pm1.9$&              $16.8\pm1.6$&                  $39.6\pm4.3$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $8.1\pm1.1$&               $5.7\pm0.9$&                  $13.8\pm2.5$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.5\pm0.5$&               $1.2\pm0.4$&                   $2.7\pm1.1$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $7.3\pm1.1$&               $6.1\pm1.0$&                  $13.4\pm2.5$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $3.6\pm0.7$&               $2.4\pm0.6$&                   $5.9\pm1.7$ \\ 
- BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.4\pm0.4$&               $0.9\pm0.4$&                   $2.4\pm1.0$ \\ 
-  BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $6.1\pm1.0$&               $4.5\pm0.8$&                  $10.6\pm2.2$ \\ 
-  BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.0\pm0.5$&               $2.1\pm0.5$&                   $4.0\pm1.2$ \\ 
- BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $1.6\pm0.5$&               $2.8\pm0.7$&                   $4.4\pm1.3$ \\ 
- BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $7.5\pm1.1$&               $5.9\pm1.0$&                  $13.4\pm2.5$ \\ 
- BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $8.4\pm1.2$&               $7.8\pm1.1$&                  $16.2\pm2.7$ \\ 
- BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $4.7\pm0.9$&               $3.6\pm0.7$&                   $8.3\pm2.0$ \\ 
- BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $3.0\pm0.7$&               $2.8\pm0.6$&                   $5.8\pm1.6$ \\ 
-\bottomrule 
+                                             Baseline &           $3296.0\pm18.4$&           $2941.4\pm17.2$&               $6237.4\pm43.6$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_200-300 &             $358.8\pm7.4$&             $307.0\pm6.8$&                $665.8\pm17.5$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_300-450 &              $92.8\pm3.7$&              $68.3\pm3.1$&                 $161.1\pm8.5$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_450-600 &              $10.3\pm1.2$&               $7.2\pm1.0$&                  $17.5\pm2.7$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0500-0800\_\_MHT\_600-Inf &               $0.3\pm0.1$&               $0.8\pm0.3$&                   $1.1\pm0.4$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_200-300 &              $45.6\pm2.6$&              $38.1\pm2.3$&                  $83.7\pm6.1$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_300-450 &              $20.9\pm1.7$&              $15.2\pm1.5$&                  $36.1\pm4.0$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_450-600 &               $5.8\pm0.9$&               $4.2\pm0.7$&                  $10.0\pm2.0$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_0800-1000\_\_MHT\_600-Inf &               $1.2\pm0.4$&               $0.5\pm0.2$&                   $1.7\pm0.8$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_200-300 &              $19.7\pm1.7$&              $15.3\pm1.5$&                  $35.0\pm3.9$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_300-450 &              $10.3\pm1.2$&               $5.6\pm0.8$&                  $15.9\pm2.7$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_450-600 &               $1.6\pm0.4$&               $1.9\pm0.5$&                   $3.5\pm1.1$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1000-1250\_\_MHT\_600-Inf &               $1.1\pm0.3$&               $0.8\pm0.3$&                   $1.9\pm0.8$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_200-300 &               $6.0\pm0.9$&               $3.7\pm0.7$&                   $9.7\pm2.0$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_300-450 &               $2.5\pm0.6$&               $2.2\pm0.5$&                   $4.7\pm1.4$ \\
+ BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.1\pm0.3$&               $1.5\pm0.4$&                   $2.6\pm0.9$ \\
+  BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $3.5\pm0.7$&               $3.3\pm0.7$&                   $6.8\pm1.6$ \\
+  BTag\_2\_Inf\_NJet\_3-5\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.6\pm0.5$&               $1.6\pm0.4$&                   $4.1\pm1.2$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_200-300 &             $101.1\pm4.0$&              $77.2\pm3.5$&                 $178.3\pm9.3$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_300-450 &              $15.3\pm1.5$&              $12.4\pm1.4$&                  $27.8\pm3.6$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0500-0800\_\_MHT\_450-Inf &               $0.6\pm0.3$&               $1.0\pm0.4$&                   $1.6\pm0.8$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_200-300 &              $44.8\pm2.6$&              $35.5\pm2.4$&                  $80.2\pm6.2$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_300-450 &              $13.9\pm1.5$&               $6.9\pm1.0$&                  $20.8\pm3.2$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_0800-1000\_\_MHT\_450-Inf &               $1.8\pm0.5$&               $1.5\pm0.5$&                   $3.3\pm1.2$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_200-300 &              $22.8\pm1.9$&              $16.8\pm1.6$&                  $39.6\pm4.3$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_300-450 &               $8.1\pm1.1$&               $5.7\pm0.9$&                  $13.8\pm2.5$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1000-1250\_\_MHT\_450-Inf &               $1.5\pm0.5$&               $1.2\pm0.4$&                   $2.7\pm1.1$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_200-300 &               $7.3\pm1.1$&               $6.1\pm1.0$&                  $13.4\pm2.5$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_300-450 &               $3.6\pm0.7$&               $2.4\pm0.6$&                   $5.9\pm1.7$ \\
+ BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1250-1500\_\_MHT\_450-Inf &               $1.4\pm0.4$&               $0.9\pm0.4$&                   $2.4\pm1.0$ \\
+  BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_200-300 &               $6.1\pm1.0$&               $4.5\pm0.8$&                  $10.6\pm2.2$ \\
+  BTag\_2\_Inf\_NJet\_6-7\_\_HT\_1500-Inf\_\_MHT\_300-Inf &               $2.0\pm0.5$&               $2.1\pm0.5$&                   $4.0\pm1.2$ \\
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_0500-0800\_\_MHT\_200-Inf &               $1.6\pm0.5$&               $2.8\pm0.7$&                   $4.4\pm1.3$ \\
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_0800-1000\_\_MHT\_200-Inf &               $7.5\pm1.1$&               $5.9\pm1.0$&                  $13.4\pm2.5$ \\
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1000-1250\_\_MHT\_200-Inf &               $8.4\pm1.2$&               $7.8\pm1.1$&                  $16.2\pm2.7$ \\
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1250-1500\_\_MHT\_200-Inf &               $4.7\pm0.9$&               $3.6\pm0.7$&                   $8.3\pm2.0$ \\
+ BTag\_2\_Inf\_NJet\_8-Inf\_\_HT\_1500-Inf\_\_MHT\_200-Inf &               $3.0\pm0.7$&               $2.8\pm0.6$&                   $5.8\pm1.6$ \\
+\bottomrule
 \end{tabular}
 \end{frame}
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{54}
+\setcounter{framenumber}{20}
 
 \end{document}
