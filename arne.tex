@@ -39,7 +39,7 @@
   Arne-Rasmus~Dr\"ager (Uni Hamburg) \\ on behalf of the RA2/b team
 }
 \date[January 23, 2015]{January 23, 2015
-  \vskip1cm
+%   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
     \hskip8cm
@@ -83,7 +83,7 @@
   \end{figure}
   \begin{itemize}
   \item RA2/b: inclusive hadronic analyses targeting gluino production (T1tttt, T1bbbb, T1qqqq)
-  \item In most sensitive bins, main background is \ttbar, \wpj events with lost lepton
+  \item In most sensitive bins, main background is \ttbar events with lost-leptons
   \item T1tttt events have leptons $\sim 70 \%$ of the time
   \begin{itemize}
    \item Are rejected if any lepton passes isolation definition
@@ -105,17 +105,17 @@
        \item Jets: $\pt>30\gev$, $|\eta|<5.0$
       \end{itemize}
  \item $\NJets\ge 4$, \HT jets
- \item $\BTags$ CSVM ($>0.814$), $\pt>30\gev$
+ \item $\BTags$= {$0,1,2,\geq3$} CSVM ($>0.814$), $\pt>30\gev$
  \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
-\item Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
-    \item Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
+\item Veto Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
+    \item Veto Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
       (\Delta R<0.3) < 0.33 / 0.38$
       \item Under study:
       \begin{itemize}
 
 
     \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
-      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV â (no neutral isolation yet)
+      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV (no neutral isolation yet)
     \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
       \end{itemize}
 \end{itemize}
@@ -129,7 +129,7 @@
 \begin{frame}
   \begin{center}
     {\Large
-     Classical Lost-Lepton Prediction Method }
+     Classical Lost-Lepton Prediction Method \\(Arne-Rasmus Draeger)}
   \end{center}
 \end{frame}
 \subsection{Basic concept}
@@ -178,8 +178,9 @@
     \begin{column}{0.5\textwidth}
       \centering
     %  \begin{overpic}[width=0.8\textwidth]{figures/lost-lepton/ControlSample__MTW__MCPrMTWDiLepTTbar+MCPrMTWDiLepW__mu_control_sample.pdf}
-       \begin{overpic}[width=0.95\textwidth]{figures/control-sample/ControlSample_Combined_searchbins__MTW__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
-       \put(53.93,83){\color{black}\line(0,-1){67}}
+%        \begin{overpic}[width=0.95\textwidth]{figures/control-sample/ControlSample_Combined_searchbins__MTW__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+\begin{overpic}[width=0.95\textwidth]{figures/control-sample/mtw.png}
+       \put(53.93,80){\color{black}\line(0,-1){67}}
     %\put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
       \end{overpic}
     \end{column}
@@ -195,7 +196,7 @@
   \normalsize
    \begin{itemize}
   \item In order to achieve good closure well parametrized and binned efficiency maps needed!
-  \item Classical approach of $\Delta R$ \& lepton \pt \/ jet \pt suffers from strong variation of efficiency
+  \item Classical approach of lepton \pt (jet \pt) \& $\Delta R$ shows strong variation of efficiency and is strongly correlated with lepton isolation definition
   \item Severe problem when applying method in low statistical regions most sensitive search regions (hand full of events)
  \end{itemize}
   \end{column}
@@ -211,33 +212,59 @@
      \end{overpic}
      \begin{overpic} [width=0.45\textwidth]{figures/deltaRLowStatReco.pdf}
      \end{overpic} \\
-    Here: Control sample lepton in high eff. region\\  $\rightarrow$ low weight $\rightarrow$ underprediction
+    Here: Control sample lepton in high eff. region\\  $\rightarrow$ low weight $\rightarrow$ under-prediction
  
   \end{column}
  \end{columns}
- \begin{itemize}
-  \item Low statistics in control sample combined with strong variation in efficiency leads to high uncertainties in most sensitive bins
- \end{itemize}
+%  \begin{itemize}
+%   \item Low statistics in control sample combined with strong variation in efficiency leads to high uncertainties in most sensitive bins
+%  \end{itemize}
 
+
+\end{frame}
+\begin{frame}
+ \frametitle{Parametrization Problem \& 8 TeV solution}
+  \begin{columns}
+  \begin{column}{0.5\textwidth}
+    \begin{itemize}
+ \item Two main problems:
+ \begin{itemize}
+  \item Lepton isolation definition and $\Delta R<IsoCone$ combined with relative \pt are strongly correlated
+  \item Steep drop in efficiency approaching IsoCone combined with low statistics of control sample in most sensitive search regions leads to high uncertainties
+ \end{itemize}
+ \end{itemize}
+ \end{column}
+ \begin{column}{0.5\textwidth}
+  \begin{overpic}[width=1.\textwidth]{figures/efficiencies/8TeV/DataTAPmuIso.pdf}
+     \end{overpic} \\
+ \end{column}
+
+  \end{columns}
+
+\begin{itemize}
+
+\item In 8TeV RA2 used efficiencies binned in search variables following closely search region definition
+  \begin{itemize}
+  \item Good closure
+   \item Relatively high statistical uncertainties on efficiency maps
+   \item Could not be obtained from data only indirect validation via Tag \& Probe method
+  \end{itemize}
+  \end{itemize}
+ 
 
 \end{frame}
 
 \begin{frame}
- \frametitle{Solving parametrization problem (first attempt)}
+ \frametitle{13 TeV Attempt (unoptimized)}
  \begin{itemize}
-  \item In 8TeV RA2 used efficiencies binned in search variables following closely search region definition
-  \begin{itemize}
-   \item Good closure
-   \item Relatively high statistical uncertainties on efficiency maps
-   \item Could not be obtained from data only indirect validation via Tag \& Probe method
-  \end{itemize}
-  \item Ansatz: Lepton \pt together with activity ($A$) around the lepton in a larger fixed cone size (replace $\Delta R$)
-  \begin{itemize}
-   \item 'Average' over $\Delta R$ capture event activity in a more broader picture. More activity in event more likely to lose lepton
+  \item New Ansatz: Lepton \pt together with activity ($A$) around the lepton in a larger fixed cone size (replace $\Delta R$)
+ \begin{itemize}
+  \item Not orthogonal but also not fully correlated to isolation definition $\rightarrow$ subset of energy in cone around lepton
+ \item Capture event kinematics in a more broader framer 'averaging' over range of strong drop in $\Delta R$
+ \end{itemize}
    \item Can in principle be obtained from data. % Capability of capturing kinematic differences between \Zmumu and \wpj, \ttbar need to be evaluated
-   \item Integrate over some event information but gain more resistance to low statistics region fluctuations
-  \end{itemize}
-   \item Muon activity:
+   \item Integrate over some event information but gain more resistance against low statistics region fluctuations
+  \item Muon activity:
   \begin{itemize}
    \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedEMFraction + ChargedHadFraction) $
   \end{itemize}
@@ -245,13 +272,41 @@
   \begin{itemize}
    \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedHadFraction) $
   \end{itemize}
-  \end{itemize}
+ \end{itemize}
 
-%  \begin{block}{}
-%  \centering
-%  \Large First tests using this new variable for the reconstruction and isolation efficiencies
-%  \end{block}
 \end{frame}
+
+
+% \begin{frame}
+%  \frametitle{Solving parametrization problem (first attempt)}
+%  \begin{itemize}
+%   \item In 8TeV RA2 used efficiencies binned in search variables following closely search region definition
+%   \begin{itemize}
+%    \item Good closure
+%    \item Relatively high statistical uncertainties on efficiency maps
+%    \item Could not be obtained from data only indirect validation via Tag \& Probe method
+%   \end{itemize}
+%   \item Ansatz: Lepton \pt together with activity ($A$) around the lepton in a larger fixed cone size (replace $\Delta R$)
+%   \begin{itemize}
+%    \item 'Average' over $\Delta R$ capture event activity in a more broader picture. More activity in event more likely to lose lepton
+%    \item Can in principle be obtained from data. % Capability of capturing kinematic differences between \Zmumu and \wpj, \ttbar need to be evaluated
+%    \item Integrate over some event information but gain more resistance against low statistics region fluctuations
+%   \end{itemize}
+%    \item Muon activity:
+%   \begin{itemize}
+%    \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedEMFraction + ChargedHadFraction) $
+%   \end{itemize}
+%     \item Electron activity:
+%   \begin{itemize}
+%    \item $A = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedHadFraction) $
+%   \end{itemize}
+%   \end{itemize}
+%
+% %  \begin{block}{}
+% %  \centering
+% %  \Large First tests using this new variable for the reconstruction and isolation efficiencies
+% %  \end{block}
+% \end{frame}
 
 %--------------------------------------------------------------------
 
@@ -291,7 +346,7 @@
   \begin{frame}
   \begin{center}
     {
-     \large Extension of Classical Lost-Lepton Method:\\ \Large Extrapolation from low to high \MHT regions}
+     \large Extension of Classical Lost-Lepton Method:\\ \Large Extrapolation from mdium to high \MHT regions \\(Owen Long)}
   \end{center}
 \end{frame}
 \section{Extrapolation Method}
@@ -326,9 +381,10 @@
  \begin{columns}
   \begin{column}{0.6\textwidth}
   \begin{itemize}
-   \item Use classic lost-lepton method to estimate background at medium \MHT [200,500] and \MHT ratio as a function of cos($\Delta \Theta_{T}$) to extrapolate to high \MHT    
-   \item First try shows good closure at high search regions
+   \item Use classic lost-lepton method to estimate background at medium \MHT [200,500] and a \MHT ratio as a function of cos($\Delta \Theta_{T}$) to extrapolate to high \MHT    
+   \item First try shows good closure in the relavant high \MHT search regions
    \item Increase in control sample statistics up to a factor of 4 to 7 in respect to single lepton estimation method
+   \item \wpj and di-leptonic \ttbar events need to be accounted for as well
    \item Uncertainties need to evaluated and compared to classical method to judge on the gain
   \end{itemize}
 
@@ -343,7 +399,8 @@
 
 
  \end{columns}
-
+  \centering
+\small More information: Presentation \href{https://indico.cern.ch/event/334951/contribution/0/material/slides/0.pdf}{1}, \href{https://indico.cern.ch/event/360073/contribution/0/material/slides/0.pdf}{2}
 \end{frame}
 
 
@@ -355,13 +412,13 @@
  \begin{itemize}
  \item Classic lost-lepton method:
  \begin{itemize}
-  \item Extension of lost-lepton method from using single $\mu$ to combining with single $e$ control sample works nicely
-  \item Huge improvement of statistical uncertainty $\sqrt{2}$ (largest uncertainty in many very sensitive bins at 8 TeV data)
-  \item Studies ongoing of parametrization of efficiencies exploring different variables
+  \item Extension of lost-lepton method from using single $e$ \& $\mu$ control sample with an important improvement of statistical uncertainty $\sqrt{2}$ (largest uncertainty in many very sensitive bins at 8 TeV data) works
+  \item Activity variable shows good performance as lepton efficiency parametrization
+  \item Further studies are ongoing exploring various variables for binning the efficiencies
  \end{itemize}
  \item Lost-lepton extrapolation method:
  \begin{itemize}
-  \item Attempt of decreasing statistical uncertainty in some of the most sensitive bins by extrapolating from high to low stat. region
+  \item Attempt of further decreasing of statistical uncertainty in some of the most sensitive bins by extrapolating from medium to high \MHT region
   \item First attempt shows good closure
   \item Gain in respect to classical lost-lepton method statistics by a factor of 4-7 for relevant bins
   \item Uncertainties need to be evaluated and compared with classical lost-lepton approach to judge on expected improvement
@@ -376,33 +433,10 @@
   \begin{frame}
   \begin{center}
     {
-     \large Optimization Studies on \ttbar \& \wpj background event rejection}
+     \large Optimization Studies on \ttbar \& \wpj background event rejection \\(Jack Bradmiller-Feld)}
   \end{center}
 \end{frame}
-\subsection{Introduction}
-\begin{frame}
-  \frametitle{Event selection and object definitions}
-  \begin{itemize}
-  \item Baseline selection: $\MHT>200$ GeV,
-    $H_{T}>500$ GeV, $\geq4$ jets, $\geq2$ CSVM,
-    $\Delta\hat{\phi}_{\mathrm{min}}>4$, no electrons or muons
-  \item Object definitions:
-    \begin{itemize}
-    \item Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
-    \item Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
-      (\Delta R<0.3) < 0.33 / 0.38$
-    \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
-      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV â (no neutral isolation yet)
-    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
-      \begin{itemize}
-      \item Strong ttbar rejection, $\sim~6\%$ QCD fake rate -- \href{https://indico.cern.ch/event/334949/contribution/1/material/slides/0.pdf}{see studies}
-      \end{itemize}
 
-    \end{itemize}
-  \item All of the definitions can and will be re-optimized for this
-    analysis in Run II.
-  \end{itemize}
-\end{frame}
 \subsection{Optimization}
 \begin{frame}
   \frametitle{Lepton composition at truth level}
@@ -443,8 +477,7 @@
     ($W\rightarrow l\nu$ decay) are efficiently selected with $m_T<100$ GeV (90\%)
   \item If we only reject events with single isolated e or $\mu$ (taus or
     tracks) satisfying the above (or $m_T<100$), can we save any signal?
-    How much \ttbar \wpj would we keep?
-  \item This idea also suggested by \href{https://indico.cern.ch/event/339666/session/2/contribution/50/material/slides/0.pdf}{Jason Gran / MT2 group}
+  \item This idea was also suggested by \href{https://indico.cern.ch/event/339666/session/2/contribution/50/material/slides/0.pdf}{Jason Gran / MT2 group}
   \end{itemize}
   \begin{figure}[h]
     \centering
@@ -469,23 +502,22 @@
       this, skip $\tau$ veto
     \end{itemize}
   \end{columns}
+  \vskip1cm
+  \centering
+\small More information: \href{https://indico.cern.ch/event/360072/contribution/0/material/slides/0.pdf}{Presentation}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Background and signal events rejected by track veto}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{figures/jacks_Studies/rejection_slide}
-  \end{figure}
-\end{frame}
+
 \subsection{Conclusion}
 \begin{frame}
-  \frametitle{Track veto: conclusions}
+  \frametitle{Lepton \& Track Veto: Conclusions}
   \begin{itemize}
   \item Isolated track veto with $m_T<100$ restriction shows great
     improvement in sensitivity $(10-15\%)$ gain in
     $S/\sqrt{B}$
     \item Will be used for Phys14 on top of standard
     $e/\mu$ veto.
+    \item Optimization of lepton \& isolated track definition
   \item Want to further reduce hadronic $\tau$ background:
     \begin{itemize}
     \item Looking into separate isolation recipes for hadronic tracks vs. $e/\mu$
@@ -517,6 +549,39 @@
     {\Large Additional Material}
   \end{center}
 \end{frame}
+
+\subsection{Introduction}
+\begin{frame}
+  \frametitle{Event selection and object definitions}
+  \begin{itemize}
+  \item Baseline selection: $\MHT>200$ GeV,
+    $H_{T}>500$ GeV, $\geq4$ jets, $\geq2$ CSVM,
+    $\Delta\hat{\phi}_{\mathrm{min}}>4$, no electrons or muons
+  \item Object definitions:
+    \begin{itemize}
+    \item Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
+    \item Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
+      (\Delta R<0.3) < 0.33 / 0.38$
+    \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
+      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV â (no neutral isolation yet)
+    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
+      \begin{itemize}
+      \item Strong ttbar rejection, $\sim~6\%$ QCD fake rate -- \href{https://indico.cern.ch/event/334949/contribution/1/material/slides/0.pdf}{see studies}
+      \end{itemize}
+
+    \end{itemize}
+  \item All of the definitions can and will be re-optimized for this
+    analysis in Run II.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Background and signal events rejected by track veto}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{figures/jacks_Studies/rejection_slide}
+  \end{figure}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Parametrization of Efficiencies}
@@ -1821,6 +1886,6 @@
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{20}
+\setcounter{framenumber}{19}
 
 \end{document}
