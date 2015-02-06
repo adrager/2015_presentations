@@ -1,6 +1,5 @@
-
 \documentclass{beamer}
-
+%kdfj
 \usetheme[secheader]{Boadilla}
 \setbeamertemplate{footline} {
   %\leavevmode%
@@ -26,20 +25,19 @@
 \usepackage{rotating}
 \usepackage{wasysym}
 \usepackage{marvosym}
-\usepackage{subcaption}
 \graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
 
 \input{definitions.tex}
 \newcommand{\lib}[1]{\tiny #1}
 
 % Title etc
-\title[Inc. SUSY searches Meeting]{Status Report from RA2/b \\ Lost-Lepton Background Estimation Methods \\ \& \ttbar, \wpj Background Rejection Studies }
-\subtitle{using phys14 Samples}
+\title[RA2/b Meeting]{Status Lost-Lepton Method phys14 Samples}
+\subtitle{Combining Single Muon and Electron Control Sample\\ Efficiency Studies}
 \author[Arne-Rasmus~Dr\"ager]{
-  Arne-Rasmus~Dr\"ager (Uni Hamburg) \\ on behalf of the RA2/b team
+  Arne-Rasmus~Dr\"ager (Uni Hamburg)
 }
-\date[January 23, 2015]{January 23, 2015
-%   \vskip1cm
+\date[February 05, 2015]{February 05, 2015
+  \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
     \hskip8cm
@@ -50,7 +48,7 @@
 % pdflatex packages
 \hypersetup{bookmarks=true}
 \hypersetup{unicode=false}
-\hypersetup{pdftitle={Lost-Lepton RA2/b}}
+\hypersetup{pdftitle={Islated Tracks}}
 \hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
 
 
@@ -59,37 +57,6 @@
 % --------------------------------------------------
 \begin{frame}
   \titlepage
-\end{frame}
-
-
-% --------------------------------------------------
-\section{Introduction}
-
-
-\begin{frame}
-  \frametitle{Lost-lepton Motivation}
-  \begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-      \includegraphics[width=\textwidth]{figures/jacks_Studies/T1tttt_feyn}
-    \end{subfigure}%
-    \begin{subfigure}[b]{0.3\textwidth}
-      \includegraphics[width=\textwidth]{figures/jacks_Studies/T1bbbb_feyn}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
-      \includegraphics[width=\textwidth]{figures/jacks_Studies/T1qqqq}
-    \end{subfigure}
-    % \label{fig:models}
-  \end{figure}
-  \begin{itemize}
-  \item RA2/b: inclusive hadronic analyses targeting gluino production (T1tttt, T1bbbb, T1qqqq)
-  \item In most sensitive bins, main background is \ttbar events with lost-leptons
-  \item T1tttt events have leptons $\sim 70 \%$ of the time
-  \begin{itemize}
-   \item Are rejected if any lepton passes isolation definition
-   \item Enter control sample for background estimation methods
-  \end{itemize}  
-  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -340,203 +307,7 @@
    \item Reasonable closure (exp $3862.1 \pm 17.9$, pred $3742.9 \pm 27.4$)
   \end{itemize}
 
-
- 
 \end{frame}
-  \begin{frame}
-  \begin{center}
-    {
-     \large Extension of Classical Lost-Lepton Method:\\ \Large Extrapolation from mdium to high \MHT regions \\(Owen Long)}
-  \end{center}
-\end{frame}
-\section{Extrapolation Method}
-\begin{frame}
- \begin{itemize}
-  \item Idea:
-  \begin{itemize}
-  \item Lost-lepton method limited by single lepton control sample statistics in some high \MHT search regions
-   \item Reduce statistical uncertainties in high \MHT regions by extrapolating from medium to high \MHT regions using W decay helicity distributions (well known physics $\rightarrow$ MC reliable).
-  \end{itemize}
-
- \end{itemize}
- \begin{center}
- 
-
-
-\begin{overpic}[width=0.85\textwidth]{figures/LostLeptonExtraPolationScatch.png}
-%       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
-      \end{overpic}
-       \end{center}
-       \begin{itemize}
- \item Concept:
- \begin{itemize}
-  \item Use single lepton data control sample to measure $\pt(W)$ spectrum
-  \item Use cos($\Delta \Theta_{T}$) distribution from MC to predict lost-lepton \MHT spectrum
- \end{itemize}
-
-\end{itemize}
-\end{frame}
-\begin{frame}
- \frametitle{Status of extrapolation technique}
- \begin{columns}
-  \begin{column}{0.6\textwidth}
-  \begin{itemize}
-   \item Use classic lost-lepton method to estimate background at medium \MHT [200,500] and a \MHT ratio as a function of cos($\Delta \Theta_{T}$) to extrapolate to high \MHT    
-   \item First try shows good closure in the relavant high \MHT search regions
-   \item Increase in control sample statistics up to a factor of 4 to 7 in respect to single lepton estimation method
-   \item \wpj and di-leptonic \ttbar events need to be accounted for as well
-   \item Uncertainties need to evaluated and compared to classical method to judge on the gain
-  \end{itemize}
-
-   
-  \end{column}
-  \begin{column}{0.4\textwidth}
-   \begin{overpic}[width=0.90\textwidth]{figures/LostLeptonHelicityPlot.png}
-      \end{overpic}\\
-         \begin{overpic}[width=0.90\textwidth]{figures/LostLeptonExtrapolationClosure.png}
-      \end{overpic}\\
-  \end{column}
-
-
- \end{columns}
-  \centering
-\small More information: Presentation \href{https://indico.cern.ch/event/334951/contribution/0/material/slides/0.pdf}{1}, \href{https://indico.cern.ch/event/360073/contribution/0/material/slides/0.pdf}{2}
-\end{frame}
-
-
-
-
-\subsection{Conclusion}
-\begin{frame}
- \frametitle{Lost-Lepton Methods Conclusion}
- \begin{itemize}
- \item Classic lost-lepton method:
- \begin{itemize}
-  \item Extension of lost-lepton method from using single $e$ \& $\mu$ control sample with an important improvement of statistical uncertainty $\sqrt{2}$ (largest uncertainty in many very sensitive bins at 8 TeV data) works
-  \item Activity variable shows good performance as lepton efficiency parametrization
-  \item Further studies are ongoing exploring various variables for binning the efficiencies
- \end{itemize}
- \item Lost-lepton extrapolation method:
- \begin{itemize}
-  \item Attempt of further decreasing of statistical uncertainty in some of the most sensitive bins by extrapolating from medium to high \MHT region
-  \item First attempt shows good closure
-  \item Gain in respect to classical lost-lepton method statistics by a factor of 4-7 for relevant bins
-  \item Uncertainties need to be evaluated and compared with classical lost-lepton approach to judge on expected improvement
- \end{itemize}
-
- \end{itemize}
-
-\end{frame}
-
-
-\section{Optimization Studies}
-  \begin{frame}
-  \begin{center}
-    {
-     \large Optimization Studies on \ttbar \& \wpj background event rejection \\(Jack Bradmiller-Feld)}
-  \end{center}
-\end{frame}
-
-\subsection{Optimization}
-\begin{frame}
-  \frametitle{Lepton composition at truth level}
-  \begin{columns}[c] % the "c" option specifies center vertical alignment
-    \column{.5\textwidth} % column designated by a command
-    After baseline selection, more than $\sim60\%$ of $t\bar{t}$
-    events contain taus
-    \begin{figure}
-      \includegraphics[width=1.2\textwidth]{figures/jacks_Studies/lepton_piechart_ttbar_baseline_117}
-    \end{figure}
-    \column{.5\textwidth}
-    About $\sim40\%$ of T1tttt events contain $e/\mu$
-    \begin{figure}
-      \includegraphics[width=1.2\textwidth]{figures/jacks_Studies/lepton_piechart_t1tttt_1500_100_baseline_117}
-    \end{figure}
-  \end{columns}
-  \begin{itemize}
-  \item Try to reject more $t\bar{t}$ \wpj BG with
-    \begin{itemize}
-    \item Single-prong tau veto
-    \item Isolated track veto
-    \end{itemize}
-  \item For each object, compute and cut at $m_T(W) <100 \gev$
-  \begin{itemize}
-   \item Good efficiency for SM events
-   \item Strong rejection of expected signal events
-  \end{itemize}
-
-  \item Can we save signal by not vetoing events with taus/tracks
-    with $m_T>100$ GeV?
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Using $m_T(W)$ to save signal}
-  \begin{itemize}
-  \item We know that events with 1 true lepton and one source of MET
-    ($W\rightarrow l\nu$ decay) are efficiently selected with $m_T<100$ GeV (90\%)
-  \item If we only reject events with single isolated e or $\mu$ (taus or
-    tracks) satisfying the above (or $m_T<100$), can we save any signal?
-  \item This idea was also suggested by \href{https://indico.cern.ch/event/339666/session/2/contribution/50/material/slides/0.pdf}{Jason Gran / MT2 group}
-  \end{itemize}
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{figures/jacks_Studies/mTIsoTracks}
-  \end{figure}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Lepton event rejection cut flow $(5\mathrm{fb}^{-1})$}
-  \begin{columns}[c] % the "c" option specifies center vertical alignment
-    \column{.7\textwidth}
-    \begin{figure}[h]
-      \centering
-      \includegraphics[width=\textwidth]{figures/jacks_Studies/cutflow_baseline}
-    \end{figure}
-    \column{.3\textwidth}
-    \begin{itemize}
-    \item Only rejecting events with $m_T(\tau,\;
-      E_{T}^{\mathrm{miss}})$ or $m_T(tk,\; E_{T}^{\mathrm{miss}}) <
-      100$ saves both T1bbbb and T1tttt
-    \item Track veto seems most effective--for Phys14 AN, will only use
-      this, skip $\tau$ veto
-    \end{itemize}
-  \end{columns}
-  \vskip1cm
-  \centering
-\small More information: \href{https://indico.cern.ch/event/360072/contribution/0/material/slides/0.pdf}{Presentation}
-\end{frame}
-
-
-\subsection{Conclusion}
-\begin{frame}
-  \frametitle{Lepton \& Track Veto: Conclusions}
-  \begin{itemize}
-  \item Isolated track veto with $m_T<100$ restriction shows great
-    improvement in sensitivity $(10-15\%)$ gain in
-    $S/\sqrt{B}$
-    \item Will be used for Phys14 on top of standard
-    $e/\mu$ veto.
-    \item Optimization of lepton \& isolated track definition
-  \item Want to further reduce hadronic $\tau$ background:
-    \begin{itemize}
-    \item Looking into separate isolation recipes for hadronic tracks vs. $e/\mu$
-      tracks
-    \item Want to use neutral PFcands to calculate isolation as well, may
-      help to characterize $\tau$ decays.
-    \end{itemize}
-  \item $\tau$ veto may also be useful at some point.
-  \item Lost-lepton background estimation methods are being extended for isolated track veto
-  \end{itemize}
-\end{frame}
-
-
-
-
-
-
-
-
 
 
 % --------------------------------------------------
@@ -650,8 +421,8 @@
     \begin{column}{0.5\textwidth}
       \centering
       \large \mindeltaphi cut \\
-      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_Combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_Combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
 
     \end{column}
   \end{columns}
@@ -672,14 +443,146 @@
     \begin{column}{0.5\textwidth}
       \centering
       \large \mindeltaphi cut \\
-      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
-      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_Combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/mindeltaphicut/Closure/Closure_Combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} \end{overpic}
 
     \end{column}
   \end{columns}
 \end{frame}
+\begin{frame}
+\frametitle{Old \deltaphi cut}
+\tiny
+ \begin{tabular}{lrrrr}
+\toprule
+                                       Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Tot pred  \\ 
+\midrule
+                                        Baseline &           $3862.1\pm17.9$&           $1875.4\pm11.1$&           $1858.2\pm11.9$&               $3733.5\pm27.4$ \\ 
+    B=0, NJet=4-Inf, HT=500-800, MHT=200-500 &             $890.9\pm7.2$&             $420.8\pm4.1$&             $428.1\pm4.3$&                $848.9\pm10.1$ \\ 
+      B=1, NJet=4-6, HT=500-800, MHT=200-500 &             $655.4\pm8.4$&             $300.3\pm4.9$&             $301.5\pm5.3$&                $601.9\pm12.1$ \\ 
+      $\text{B}\geq$, NJet=4-6, HT=500-800, MHT=200-500 &              $64.6\pm2.8$&              $29.9\pm1.8$&              $25.9\pm1.9$&                  $55.8\pm4.3$ \\ 
+    B=1, NJet=6-Inf, HT=500-800, MHT=200-500 &             $114.1\pm3.8$&              $64.6\pm2.3$&              $55.7\pm2.3$&                 $120.3\pm5.6$ \\ 
+    B=2, NJet=6-Inf, HT=500-800, MHT=200-500 &              $99.3\pm3.5$&              $51.8\pm2.1$&              $52.9\pm2.4$&                 $104.7\pm5.3$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=500-800, MHT=200-500 &              $28.9\pm1.9$&              $14.1\pm1.1$&              $12.4\pm1.1$&                  $26.5\pm2.7$ \\ 
+   B=0, NJet=4-Inf, HT=800-1200, MHT=200-500 &             $220.2\pm3.1$&             $121.5\pm2.1$&             $125.8\pm2.2$&                 $247.3\pm5.1$ \\ 
+     B=1, NJet=4-6, HT=800-1200, MHT=200-500 &             $146.2\pm3.8$&              $71.3\pm2.5$&              $66.1\pm2.5$&                 $137.4\pm6.1$ \\ 
+     $\text{B}\geq$, NJet=4-6, HT=800-1200, MHT=200-500 &              $16.5\pm1.4$&               $8.5\pm1.0$&               $7.7\pm1.1$&                  $16.2\pm2.5$ \\ 
+   B=1, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $69.5\pm2.8$&              $43.1\pm1.9$&              $39.6\pm2.0$&                  $82.7\pm4.7$ \\ 
+   B=2, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $63.8\pm2.8$&              $38.9\pm1.9$&              $37.4\pm2.1$&                  $76.3\pm4.7$ \\ 
+   $\text{B}\geq$, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $22.6\pm1.7$&              $13.2\pm1.2$&              $11.1\pm1.2$&                  $24.3\pm2.8$ \\ 
+   B=0, NJet=4-Inf, HT=1200-Inf, MHT=200-500 &              $56.2\pm1.5$&              $33.0\pm1.0$&              $34.8\pm1.1$&                  $67.8\pm2.5$ \\ 
+     B=1, NJet=4-6, HT=1200-Inf, MHT=200-500 &              $29.5\pm1.6$&              $16.1\pm1.2$&              $16.1\pm1.3$&                  $32.2\pm2.9$ \\ 
+     $\text{B}\geq$, NJet=4-6, HT=1200-Inf, MHT=200-500 &               $3.4\pm0.6$&               $2.0\pm0.5$&               $0.9\pm0.3$&                   $2.9\pm1.1$ \\ 
+   B=1, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &              $24.9\pm1.7$&              $14.6\pm1.2$&              $15.5\pm1.4$&                  $30.2\pm3.1$ \\ 
+   B=2, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &              $23.6\pm1.7$&              $14.5\pm1.3$&              $13.0\pm1.3$&                  $27.5\pm3.1$ \\ 
+   $\text{B}\geq$, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &               $7.4\pm1.0$&               $4.8\pm0.8$&               $3.1\pm0.7$&                   $8.0\pm1.8$ \\ 
+\bottomrule 
+\end{tabular}
 
-\subsection{Closure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Old \deltaphi cut}
+\tiny
+ \begin{tabular}{lrrrr}
+\toprule
+                                       Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Tot pred  \\ 
+\midrule
+   B=0, NJet=4-Inf, HT=500-800, MHT=500-750 &              $20.3\pm0.9$&               $9.4\pm0.5$&               $7.9\pm0.3$&                  $17.3\pm1.2$ \\ 
+      B=1, NJet=4-6, HT=500-800, MHT=500-750 &               $7.1\pm0.7$&               $3.0\pm0.5$&               $3.2\pm0.5$&                   $6.2\pm1.2$ \\ 
+      $\text{B}\geq$, NJet=4-6, HT=500-800, MHT=500-750 &               $0.2\pm0.1$&               $0.4\pm0.3$&               $0.0\pm0.0$&                   $0.5\pm0.5$ \\ 
+    B=1, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.2\pm0.1$&               $0.3\pm0.1$&               $0.1\pm0.0$&                   $0.3\pm0.3$ \\ 
+    B=2, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.1\pm0.1$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.2\pm0.2$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+   B=0, NJet=4-Inf, HT=800-1200, MHT=500-750 &              $16.1\pm0.7$&               $9.4\pm0.4$&              $10.1\pm0.4$&                  $19.5\pm1.0$ \\ 
+     B=1, NJet=4-6, HT=800-1200, MHT=500-750 &               $7.4\pm0.8$&               $3.3\pm0.4$&               $3.1\pm0.4$&                   $6.5\pm0.9$ \\ 
+     $\text{B}\geq$, NJet=4-6, HT=800-1200, MHT=500-750 &               $0.2\pm0.1$&               $0.1\pm0.1$&               $0.3\pm0.2$&                   $0.4\pm0.3$ \\ 
+   B=1, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $1.3\pm0.3$&               $0.8\pm0.2$&               $0.8\pm0.3$&                   $1.6\pm0.5$ \\ 
+   B=2, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $1.5\pm0.4$&               $0.5\pm0.2$&               $0.8\pm0.4$&                   $1.2\pm0.5$ \\ 
+   $\text{B}\geq$, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $0.1\pm0.1$&               $0.1\pm0.1$&               $0.0\pm0.0$&                   $0.1\pm0.2$ \\ 
+   B=0, NJet=4-Inf, HT=1200-Inf, MHT=500-750 &               $4.9\pm0.5$&               $3.6\pm0.2$&               $4.1\pm0.4$&                   $7.6\pm0.7$ \\ 
+     B=1, NJet=4-6, HT=1200-Inf, MHT=500-750 &               $2.5\pm0.4$&               $1.9\pm0.4$&               $1.1\pm0.2$&                   $3.0\pm0.8$ \\ 
+     $\text{B}\geq$, NJet=4-6, HT=1200-Inf, MHT=500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+   B=1, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $1.8\pm0.4$&               $1.4\pm0.4$&               $1.2\pm0.4$&                   $2.6\pm0.9$ \\ 
+   B=2, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $1.2\pm0.4$&               $1.2\pm0.4$&               $0.8\pm0.3$&                   $2.0\pm0.9$ \\ 
+   $\text{B}\geq$, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $0.5\pm0.3$&               $0.2\pm0.1$&               $0.1\pm0.1$&                   $0.3\pm0.3$ \\ 
+   B=0, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $4.3\pm0.3$&               $2.4\pm0.2$&               $2.5\pm0.2$&                   $4.9\pm0.4$ \\ 
+   B=1, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $2.2\pm0.4$&               $0.8\pm0.1$&               $0.5\pm0.1$&                   $1.3\pm0.3$ \\ 
+   B=2, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $0.7\pm0.3$&               $0.2\pm0.1$&               $0.4\pm0.2$&                   $0.6\pm0.3$ \\ 
+   $\text{B}\geq$, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $0.1\pm0.1$&               $0.0\pm0.0$&               $0.1\pm0.1$&                   $0.1\pm0.1$ \\ 
+\bottomrule 
+\end{tabular}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{New \mindeltaphi cut}
+\tiny
+ \begin{tabular}{lrrrr}
+\toprule
+                                       Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Tot pred  \\ 
+\midrule
+                                        Baseline &           $6139.3\pm22.5$&           $3036.0\pm14.8$&           $2997.4\pm14.8$&               $6033.4\pm35.8$ \\ 
+    B=0 NJet=4-Inf HT=500-800 MHT=200-500 &            $1375.2\pm9.0$&             $667.7\pm5.4$&             $673.8\pm5.3$&               $1341.5\pm13.0$ \\ 
+      B=1 NJet=4-6 HT=500-800 MHT=200-500 &            $989.8\pm10.3$&             $485.4\pm6.7$&             $481.3\pm6.7$&                $966.6\pm16.2$ \\ 
+      $\text{B}\geq3$ NJet=4-6 HT=500-800 MHT=200-500 &              $97.0\pm3.5$&              $41.4\pm2.2$&              $39.8\pm2.2$&                  $81.1\pm5.3$ \\ 
+    B=1 NJet=6-Inf HT=500-800 MHT=200-500 &             $173.6\pm4.6$&              $93.0\pm2.9$&              $83.7\pm2.8$&                 $176.8\pm6.9$ \\ 
+    B=2 NJet=6-Inf HT=500-800 MHT=200-500 &             $145.9\pm4.3$&              $73.5\pm2.6$&              $76.7\pm2.8$&                 $150.3\pm6.5$ \\ 
+    $\text{B}\geq3$ NJet=6-Inf HT=500-800 MHT=200-500 &              $41.2\pm2.3$&              $19.9\pm1.4$&              $17.7\pm1.3$&                  $37.7\pm3.3$ \\ 
+   B=0 NJet=4-Inf HT=800-1200 MHT=200-500 &             $346.9\pm4.0$&             $195.6\pm3.0$&             $190.5\pm2.9$&                 $386.1\pm7.2$ \\ 
+     B=1 NJet=4-6 HT=800-1200 MHT=200-500 &             $241.5\pm4.9$&             $132.0\pm3.8$&             $122.3\pm3.7$&                 $254.3\pm9.1$ \\ 
+     $\text{B}\geq3$ NJet=4-6 HT=800-1200 MHT=200-500 &              $27.0\pm1.8$&              $13.1\pm1.3$&              $12.8\pm1.4$&                  $25.9\pm3.2$ \\ 
+   B=1 NJet=6-Inf HT=800-1200 MHT=200-500 &             $105.0\pm3.5$&              $62.2\pm2.6$&              $56.7\pm2.5$&                 $118.9\pm6.1$ \\ 
+   B=2 NJet=6-Inf HT=800-1200 MHT=200-500 &              $93.7\pm3.4$&              $53.9\pm2.4$&              $52.7\pm2.5$&                 $106.7\pm5.9$ \\ 
+   $\text{B}\geq3$ NJet=6-Inf HT=800-1200 MHT=200-500 &              $31.2\pm2.0$&              $16.7\pm1.4$&              $14.1\pm1.3$&                  $30.8\pm3.2$ \\ 
+   B=0 NJet=4-Inf HT=1200-Inf MHT=200-500 &              $77.8\pm1.8$&              $42.5\pm1.4$&              $39.6\pm1.2$&                  $82.1\pm3.2$ \\ 
+     B=1 NJet=4-6 HT=1200-Inf MHT=200-500 &              $46.4\pm2.1$&              $21.5\pm1.5$&              $20.3\pm1.5$&                  $41.8\pm3.7$ \\ 
+     $\text{B}\geq3$ NJet=4-6 HT=1200-Inf MHT=200-500 &               $5.2\pm0.8$&               $2.3\pm0.6$&               $0.8\pm0.3$&                   $3.1\pm1.3$ \\ 
+   B=1 NJet=6-Inf HT=1200-Inf MHT=200-500 &              $29.1\pm1.8$&              $15.4\pm1.3$&              $14.2\pm1.3$&                  $29.6\pm3.2$ \\ 
+   B=2 NJet=6-Inf HT=1200-Inf MHT=200-500 &              $26.4\pm1.8$&              $13.7\pm1.3$&              $14.0\pm1.3$&                  $27.8\pm3.2$ \\ 
+   $\text{B}\geq3$ NJet=6-Inf HT=1200-Inf MHT=200-500 &               $7.9\pm1.0$&               $5.4\pm0.9$&               $3.9\pm0.7$&                   $9.3\pm2.0$ \\ 
+\bottomrule 
+\end{tabular}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{New \mindeltaphi cut}
+\tiny
+ \begin{tabular}{lrrrr}
+\toprule
+                                       Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Tot pred  \\ 
+\midrule
+    B=0 NJet=4-Inf HT=500-800 MHT=500-750 &              $28.7\pm1.1$&              $13.0\pm0.5$&              $12.7\pm0.4$&                  $25.6\pm1.1$ \\ 
+      B=1 NJet=4-6 HT=500-800 MHT=500-750 &              $10.2\pm0.9$&               $4.6\pm0.5$&               $5.7\pm0.6$&                  $10.3\pm1.2$ \\ 
+      $\text{B}\geq3$ NJet=4-6 HT=500-800 MHT=500-750 &               $0.2\pm0.1$&               $0.3\pm0.2$&               $0.1\pm0.0$&                   $0.4\pm0.4$ \\ 
+    B=1 NJet=6-Inf HT=500-800 MHT=500-750 &               $0.6\pm0.3$&               $0.2\pm0.1$&               $0.1\pm0.0$&                   $0.3\pm0.2$ \\ 
+    B=2 NJet=6-Inf HT=500-800 MHT=500-750 &               $0.2\pm0.1$&               $0.2\pm0.1$&               $0.1\pm0.1$&                   $0.3\pm0.2$ \\ 
+    $\text{B}\geq3$ NJet=6-Inf HT=500-800 MHT=500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+   B=0 NJet=4-Inf HT=800-1200 MHT=500-750 &              $28.8\pm0.9$&              $16.9\pm0.5$&              $17.6\pm0.5$&                  $34.5\pm1.2$ \\ 
+     B=1 NJet=4-6 HT=800-1200 MHT=500-750 &              $15.1\pm1.2$&               $6.8\pm0.6$&               $6.2\pm0.6$&                  $13.0\pm1.4$ \\ 
+     $\text{B}\geq3$ NJet=4-6 HT=800-1200 MHT=500-750 &               $0.7\pm0.3$&               $0.3\pm0.1$&               $0.4\pm0.2$&                   $0.7\pm0.4$ \\ 
+   B=1 NJet=6-Inf HT=800-1200 MHT=500-750 &               $2.3\pm0.5$&               $1.0\pm0.2$&               $0.9\pm0.2$&                   $1.9\pm0.6$ \\ 
+   B=2 NJet=6-Inf HT=800-1200 MHT=500-750 &               $1.7\pm0.5$&               $0.6\pm0.2$&               $1.1\pm0.3$&                   $1.7\pm0.5$ \\ 
+   $\text{B}\geq3$ NJet=6-Inf HT=800-1200 MHT=500-750 &               $0.3\pm0.2$&               $0.3\pm0.1$&               $0.1\pm0.0$&                   $0.3\pm0.3$ \\ 
+   B=0 NJet=4-Inf HT=1200-Inf MHT=500-750 &              $13.0\pm0.8$&               $7.0\pm0.5$&               $7.0\pm0.5$&                  $14.1\pm1.1$ \\ 
+     B=1 NJet=4-6 HT=1200-Inf MHT=500-750 &               $7.1\pm0.8$&               $3.9\pm0.6$&               $3.4\pm0.6$&                   $7.3\pm1.5$ \\ 
+     $\text{B}\geq3$ NJet=4-6 HT=1200-Inf MHT=500-750 &               $0.6\pm0.3$&               $0.3\pm0.2$&               $0.0\pm0.0$&                   $0.3\pm0.4$ \\ 
+   B=1 NJet=6-Inf HT=1200-Inf MHT=500-750 &               $3.4\pm0.6$&               $2.5\pm0.6$&               $2.0\pm0.5$&                   $4.5\pm1.3$ \\ 
+   B=2 NJet=6-Inf HT=1200-Inf MHT=500-750 &               $2.0\pm0.5$&               $1.6\pm0.5$&               $1.1\pm0.3$&                   $2.7\pm1.1$ \\ 
+   $\text{B}\geq3$ NJet=6-Inf HT=1200-Inf MHT=500-750 &               $1.2\pm0.4$&               $0.5\pm0.3$&               $0.2\pm0.1$&                   $0.7\pm0.6$ \\ 
+   B=0 NJet=4-Inf HT=0800-Inf MHT=750-Inf &               $8.1\pm0.4$&               $4.7\pm0.2$&               $4.7\pm0.2$&                   $9.4\pm0.5$ \\ 
+   B=1 NJet=4-Inf HT=0800-Inf MHT=750-Inf &               $4.1\pm0.5$&               $1.4\pm0.2$&               $1.1\pm0.1$&                   $2.5\pm0.4$ \\ 
+   B=2 NJet=4-Inf HT=0800-Inf MHT=750-Inf &               $1.2\pm0.3$&               $0.6\pm0.2$&               $0.4\pm0.2$&                   $1.0\pm0.5$ \\ 
+   $\text{B}\geq3$ NJet=4-Inf HT=0800-Inf MHT=750-Inf &               $0.3\pm0.2$&               $0.0\pm0.0$&               $0.3\pm0.2$&                   $0.3\pm0.2$ \\ 
+\bottomrule 
+\end{tabular}
+
+\end{frame}
+
+\subsection{Closure Separate}
 \begin{frame}
  \begin{center}
     {\Large Comparison \\ \deltaphi vs \mindeltaphi selection\\ Separate $\mu$ closure}
@@ -1241,6 +1144,529 @@
 
     \end{column}
   \end{columns}
+\end{frame}
+
+
+
+\subsection{Muon Efficiencies}
+\begin{frame}
+ \begin{center}
+    {\Large Efficiencies: Muon}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ iso}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuIsoHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuIsoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuIsoBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ iso}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuIsoNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuIsoPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuIsoActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\mu$ iso used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/MuIsoPTActivity.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/MuIsoPTActivity.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{$\mu$ reco}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuRecoHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuRecoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuRecoBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ reco}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuRecoNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuRecoPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuRecoActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\mu$ reco used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/MuRecoPTActivity.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/MuRecoPTActivity.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{$\mu$ acc}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuAccHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuAccHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuAccMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuAccMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuAccBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuAccBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\mu$ acc}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuAccNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuAccNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuAccPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuAccPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/MuAccActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/MuAccActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{$\mu$ acc used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/MuAccBTagNJets.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/MuAccMHTNJets.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
+\end{frame}
+
+
+\subsection{Electron Efficiencies}
+\begin{frame}
+ \begin{center}
+    {\Large Efficiencies: Electron}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{electron iso}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecIsoHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecIsoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecIsoBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{electron iso}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecIsoNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecIsoPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecIsoActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{electron iso used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/ElecIsoPTActivity.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/ElecIsoPTActivity.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{electron reco}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecRecoHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecRecoMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecRecoBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{electron reco}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecRecoNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecRecoPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecRecoActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{electron reco used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/ElecRecoPTActivity.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/ElecRecoPTActivity.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{electron acc}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecAccHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecAccMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecAccBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{electron acc}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecAccNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecAccPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecAccActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{electron acc used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/ElecAccBTagNJets.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/ElecAccMHTNJets.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{electron purity}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecPurityHT1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurityHT1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecPurityMHT1D.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurityMHT1D.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecPurityBTag1D.pdf}     
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurityBTag1D.pdf}
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{electron purity}
+   \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecPurityNJets1D.pdf}
+     \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurityNJets1D.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecPurityPT.pdf}      \end{overpic}
+      \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurityPT.pdf}      \end{overpic}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=1.00\textwidth]{figures/deltaphicut/efficiencies/ElecPurityActivity.pdf}      
+      \put(92,40){\rotatebox{-90}{\scriptsize \deltaphi}}
+      \end{overpic}
+      \begin{overpic}[width=1.00\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurityActivity.pdf} 
+      \put(92,40){\rotatebox{-90}{\scriptsize \mindeltaphi}}
+      \end{overpic}
+
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{electron purity used parametization and binnning}
+\centering
+      \begin{overpic}[width=0.45\textwidth]{figures/deltaphicut/efficiencies/ElecPurity.pdf}
+      \put(45,75){\rotatebox{0}{\scriptsize \deltaphi}}
+     \end{overpic}
+           \begin{overpic}[width=0.45\textwidth]{figures/mindeltaphicut/efficiencies/ElecPurity.pdf}
+            \put(45,75){\rotatebox{-0}{\scriptsize \mindeltaphi}}
+     \end{overpic}
 \end{frame}
 
 
