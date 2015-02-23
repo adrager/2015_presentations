@@ -32,12 +32,12 @@
 
 % Title etc
 \vskip2cm
-\title[RA2/b Meeting]{Sketch of (Classical) Lost-Lepton Method}
-\subtitle{Combining Single Muon and Electron Control Sample}
+\title[RA2/b Meeting]{Absch\"atzung des $W$ und \ttbar Untergrundes f\"ur die Suche nach neuer Physik im Endzustand mit Jets und fehlender Transversalenergie bei CMS}
+% \subtitle{Combining Single Muon and Electron Control Sample}
 \author[Arne-Rasmus~Dr\"ager]{
-  Arne-Rasmus~Dr\"ager (Uni Hamburg)
+  \underline{Arne-Rasmus~Dr\"ager}, Christian Sander \\(Uni Hamburg)
 }
-\date[February 05, 2015]{February 05, 2015
+\date[March 05, 2015]{March 05, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -49,7 +49,7 @@
 % pdflatex packages
 \hypersetup{bookmarks=true}
 \hypersetup{unicode=false}
-\hypersetup{pdftitle={Islated Tracks}}
+\hypersetup{pdftitle={Lost-Lepton}}
 \hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
 
 
@@ -59,24 +59,89 @@
 \begin{frame}
   \titlepage
 \end{frame}
+\section{Outline}
+\begin{frame}
+\frametitle{Outline}
+\Large
+\begin{itemize}
+ \item Introduction:
+ \begin{itemize}
+  \item SUSY
+  \item Analysis strategy 8 TeV vs 13 TeV
+ \end{itemize}
+ \item \wpj \& \ttbar estimiation method
+ \item Conclusion
+\end{itemize}
+\end{frame}
 
+\section{Introduction}
+\subsection{SUSY}
+\begin{frame}
+ \frametitle{Supersymmetry: An elegant extension of the standard model!}
+ \begin{columns}
+ \begin{column}{0.5\textwidth}
+
+  \begin{itemize}
+  \item SUSY advantages:
+  \begin{itemize}
+   \item Unification of gauge couplings possible
+   \item Can provide dark matter candidate
+   \item Solving hierarchy problem by canceling lare SM mass contributions to Higgs mass
+  \end{itemize}
+  \item New light (TeV) scale particles favored
+  \begin{itemize}
+   \item \textbf{Production @ LHC possible!}
+  \end{itemize}
+ \end{itemize}
+ \end{column}
+ \begin{column}{0.5\textwidth}
+  \begin{overpic}[width=.9\textwidth]{figures/Sketches/CouplingsUnification.png} \end{overpic}\\
+  \begin{overpic}[width=.48\textwidth]{figures/Sketches/DarkMatter.png} \end{overpic}
+  \begin{overpic}[width=.48\textwidth]{figures/Sketches/HiggsMassCancelation.png} \end{overpic}
+ \end{column}
+
+ \end{columns}
+
+\end{frame}
+
+\subsection{SUSY}
+
+\begin{frame}
+\frametitle{Supersymmetry}
+\normalsize
+\begin{itemize}
+ \item $\HT >500 \gev$
+ \begin{itemize}
+       \item Jets: $\pt>30\gev$, $|\eta|<2.5$
+      \end{itemize}
+ \item $\MHT >200 \gev$
+  \begin{itemize}
+       \item Jets: $\pt>30\gev$, $|\eta|<5.0$
+      \end{itemize}
+ \item $\NJets\ge 4$, \HT jets
+ \item $\BTags$= {$0,1,2,\geq3$} CSVM ($>0.814$), $\pt>30\gev$
+ \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
+\item Veto Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
+    \item Veto Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
+      (\Delta R<0.3) < 0.33 / 0.38$
+      \item Under study:
+      \begin{itemize}
+
+
+    \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
+      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV (no neutral isolation yet)
+    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
+      \end{itemize}
+\end{itemize}
+% \begin{block}{}
+% \centering
+% \Large
+% \end{block}
+\end{frame}
 
 
 \section{Classical Lost-Lepton Method}
-\begin{frame}
-\frametitle{Outline}
-\normalsize
-\begin{itemize}
- \item Reminder: The lost-lepton background is estimated selecting a single $\mu$/e control-sample and weighting each event according to the lepton efficiencies
- \item The following slides illustrate the lost-lepton background composition and the full picture of the estimation method
- \begin{itemize}
- \item Slides 4,5: Simple case for only lost $\mu$ using a single $\mu$ control-sample
- \item Slides 6,7: Adding the lost electrons, still using only the single $\mu$ control-sample
- \item Slides 8: Same as slide 7 but using now the single electron control-sample
-  \end{itemize}
-  \item The final prediction of the lost-lepton method is a combination of the statistical uncorrelated predictions using the single electron and single muon control-sample
-\end{itemize}
-\end{frame}
+
 
 \begin{frame}
 \frametitle{Lost-Lepton Background $\mu$ only}
