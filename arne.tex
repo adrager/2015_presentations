@@ -25,6 +25,8 @@
 \usepackage{rotating}
 \usepackage{wasysym}
 \usepackage{marvosym}
+\usepackage{amssymb}
+\usepackage{xcolor}
 \graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
 
 \input{definitions.tex}
@@ -32,10 +34,10 @@
 
 % Title etc
 \vskip2cm
-\title[RA2/b Meeting]{Absch\"atzung des $W$ und \ttbar Untergrundes f\"ur die Suche nach neuer Physik im Endzustand mit Jets und fehlender Transversalenergie bei CMS}
-% \subtitle{Combining Single Muon and Electron Control Sample}
+\title[RA2/b Meeting]{Classical Lost-Lepton Background}
+\subtitle{Study of Mini Isolation\\Usage of $e$ \& $\mu$ Prediction\\Stat. Uncertainty on Efficiencies} 
 \author[Arne-Rasmus~Dr\"ager]{
-  \underline{Arne-Rasmus~Dr\"ager}, Christian Sander \\(Uni Hamburg)
+  Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
 \date[March 05, 2015]{March 05, 2015
   \vskip1cm
@@ -64,45 +66,117 @@
 \frametitle{Outline}
 \Large
 \begin{itemize}
- \item Introduction:
- \begin{itemize}
-  \item SUSY
-  \item Analysis strategy 8 TeV vs 13 TeV
- \end{itemize}
- \item \wpj \& \ttbar estimiation method
+ \item Classical Lost-Lepton Method (reminder)
+ \item Usage of $e$ \& $\mu$ Control-Sample
+ \item Stat. Uncertainty on Efficiencies
+ \item Study of Mini Isolation
  \item Conclusion
 \end{itemize}
 \end{frame}
 
-\section{Introduction}
-\subsection{SUSY}
+\section{Lost-Lepton Method}
+\subsection{Overview}
 \begin{frame}
- \frametitle{Supersymmetry: An elegant extension of the standard model!}
- \begin{columns}
- \begin{column}{0.5\textwidth}
+ \frametitle{Total Lost-Lepton Background: Lost $\mu$ \& $e$}
 
-  \begin{itemize}
-  \item SUSY advantages:
-  \begin{itemize}
-   \item Unification of gauge couplings possible
-   \item Can provide dark matter candidate
-   \item Solving hierarchy problem by canceling lare SM mass contributions to Higgs mass
-  \end{itemize}
-  \item New light (TeV) scale particles favored
-  \begin{itemize}
-   \item \textbf{Production @ LHC possible!}
-  \end{itemize}
- \end{itemize}
- \end{column}
- \begin{column}{0.5\textwidth}
-  \begin{overpic}[width=.9\textwidth]{figures/Sketches/CouplingsUnification.png} \end{overpic}\\
-  \begin{overpic}[width=.48\textwidth]{figures/Sketches/DarkMatter.png} \end{overpic}
-  \begin{overpic}[width=.48\textwidth]{figures/Sketches/HiggsMassCancelation.png} \end{overpic}
- \end{column}
+ \begin{center}
+ \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_ll.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
 
- \end{columns}
+ \end{center}
 
 \end{frame}
+
+\begin{frame}
+
+ \begin{center}
+ \begin{overpic}[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+ \begin{itemize}
+  \item Select a control-sample (CS) of exaclty one well isolated e, $\mu$ within the acceptance
+  \item Weight each event according to efficiencies of each identificaiton step
+ \end{itemize}
+\end{frame}
+\subsection{Usage of $\mu$ \& $e$ CS}
+\begin{frame}
+ \frametitle{Making the most of $\mu$ \& $e$ CS}
+ \begin{itemize}
+  \item Method as been extend to use both $\mu$ \& $e$ CS to predict lost $\mu$ \& $e$ events
+  \item Proposals:
+  \begin{itemize}
+   \item Treat $\mu$ and  $e$ events totally separated: Use only $\mu$ CS to predict lost $\mu$ \& only $e$ CS to predict lost $e$
+   \item Take advantage of both CS for both backgrounds: Use $\mu$ ($e$) CS to predict both $\mu$ \& $e$. Combine according to statistical power
+  \end{itemize}
+  \item What are the advantages of each method?
+  \item Is one approach superior in terms of the statistical uncertaitnies of total lost-lepton prediction?
+  \item What is the impact of different $\mu$ \& $e$ control-sample sizes?
+
+ \end{itemize}
+
+\end{frame}
+\begin{frame}
+ \frametitle{Comparison of $\mu$ \& $e$ Control-Sample (Search Bins)}
+ \begin{overpic}[width=0.47\textwidth]{figures/control-sample/ControlSampleNumbersCompare.pdf} 
+ \put(73,55){\rotatebox{-0}{\scriptsize \mycirc[blue] $\mu$ CS}}
+ \put(73,50){\rotatebox{-0}{\scriptsize \mycirc[red] $e$ CS}}
+ \end{overpic}
+ \begin{overpic}[width=0.47\textwidth]{figures/control-sample/ControlSampleRatio.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+ \begin{itemize}
+  \item Ratio of $\mu$/ $e$ CS mostly 1. But espeically in low statistic regions differences expected
+  \item More $\mu$ then $e$ CS in most relevant bins
+ \end{itemize}
+
+\end{frame}
+\begin{frame}
+  \frametitle{Comparison of both approaches: Simple 1 bin Example}
+  \begin{itemize}
+   \item Assume:
+   \begin{itemize}
+    \item Both methods predict same amount of lost-leptons ($\mu$ and $e$)
+    \item Control-samples: 4 $\mu$, 1 $e$ (weight=1)
+    \item Same weight for each $\mu$ \& $e$ 
+   \end{itemize}
+
+  \end{itemize}
+  \scriptsize
+  \begin{tabular}{l|r|r||r|r}
+
+                                                  &           $\mu$            &           $e$  &             $\mu$            &           $e$  \\
+\midrule 
+     CS &                $4\pm2$ &             $1\pm1$ &              $4\pm2$ &             $1\pm1$  \\ \hline
+      Pred.    &          $10\pm5$ (50\%) &              $10\pm10$(100\%)&              $20\pm10$(50\%)&                 $20\pm20$(100\%) \\
+      Total Pred. &      $10\pm5$ (50\%) &              $10\pm10$(100\%)&              $20\pm10$(50\%)&                 $20\pm20$(100\%) \\
+\bottomrule
+\end{tabular}
+\begin{itemize}
+ \item Total lost-lepton prediction:
+ \item Treating $\mu$ \& $e$ separately
+ \begin{itemize}
+  \item Total prediction: $20\pm11.2$
+ \end{itemize}
+ \item Using $\mu$ \& $e$ for both lost $\mu$ \& $e$
+ \begin{itemize}
+  \item Total prediction: $20\pm$
+ \end{itemize}
+
+
+\end{itemize}
+
+
+
+
+\end{frame}
+
+
+
+
+
 
 \subsection{SUSY}
 
