@@ -107,40 +107,121 @@
 \subsection{Full Hadronic Analysis}
 
 \begin{frame}
-\frametitle{Supersymmetry}
-\normalsize
-\begin{itemize}
- \item $\HT >500 \gev$
+ \begin{overpic}[width=.32\textwidth]{figures/feynmanDiagrams/T1qqqq.pdf} \end{overpic}
+ \begin{overpic}[width=.32\textwidth]{figures/feynmanDiagrams/T1tttt.pdf} \end{overpic}
+ \begin{overpic}[width=.32\textwidth]{figures/feynmanDiagrams/T1bbbb_feyn.pdf} \end{overpic}\\
  \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<2.5$
-      \end{itemize}
- \item $\MHT >200 \gev$
+  \item Focus on gluino topologies inspired by natural SUSY with R-partiy conservation ($R=(-1)^{3(B-L)+2S}$)
+  \item Select events with final state of only jets according to ``Baseline-Selection``:
+  \begin{block}{}
   \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<5.0$
-      \end{itemize}
- \item $\NJets\ge 4$, \HT jets
- \item $\BTags$= {$0,1,2,\geq3$} CSVM ($>0.814$), $\pt>30\gev$
- \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
-\item Veto Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
-    \item Veto Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
-      (\Delta R<0.3) < 0.33 / 0.38$
-      \item Under study:
-      \begin{itemize}
+   \item $\HT >500 \gev$ (Jets: $\pt>30\gev$, $|\eta|<2.5$)
+   \item $\MHT >200 \gev$ (Jets: $\pt>30\gev$, $|\eta|<5.0$)
+   \item $\NJets\ge 4$, $\BTags$= {$0,1,2,\geq3$},  \HT jets
+   \item \dphin $> 4.0$ (QCD multi-jet rejection)
+   \item Veto isolated $e/\mu$ (reject \ttbar \& \wpj)
+  \end{itemize}
+  \end{block}
+  \item Increase sensitivity by dividing ``Baseline-Selecttion`` in $~72$ exclusive search bins of \HT, \MHT, \NJets \& \BTags  
+ \end{itemize}
+\end{frame}
 
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large
+ This talk: Estimation strategy of lost $e/\mu$\\ from \ttbar \& \wpj events
+ \end{block}
+\end{frame}
+\section{Classical Lost-Lepton Method}
+\begin{frame}
+ \begin{center}
+\frametitle{Mainly \ttbar \& \wpj events where prompt electrons and muons are lost}
 
-    \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
-      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV (no neutral isolation yet)
-    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
-      \end{itemize}
+ \begin{overpic}[width=0.7\textwidth]{figures/Sketches/TotalLostLeptonBackgroundSmaller.png} 
+%    \put(0,0){\rotatebox{-0}{\normalsize  Select a control-sample (CS) of exaclty one well isolated $e/\mu$ within acceptance cuts}}
+%    \put(0,-10){\rotatebox{-0}{\normalsize  Weight each CS event according to efficiencies for each identification step}}
+ \end{overpic}
+
+ \end{center}
+ \begin{itemize}
+  \item Select a control-sample (CS) of exaclty one well isolated $e/\mu$ within acceptance cuts
+  \item Weight each CS event according to efficiencies for each identification step
+ \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+ \item Signal and other SM processes can contribute to e/$\mu$ control sample
+ \item Suppress contamination by requiring trans. mass $\mt < 100 \gev$ \\
 \end{itemize}
-% \begin{block}{}
-% \centering
-% \Large
-% \end{block}
+\vspace{0.5cm}
+\hspace{0.5cm}$m_{T} = \sqrt{2 \cdot p_{T}(\mu/e)\cdot \met (1 - \cos(\Delta \Phi))}$
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+
+      \begin{itemize}
+      \item Removes about 10\% of e/$\mu$ CS due to:
+        \begin{itemize}
+        \item di-leptonic \ttbar decays
+        \item Mismeasured jets
+        \item Highly virtual W
+        \end{itemize}
+      \begin{centering}
+      \end{centering}
+      \item Correction for as a function of lepton $p_{T}$ \& activity around the lepton (motivation \& definition on the next slides)
+      \end{itemize}
+      \vspace{0.3cm}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+       \begin{overpic}[width=0.95\textwidth]{figures/control-sample/mtw.png}
+       \put(53.93,80){\color{black}\line(0,-1){67}}
+       \end{overpic}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
-\section{Classical Lost-Lepton Method}
+\begin{frame}
+\frametitle{Comparison prediction to expectation on simulated events}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+     \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+%       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+      \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+  \item $\HT > 500 \gev$ , $\MHT>200 \gev$, $\NJets\ge 3$ , \dphin $> 4.0$
+   \item Reasonable closure (exp $4352.1\pm 20.0$, pred $4432.4 \pm 32.0$)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+% \frametitle{Lost-Lepton Background $\mu$ \& e}
+ \begin{center}
+ \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf} 
+  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+\end{frame}
 
 
 \begin{frame}
