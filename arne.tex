@@ -31,14 +31,14 @@
 \newcommand{\lib}[1]{\tiny #1}
 
 % Title etc
-\vskip2cm
+% \vskip2cm
 \title[RA2/b Meeting]{Absch\"atzung des $W$ und \ttbar Untergrundes f\"ur die Suche nach neuer Physik im Endzustand mit Jets und fehlender Transversalenergie bei CMS}
-% \subtitle{Combining Single Muon and Electron Control Sample}
+ \subtitle{Studien mit 13TeV MC}
 \author[Arne-Rasmus~Dr\"ager]{
   \underline{Arne-Rasmus~Dr\"ager}, Christian Sander \\(Uni Hamburg)
 }
 \date[March 05, 2015]{March 05, 2015
-  \vskip1cm
+%   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
     \hskip8cm
@@ -66,10 +66,15 @@
 \begin{itemize}
  \item Introduction:
  \begin{itemize}
-  \item SUSY
-  \item Analysis strategy 8 TeV vs 13 TeV
+  \item SUSY Introduction
+  \item Full Hadronic Analysis
  \end{itemize}
- \item \wpj \& \ttbar estimiation method
+ \item \wpj \& \ttbar Lost-Lepton Estimation Method
+ \begin{itemize}
+  \item Basic Concept
+  \item Closure Tests
+  \item Efficiency Parametrization
+ \end{itemize}
  \item Conclusion
 \end{itemize}
 \end{frame}
@@ -86,7 +91,7 @@
   \begin{itemize}
    \item Unification of gauge couplings possible
    \item Can provide dark matter candidate
-   \item Solving hierarchy problem by canceling lare SM mass contributions to Higgs mass
+   \item Solving hierarchy problem by canceling large SM mass contributions to Higgs mass
   \end{itemize}
   \item New light (TeV) scale particles favored
   \begin{itemize}
@@ -111,7 +116,7 @@
  \begin{overpic}[width=.32\textwidth]{figures/feynmanDiagrams/T1tttt.pdf} \end{overpic}
  \begin{overpic}[width=.32\textwidth]{figures/feynmanDiagrams/T1bbbb_feyn.pdf} \end{overpic}\\
  \begin{itemize}
-  \item Focus on gluino topologies inspired by natural SUSY with R-partiy conservation ($R=(-1)^{3(B-L)+2S}$)
+  \item Focus on gluino topologies inspired by natural SUSY with R-parity conservation ($R=(-1)^{3(B-L)+2S}$)
   \item Select events with final state of only jets according to ``Baseline-Selection``:
   \begin{block}{}
   \begin{itemize}
@@ -122,7 +127,7 @@
    \item Veto isolated $e/\mu$ (reject \ttbar \& \wpj)
   \end{itemize}
   \end{block}
-  \item Increase sensitivity by dividing ``Baseline-Selecttion`` in $~72$ exclusive search bins of \HT, \MHT, \NJets \& \BTags  
+  \item Increase sensitivity by dividing ``Baseline-Selection`` in $~72$ exclusive search bins of \HT, \MHT, \NJets \& \BTags  
  \end{itemize}
 \end{frame}
 
@@ -132,20 +137,26 @@
  \Large
  This talk: Estimation strategy of lost $e/\mu$\\ from \ttbar \& \wpj events
  \end{block}
+%  \begin{itemize}
+%   \item A similar method has been use on 7 \& 8 TeV
+%   \item Extension and adaptation to exclusive \BTags bins and higher $\sqrt{s}$
+%  \end{itemize}
+
 \end{frame}
 \section{Classical Lost-Lepton Method}
+\subsection{Basic Concept}
 \begin{frame}
  \begin{center}
 \frametitle{Mainly \ttbar \& \wpj events where prompt electrons and muons are lost}
 
- \begin{overpic}[width=0.7\textwidth]{figures/Sketches/TotalLostLeptonBackgroundSmaller.png} 
-%    \put(0,0){\rotatebox{-0}{\normalsize  Select a control-sample (CS) of exaclty one well isolated $e/\mu$ within acceptance cuts}}
+ \begin{overpic}[width=0.7\textwidth]{figures/Sketches/TotalLostLeptonBackgroundSmaller.png}
+%    \put(0,0){\rotatebox{-0}{\normalsize  Select a control-sample (CS) of exactly one well isolated $e/\mu$ within acceptance cuts}}
 %    \put(0,-10){\rotatebox{-0}{\normalsize  Weight each CS event according to efficiencies for each identification step}}
  \end{overpic}
 
  \end{center}
  \begin{itemize}
-  \item Select a control-sample (CS) of exaclty one well isolated $e/\mu$ within acceptance cuts
+  \item Select a control-sample (CS) of exactly one well isolated $e/\mu$ within acceptance cuts
   \item Weight each CS event according to efficiencies for each identification step
  \end{itemize}
 
@@ -186,6 +197,20 @@
 
 
 \begin{frame}
+\centering
+ \frametitle{Predicting lost $e/\mu$ using single $\mu$ CS}
+ \begin{center}
+ \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}
+%   \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+\end{frame}
+
+
+\subsection{Closure Tests}
+
+\begin{frame}
 \frametitle{Comparison prediction to expectation on simulated events}
   \begin{columns}
     \begin{column}{0.5\textwidth}
@@ -207,120 +232,142 @@
   \end{columns}
   \begin{itemize}
   \item $\HT > 500 \gev$ , $\MHT>200 \gev$, $\NJets\ge 3$ , \dphin $> 4.0$
-   \item Reasonable closure (exp $4352.1\pm 20.0$, pred $4432.4 \pm 32.0$)
+   \item Good closure but each exclusive search bin (72) closure relevant!
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+ \frametitle{Comparison prediction to expectation on simulated events for all 72 search bins}
+  \begin{center}
+ \begin{overpic}[width=0.70\textwidth]{figures/lost-lepton-closure/closureSearchbins.pdf}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+ \end{center}
+ \begin{itemize}
+  \item Overall reasonable closure taking statistical uncertainties into account
+  \item Low \BTags region needs more investigation (first 16 bins)
+  \item Investigate fluctuations in regions of low control-sample statistics
+ \end{itemize}
+\end{frame}
 
+\subsection{Efficiency Parametrization}
+\begin{frame}
+ \frametitle{Low statistics search region}
+ \begin{itemize}
+  \item Most sensitive search regions contain few $e/\mu$ control-sample events
+  \item Most important: \underline{Choice of efficiency parametrization!}
+  \item Investigate different approaches:
+  \begin{itemize}
+   \item 1. Event topology based parametrization, eg. \pt lepton \deltaR lepton closest jet
+   \item 2. Search bin based efficiencies: Binned in \HT, \MHT, \NJets \& \BTags
+  \end{itemize}
+ \end{itemize}
+ \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+ \begin{columns}
+  \begin{column}{0.465\textwidth}
+  Option 1
+   \begin{itemize}
+    \item Can be obtained directly from data using a Tag \& Probe method if well chosen
+    \item Difficult to parametrize event topology independent: Obtain from \Zll apply to \ttbar \wpj events
+   \end{itemize}
+
+  \end{column}
+  \begin{column}{0.535\textwidth}
+     Option 2
+   \begin{itemize}
+    \item Can not be obtained from data needs to be validated indirectly via a Tag \& Probe method
+    \item Captures event kinematics according to quality of MC (best know)
+    \item Lags of statistics (72 search bins)
+   \end{itemize}
+  \end{column}
+
+ \end{columns}
+\end{frame}
+\begin{frame}
+\frametitle{Closer look at option 1}
+    \begin{itemize}
+   \item Classical approach of lepton \pt, (jet \pt) \& $\Delta R$ shows strong variation of efficiency and is strongly correlated with lepton isolation definition
+   \item Severe problem when applying method to low statistical regions!
+  \end{itemize}
+  \begin{columns}
+   \begin{column}{0.45\textwidth}
+   \centering
+    \small  Typical $\mu$ isolation efficiency
+    \begin{overpic}[width=.99\textwidth]{figures/8TeV/DataTAPmuIso.pdf}
+    \end{overpic}
+   \end{column}
+  \begin{column}{0.55\textwidth}
+   Example: Region with 3 gen 1 CS event\\
+    \begin{overpic} [width=0.45\textwidth]{figures/Sketches/deltaRLowStat.pdf}
+      \end{overpic}
+      \begin{overpic} [width=0.45\textwidth]{figures/Sketches/deltaRLowStatReco.pdf}
+      \end{overpic}
+     
+  \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item Strong variation of efficiencies ($20-99\%$) lead to large fluctuations in low statistics regions
+   \item Need to find parametrization that:
+   \begin{itemize}
+    \item Capture event based topology in order to make transfer \Zll $\rightarrow$ \ttbar \wpj
+    \item More steady to avoid large fluctuations
+   \end{itemize}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}
-% \frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf} 
-  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
- \end{overpic}
+ \frametitle{New ansatz: Activity around lepton}
+ \begin{itemize}
+  \item Combine lepton \pt with subset of activity around the lepton in a fixed large cone size
+  \begin{itemize}
+\item Not orthogonal but also not fully correlated to isolation definition $\rightarrow$ subset of energy in cone around lepton
+ \item Capture event kinematics in a more broader frame 'averaging' over range of strong drop in $\Delta R$
+  \end{itemize}
+ \end{itemize}
+ 
+   \begin{columns}
+   \begin{column}{0.5\textwidth}
+   \centering
+    \small  lepton \pt, (jet \pt) \& $\Delta R$
+    \begin{overpic}[width=.99\textwidth]{figures/8TeV/DataTAPmuIso.pdf}
+    \end{overpic}
+   \end{column}
+  \begin{column}{0.5\textwidth}
+   \centering
+    \small  lepton \pt, Activity
+    \begin{overpic}[width=.99\textwidth]{figures/efficiencies/MuIsoPTActivity.pdf}
+    \end{overpic}
+     
+  \end{column}
+  \end{columns}
+\section{Conclusion}
+\end{frame}
+\begin{frame}
+ \frametitle{Conclusion}
+ \begin{itemize}
+  \item The lost-lepton method has been used for 7 \& 8 TeV analysis in a similar way
+  \item Extension in respect to 8 TeV have been performed using also the single e CS
+  \item In addition the method has been extend in exclusive \BTags regions
+  \item Extensive studies have been performed on the efficiency parametrization
+  \item Good performance already visible for wide range of phase space
+  \item Ongoing work on optimization of efficiency binning and choice of variables along with specialized lepton isolation definition for high \HT \& \NJets regions
+ \end{itemize}
 
- \end{center}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ only}
- \begin{center}
- \begin{overpic}[width=1.0\textwidth]{figures/Sketches/LostLeptonSketch.pdf} \end{overpic}
- \end{center}
-\end{frame}
 
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ only}
- \begin{center}
- \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred.pdf} 
- \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
- \end{overpic}
-
- \end{center}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_ll.pdf} 
-%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
- \end{overpic}
-
- \end{center}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf} 
-  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
- \end{overpic}
-
- \end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_e_pred_full.pdf} 
-  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single e control-sample (CS)}}
- \end{overpic}
-
- \end{center}
-\end{frame}
+\section{Backup}
 \begin{frame}
   \begin{center}
-    \Large
-     Backup
+    {\Large Additional Material}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Baseline selection}
-\normalsize
-\begin{itemize}
- \item $\HT >500 \gev$
- \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<2.5$ 
-      \end{itemize}
- \item $\MHT >200 \gev$
-  \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<5.0$
-      \end{itemize}
- \item $\NJets\ge 4$, \HT jets
- \item $\BTags$= {$0,1,2,\geq3$} CSVM ($>0.814$), $\pt>30\gev$
-% \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
-\item  \dphin $> 4.0$
-\item Veto Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
-    \item Veto Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
-      (\Delta R<0.3) < 0.33 / 0.38$
-      \item Filters:
-      \begin{itemize}
-       \item Lose jet ID criteria for pf jets
-      \end{itemize}
-
-%       \item Under study:
-%       \begin{itemize}
-% 
-% 
-%     \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
-%       chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV (no neutral isolation yet)
-%     \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
-%       \end{itemize}
-\end{itemize}
-% \begin{block}{}
-% \centering
-% \Large
-% \end{block}
-\end{frame}
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{7}
+\setcounter{framenumber}{14}
 
 \end{document}
