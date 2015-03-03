@@ -95,26 +95,52 @@
  \begin{overpic}[width=.32\textwidth]{figures/feynmanDiagrams/T1bbbb_feyn.pdf} \end{overpic}\\
  \begin{itemize}
   \item Focus on gluino topologies inspired by natural SUSY with R-parity conservation ($R=(-1)^{3(B-L)+2S}$)
-  \item Select events with final state of only jets according to ``Baseline-Selection``:
+  \item Select events with final state of only jets according to ``Baseline-Selection":
   \begin{block}{}
   \begin{itemize}
-   \item $\HT >500 \gev$ (Jets: $\pt>30\gev$, $|\eta|<2.5$)
-   \item $\MHT >200 \gev$ (Jets: $\pt>30\gev$, $|\eta|<5.0$)
-   \item $\NJets\ge 4$, $\BTags$= {$0,1,2,\geq3$},  \HT jets
+   \item $\HT = \sum_{i}^{\text{jets}} |\vec{p_{T}},i| >500 \gev$ (jets: $\pt>30\gev$, $|\eta|<2.5$)
+   \item $\MHT = |-\sum_{i}^{\text{jets}} \vec{p_{T}},i| >200 \gev$ (jets: $\pt>30\gev$, $|\eta|<5.0$)
+   \item $\NJets\ge 4$ %(Jets: $\pt>30\gev$, $|\eta|<2.5$)
+   \item $\BTags$= {$0,1,2,\geq3$} %(Jets: $\pt>30\gev$, $|\eta|<2.5$)
   \end{itemize}
   \end{block}
-  \item Increase sensitivity by dividing ``Baseline-Selection`` in $~72$ exclusive search bins of \HT, \MHT, \NJets \& \BTags  
+  \item Increase sensitivity by dividing Baseline-Selection in $~72$ exclusive search bins of \HT, \MHT, \NJets \& \BTags  
  \end{itemize}
 \end{frame}
 \begin{frame}
- \frametitle{Standard-model background}
- \begin{itemize}
-  \item Selection to reduce SM contribution
-  \begin{itemize}
-  \item \dphin $> 4.0$ (QCD multi-jet rejection)
-  \item Veto isolated $e/\mu$ (reject \ttbar \& \wpj)
-  \end{itemize}
- \end{itemize}
+ \frametitle{Standard-model background processes}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+       \item QCD multi-jet
+       \begin{itemize}
+        \item Reduction cut \dphin $> 4.0$ \\(Weighted angular separation between \MHT and leading jets)
+       \end{itemize}
+       \vskip0.7cm
+       \item \ZInvJets
+       \begin{itemize}
+        \item Irreducible
+       \end{itemize}
+       \vskip0.7cm
+       \item  \underline{(\ttbar \& \wpj) $\rightarrow e/\mu$ }
+       \begin{itemize}
+        \item Veto isolated $e/\mu$
+       \end{itemize}
+       \item  (\ttbar \& \wpj) $\rightarrow \tau _{\text{had}}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \begin{center}
+     \begin{overpic}[width=1.\textwidth]{figures/Sketches/qcd_sketch.png} %\put(0,-10){\rotatebox{-0}{\normalsize  Weight each CS event according to efficiencies for each identification step}}
+     \end{overpic}
+     \vskip0.3cm
+     \begin{overpic}[width=0.6\textwidth]{figures/Sketches/ZInvisSketch.png} %\put(0,-10){\rotatebox{-0}{\normalsize  Weight each CS event according to efficiencies for each identification step}}
+     \end{overpic}
+     \begin{overpic}[width=0.6\textwidth]{figures/Sketches/Wpjsketch.png} %\put(0,-10){\rotatebox{-0}{\normalsize  Weight each CS event according to efficiencies for each identification step}}
+     \end{overpic}
+     \end{center}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
@@ -144,7 +170,7 @@
 
  \end{center}
  \begin{itemize}
-  \item Select a control-sample (CS) of exactly one well isolated $e/\mu$ within acceptance cuts
+  \item Select control-sample (CS) exactly one well isolated $e/\mu$ within acceptance cuts
   \item Weight each CS event according to efficiencies for each identification step
  \end{itemize}
 
@@ -196,51 +222,13 @@
 \end{frame}
 
 
-\subsection{Closure Tests}
 
-\begin{frame}
-\frametitle{Comparison prediction to expectation on simulated events}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
-     \end{overpic}
-           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
-     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
-     \end{overpic}
-     \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
-%       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
-      \end{overpic}
-    \end{column}
-  \end{columns}
-  \begin{itemize}
-  \item $\HT > 500 \gev$ , $\MHT>200 \gev$, $\NJets\ge 3$ , \dphin $> 4.0$
-   \item Good closure but each exclusive search bin (72) closure relevant!
-  \end{itemize}
-\end{frame}
 
-\begin{frame}
- \frametitle{Pred. vs Exp. for all 72 exclusive search bins}
-  \begin{center}
- \begin{overpic}[width=0.50\textwidth]{figures/lost-lepton-closure/Closure_SearchBins_Separated__Bin__MCEx_vs_Pred__Search_Bins.pdf}
-     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
-     \end{overpic}
- \end{center}
- \begin{itemize}
-  \item Overall good agreement for most of the search bins
-  \item Low \BTags region needs further improvement (first 18 bins)
-  \item Investigate fluctuations in regions of low control-sample statistics
- \end{itemize}
-\end{frame}
+
 
 \subsection{Efficiency Parametrization}
 \begin{frame}
- \frametitle{Low statistics search region}
+ \frametitle{Region with little expected CS events}
  \begin{itemize}
   \item Most sensitive search regions contain few $e/\mu$ control-sample events
   \item Important: \underline{Choice of efficiency parametrization!}
@@ -255,7 +243,7 @@
   \begin{column}{0.465\textwidth}
   Option 1
    \begin{itemize}
-    \item Can be obtained directly from data using a Tag \& Probe method, if well chosen
+    \item Can be obtained directly from data using a Tag \& Probe method
     \item Difficult to parametrize event topology independent: Obtain from \Zll apply to \ttbar \wpj events
    \end{itemize}
 
@@ -298,7 +286,7 @@
    \item Need to find parametrization:
    \begin{itemize}
     \item Capture event based topology in order to make transfer\\ \Zll to \ttbar, \wpj event kinematics
-    \item More steady to avoid large fluctuations
+    \item Less dependent to avoid large fluctuations
    \end{itemize}
   \end{itemize}
 \end{frame}
@@ -306,7 +294,7 @@
 \begin{frame}
  \frametitle{New ansatz: Activity around lepton}
  \begin{itemize}
-  \item Combine lepton \pt with subset of activity around the lepton in a fixed large cone size
+  \item Combine lepton \pt with subset of activity around the lepton in a fixed large cone size ($R=1.0$)
   \begin{itemize}
 \item Not orthogonal but also not fully correlated to isolation definition $\rightarrow$ subset of energy in cone around lepton
  \item Capture event kinematics in a more broader frame 'averaging' over range of strong efficiency drop in $\Delta R$
@@ -316,7 +304,7 @@
    \begin{columns}
    \begin{column}{0.5\textwidth}
    \centering
-    \small  lepton \pt, (jet \pt) \& $\Delta R$
+    \small  lepton \pt / jet \pt \& $\Delta R$
     \begin{overpic}[width=.99\textwidth]{figures/8TeV/DataTAPmuIso.pdf}
     \end{overpic}
    \end{column}
@@ -328,22 +316,60 @@
      
   \end{column}
   \end{columns}
-\section{Conclusion}
 \end{frame}
+\subsection{Closure Tests}
+
+\begin{frame}
+\frametitle{Comparison prediction to expectation on simulated events}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+     \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+%       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+      \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+  \item $\HT > 500 \gev$ , $\MHT>200 \gev$, $\NJets\ge 3$ , \dphin $> 4.0$
+   \item Good closure but each exclusive search bin (72) closure relevant!
+  \end{itemize}
+\end{frame}
+\section{Conclusion}
 \begin{frame}
  \frametitle{Conclusion}
  \begin{itemize}
-  \item The lost-lepton method has been used for 7 \& 8 TeV analysis in a similar way
-  \item Extension using also the single e CS in respect to 8 TeV has been accomplished 
-  \item Exclusive \BTags regions haven been added as 4th dimention of search region definition
-  \item Extensive studies have been performed on the efficiency parametrization
-  \item Good performance already visible for wide range of phase space
-  \item Ongoing work on:
+  \item A search for new physics using event signatures of multi jets, b-jets, large transverse energy and missing transverse energy has been presented
+  \item Adaptation and improvements of a method to estimate lost $e/\mu$ which has been used in 7 \& 8 TeV analysis has been performed:
   \begin{itemize}
-   \item Optimization of efficiency binning \& choice of variables
-   \item Specialized lepton isolation definition for high \HT \& \NJets regions
+   \item Exploiting now also the single e CS
+   \item Extension to exclusive \BTags regions $\rightarrow$ 4 dimension search regions
+   \item Already good performance visible for wide range of phase space
+   \item The efficiency parametrization and binning has been studied in great detail (work ongoing)
   \end{itemize}
- \end{itemize}
+
+  \end{itemize}
+%
+%   \item The lost-lepton method has been used for 7 \& 8 TeV analysis in a similar way
+%   \item Extension using also the single e CS in respect to 8 TeV has been accomplished
+%   \item Exclusive \BTags regions haven been added as 4th dimension of search region definition
+%   \item Extensive studies have been performed on the efficiency parametrization
+%   \item Good performance already visible for wide range of phase space
+%   \item Ongoing work on:
+%   \begin{itemize}
+%    \item Optimization of efficiency binning \& choice of variables
+%    \item Specialized lepton isolation definition for high \HT \& \NJets regions
+%   \end{itemize}
+%  \end{itemize}
 
 \end{frame}
 
@@ -385,8 +411,21 @@
  \end{columns}
 
 \end{frame}
+\begin{frame}
+ \frametitle{Pred. vs Exp. for all 72 exclusive search bins}
+  \begin{center}
+ \begin{overpic}[width=0.50\textwidth]{figures/lost-lepton-closure/Closure_SearchBins_Separated__Bin__MCEx_vs_Pred__Search_Bins.pdf}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+ \end{center}
+ \begin{itemize}
+  \item Overall good agreement for most of the search bins
+  \item Low \BTags region needs further improvement (first 18 bins)
+  \item Investigate fluctuations in regions of low control-sample statistics
+ \end{itemize}
+\end{frame}
 % --------------------------------------------------
 
-\setcounter{framenumber}{14}
+\setcounter{framenumber}{12}
 
 \end{document}
