@@ -35,11 +35,11 @@
 % Title etc
 \vskip2cm
 \title[RA2/b Meeting]{Classical Lost-Lepton Background}
-\subtitle{Study of Mini Isolation\\Usage of $e$ \& $\mu$ Prediction\\Stat. Uncertainty on Efficiencies} 
+\subtitle{Study of Mini Isolation\\Usage of $e$ \& $\mu$ Prediction} 
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
-\date[March 05, 2015]{March 05, 2015
+\date[March 03, 2015]{March 03, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -61,18 +61,7 @@
 \begin{frame}
   \titlepage
 \end{frame}
-\section{Outline}
-\begin{frame}
-\frametitle{Outline}
-\Large
-\begin{itemize}
- \item Classical Lost-Lepton Method (reminder)
- \item Usage of $e$ \& $\mu$ Control-Sample
- \item Stat. Uncertainty on Efficiencies
- \item Study of Mini Isolation
- \item Conclusion
-\end{itemize}
-\end{frame}
+
 
 \section{Lost-Lepton Method}
 \subsection{Overview}
@@ -97,22 +86,22 @@
 
  \end{center}
  \begin{itemize}
-  \item Select a control-sample (CS) of exaclty one well isolated e, $\mu$ within the acceptance
-  \item Weight each event according to efficiencies of each identificaiton step
+  \item Select a control-sample (CS) of exactly one well isolated e, $\mu$ within the acceptance
+  \item Weight each event according to efficiencies of each identification step
  \end{itemize}
 \end{frame}
 \subsection{Usage of $\mu$ \& $e$ CS}
 \begin{frame}
  \frametitle{Making the most of $\mu$ \& $e$ CS}
  \begin{itemize}
-  \item Method as been extend to use both $\mu$ \& $e$ CS to predict lost $\mu$ \& $e$ events
+  \item Method has been extend to use both $\mu$ \& $e$ CS to predict lost $\mu$ \& $e$ events
   \item Proposals:
   \begin{itemize}
    \item Treat $\mu$ and  $e$ events totally separated: Use only $\mu$ CS to predict lost $\mu$ \& only $e$ CS to predict lost $e$
    \item Take advantage of both CS for both backgrounds: Use $\mu$ ($e$) CS to predict both $\mu$ \& $e$. Combine according to statistical power
   \end{itemize}
   \item What are the advantages of each method?
-  \item Is one approach superior in terms of the statistical uncertaitnies of total lost-lepton prediction?
+  \item Is one approach superior in terms of the statistical uncertainties of total lost-lepton prediction?
   \item What is the impact of different $\mu$ \& $e$ control-sample sizes?
 
  \end{itemize}
@@ -133,10 +122,11 @@
  \end{overpic}
  \end{center}
  \begin{itemize}
-  \item Ratio of $\mu$/ $e$ CS mostly 1. But espeically in low statistic regions fluctuations expected
+  \item Ratio of $\mu$/ $e$ CS mostly 1. But especially in low statistic regions fluctuations expected
  \end{itemize}
 
 \end{frame}
+
 \begin{frame}
   \frametitle{Comparison of both approaches: Simple 1 bin Example}
   \begin{itemize}
@@ -173,180 +163,352 @@
       Total Pred. &      $10\pm5$ (50\%) &              $10\pm10$(100\%)&              $20\pm10$(50\%)&                 $20\pm20$(100\%) \\
 \bottomrule
 \end{tabular}
+\small
+\begin{itemize}
+ \item Total lost-lepton prediction:
+ \item Treating $\mu$ \& $e$ separately
+ \begin{itemize}
+  \item Total prediction: $20\pm11.18$ (quadratic combination of stat. independent prediction uncertainties)
+ \end{itemize}
+ \item Using $\mu$ \& $e$ for both lost $\mu$ \& $e$
+ \begin{itemize}
+  \item Total prediction: $20\pm8.95$ (using weighted average)
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Mini Isolation VS Classical Isolation}
+\begin{frame}
+ \frametitle{Mini Isolation (following UCSB approach \href{https://indico.cern.ch/event/368826/contribution/3/material/slides/0.pdf}{Adam talk})}
+   \begin{columns}
+   \begin{column}{0.65\textwidth}
+ \begin{itemize}
+  \item Variable isolation cone $R$ depending on lepton \pt 
+  \item Chose $R$ small as possible to reduce overlap with jets in boosted systems
+  \item Keep large enough to not pick up b-decay leptons
+  
+  \item Checked working point with:
+  \begin{itemize}
+   \item Max isolation cone $R = 0.2$ ($\pt,lep \leq50 GeV$)
+   \item Med isolation cone $R=\frac{10 GeV}{\pt,lep}$ ($50 GeV \geq\pt,lep \leq200 GeV$)
+   \item Min isolation cone $R = 0.05$ ($\pt,lep \geq200 GeV$)
+  \end{itemize}
+ \end{itemize}
+ \end{column}
+ \begin{column}{0.35\textwidth}
+ \vskip3cm
+  \begin{overpic}[width=1.0\textwidth]{figures/Sketches/miniIso.png} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+ \end{column}
+ \end{columns}
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Comparison of isolation efficiencies}
+ 
   \begin{columns}
    \begin{column}{0.5\textwidth}
    \begin{center}
-    Separate prediction
+    Old Isolation \\
+    \begin{overpic}[width=0.90\textwidth]{figures/classicIso/efficiencies/MuIsoClassicLepHT.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}\\
+   \begin{overpic}[width=0.90\textwidth]{figures/classicIso/efficiencies/ElecIsoHTEff.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
    \end{center}
 
    \end{column}
    \begin{column}{0.5\textwidth}
     \begin{center}
-    Combined prediction
+    Mini Isolation \\
+      \begin{overpic}[width=0.90\textwidth]{figures/miniIsolation/efficiencies/MuIsoMiniIsoLepHT.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic} \\
+   \begin{overpic}[width=0.90\textwidth]{figures/miniIsolation/efficiencies/ElecIsoHTEff.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
     \end{center}
    \end{column}
 
   \end{columns}
-\begin{itemize}
- \item Total lost-lepton prediction:
- \item Treating $\mu$ \& $e$ separately
- \begin{itemize}
-  \item Total prediction: $20\pm11.2$
- \end{itemize}
- \item Using $\mu$ \& $e$ for both lost $\mu$ \& $e$
- \begin{itemize}
-  \item Total prediction: $20\pm$
- \end{itemize}
-
-
-\end{itemize}
-
-
-
-
-\end{frame}
-
-
-
-
-
-
-\subsection{SUSY}
-
-\begin{frame}
-\frametitle{Supersymmetry}
-\normalsize
-\begin{itemize}
- \item $\HT >500 \gev$
- \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<2.5$
-      \end{itemize}
- \item $\MHT >200 \gev$
   \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<5.0$
-      \end{itemize}
- \item $\NJets\ge 4$, \HT jets
- \item $\BTags$= {$0,1,2,\geq3$} CSVM ($>0.814$), $\pt>30\gev$
- \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
-\item Veto Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
-    \item Veto Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
-      (\Delta R<0.3) < 0.33 / 0.38$
-      \item Under study:
-      \begin{itemize}
+   \item Huge Improvement especially visible vs \HT
+  \end{itemize}
 
-
-    \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
-      chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV (no neutral isolation yet)
-    \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
-      \end{itemize}
-\end{itemize}
-% \begin{block}{}
-% \centering
-% \Large
-% \end{block}
 \end{frame}
 
 
-\section{Classical Lost-Lepton Method}
-
 
 \begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ only}
- \begin{center}
- \begin{overpic}[width=1.0\textwidth]{figures/Sketches/LostLeptonSketch.pdf} \end{overpic}
- \end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ only}
- \begin{center}
- \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred.pdf} 
- \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
- \end{overpic}
-
- \end{center}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_ll.pdf} 
+ \frametitle{Comparison of composition of expectation}
+ 
+  \begin{columns}
+   \begin{column}{0.5\textwidth}
+   \begin{center}
+    Old Isolation \\
+ \begin{overpic}[width=0.55\textwidth]{figures/classicIso/expectation/Expectation_SearchBins_Separated__Bin__MuExIso+MuExReco+MuExAcc__Search_Bins.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}\\
+  \begin{overpic}[width=0.55\textwidth]{figures/classicIso/expectation/Expectation_SearchBins_Separated__Bin__ElecExIso+ElecExReco+ElecExAcc__Search_Bins.pdf} 
 %  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
  \end{overpic}
+   \end{center}
 
- \end{center}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf} 
-  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+    \begin{center}
+    Mini Isolation \\
+  \begin{overpic}[width=0.55\textwidth]{figures/miniIsolation/expectation/Expectation_SearchBins_Separated__Bin__MuExIso+MuExReco+MuExAcc__Search_Bins.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic} \\
+  \begin{overpic}[width=0.55\textwidth]{figures/miniIsolation/expectation/Expectation_SearchBins_Separated__Bin__ElecExIso+ElecExReco+ElecExAcc__Search_Bins.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
  \end{overpic}
+    \end{center}
+   \end{column}
 
- \end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Lost-Lepton Background $\mu$ \& e}
- \begin{center}
- \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_e_pred_full.pdf} 
-  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single e control-sample (CS)}}
- \end{overpic}
-
- \end{center}
-\end{frame}
-\begin{frame}
-  \begin{center}
-    \Large
-     Backup
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Baseline selection}
-\normalsize
-\begin{itemize}
- \item $\HT >500 \gev$
- \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<2.5$ 
-      \end{itemize}
- \item $\MHT >200 \gev$
+  \end{columns}
   \begin{itemize}
-       \item Jets: $\pt>30\gev$, $|\eta|<5.0$
-      \end{itemize}
- \item $\NJets\ge 4$, \HT jets
- \item $\BTags$= {$0,1,2,\geq3$} CSVM ($>0.814$), $\pt>30\gev$
-% \item $\deltaphi_{1,2,3}>0.5,0.5,0.3$
-\item  \dphin $> 4.0$
-\item Veto Muons: \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMuonId\#Tight\_Muon}{2012 ``tight'' ID}: $p_T > 10$ GeV, $I_{rel}\; (\Delta R<0.4) < 0.2$    
-    \item Veto Electrons: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2\#CSA14\_selection\_conditions\_25ns}{Phys14 POG ID}:  $p_T > 10$ GeV, $I_{rel}\;
-      (\Delta R<0.3) < 0.33 / 0.38$
-      \item Filters:
-      \begin{itemize}
-       \item Lose jet ID criteria for pf jets
-      \end{itemize}
+   \item Huge reduction of expected lost-lepton due to non-isolated! 
+  \end{itemize}
 
-%       \item Under study:
-%       \begin{itemize}
-% 
-% 
-%     \item Taus: \href{https://indico.cern.ch/event/359233/contribution/4/material/slides/0.pdf}{Phys14 POG ID}: $p_T > 10$ GeV, $|\eta| < 2.3$,
-%       chargedIsoPtSum $(\Delta R<0.5)$ < 1.0 GeV (no neutral isolation yet)
-%     \item Isolated tracks: $p_T > 15$ GeV, $I_{rel}\;(\Delta R<0.3) < 0.1$ -- just charged candidates
-%       \end{itemize}
-\end{itemize}
-% \begin{block}{}
-% \centering
-% \Large
-% \end{block}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Comparison of $e \& \mu$ control-sample}
+ 
+  \begin{columns}
+   \begin{column}{0.5\textwidth}
+   \begin{center}
+ $\mu$ control sample comparison \\
+  \begin{overpic}[width=0.90\textwidth]{figures/compare/Closure_SearchBins_Separated__Bin__MuCS_vs_MuCSMiniIso__Search_Bins.pdf} 
+
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+   \end{center}
+
+   \end{column}
+   \begin{column}{0.5\textwidth}
+    \begin{center}
+ $e$ control sample comparison \\
+ \begin{overpic}[width=0.90\textwidth]{figures/compare/Closure_SearchBins_Separated__Bin__ElecCS_vs_ElecCSMiniIso__Search_Bins.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic} 
+    \end{center}
+   \end{column}
+
+  \end{columns}
+  \begin{itemize}
+   \item Over all about 10\% gain in terms of $e\& \mu$ control-sample
+   \item High \HT bins gain about 25\%!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Sensitivity (numbers produced by Jack. Thank you!)}
+
+\small Baseline selection applied except lepton veto (including isolated track veto)
+ \Tiny
+ \begin{center}
+ \Tiny
+T1tttt (1500, 100) Preselection: $\BTags\geq2,\;\HT>1000,\;\NJets\geq9,\;\MHT>500$
+
+ \begin{tabular}{lc|cc|cc}
+    \hline
+    \hline
+    Cut & T1tttt ($m_{\gluino}=1500$ GeV, $m_{\lsp}=100$ GeV) ($0-l)$ & SM $(0-l)$ & SM $(1-l)$ & $\tau$ & $Z_{Bi}(\tau)$ \\ \hline
+Old lepton veto & $6.1 \pm 0.1$ & $2.1 \pm 0.4$ & $2.7 \pm 0.5$ &  $1.3$ & $1.8$  \\
+Mini isolation veto & $5.1 \pm 0.1$ & $1.9 \pm 0.4$ & $2.7 \pm 0.5$ &  $1.4$ & $1.6$  \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{center}
+  
+  \begin{center}
+ \Tiny T1tttt (1200, 800) Preselection: $\BTags\geq2,\;\NJets\geq9$
+ \begin{tabular}{lc|cc|cc}
+    \hline
+    \hline
+    Cut & T1tttt ($m_{\gluino}=1200$ GeV, $m_{\lsp}=800$ GeV) ($0-l)$ & SM $(0-l)$ & SM $(1-l)$ & $\tau$ & $Z_{Bi}(\tau)$ \\ \hline
+Old lepton veto & $24.3 \pm 0.3$ & $86.1 \pm 3.7$ & $117.2 \pm 3.7$ &  $1.4$ & $1.8$  \\
+Mini isolation veto & $21.1 \pm 0.3$ & $80.4 \pm 3.6$ & $125.3 \pm 3.8$ &  $1.6$ & $1.7$  \\
+    \hline
+    \hline
+  \end{tabular}
+   \end{center}
+   
+  \begin{center}
+ \Tiny T1bbbb (1500, 100) Preselection: $\BTags\geq2,\;\HT>1400,\;\MHT>500$
+
+  \begin{tabular}{lc|cc|cc}
+    \hline
+    \hline
+    Cut & T1bbbb ($m_{\gluino}=1500$ GeV, $m_{\lsp}=100$ GeV) ($0-l)$ & SM $(0-l)$ & SM $(1-l)$ &  $\tau$ & $Z_{Bi}(\tau)$ \\ \hline
+Old lepton veto & $14.3 \pm 0.1$ & $9.7 \pm 0.9$ & $9.3 \pm 1.0$ &  $1.0$ & $2.3$  \\
+Mini isolation veto & $14.2 \pm 0.1$ & $7.9 \pm 0.8$ & $10.7 \pm 1.1$ &  $1.4$ & $2.7$  \\
+    \hline
+    \hline
+  \end{tabular}
+ \end{center}
+  \begin{center}
+ \Tiny T1bbbb (1000, 900) Preselection: $\BTags\geq2,\;\MHT>500$
+
+   \begin{tabular}{lc|cc|cc}
+    \hline
+    \hline
+    Cut & T1bbbb ($m_{\gluino}=1000$ GeV, $m_{\lsp}=900$ GeV) ($0-l)$ & SM $(0-l)$ & SM $(1-l)$ & $\tau$ & $Z_{Bi}(\tau)$ \\ \hline
+Old lepton veto & $34.1 \pm 0.7$ & $56.5 \pm 2.2$ & $57.6 \pm 2.4$ &  $1.0$ & $2.8$  \\
+Mini isolation veto & $33.7 \pm 0.7$ & $51.7 \pm 2.0$ & $61.7 \pm 2.5$ &  $1.2$ & $2.9$  \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{center}
+  With: $\tau=\frac{\text{N}_{CS}}{\text{N}_{SM}\text{exp}}$ \& $Z_{Bi}(\tau)$ expected discovery significance (sigmas) using $\text{N}_{CS}, \text{N}_{SM}\text{exp}$ \& $\tau$
+\end{frame}
+
+\begin{frame}
+ \frametitle{Conclusion}
+ \begin{itemize}
+  \item Mini Isolation:
+ \begin{itemize}
+  \item Mini isolation increases the isolation efficiency at high \HT regions (increase from 70\% to 90\%!)
+  \item Overall a reduction of the background arising from non-isolated $\mu$ factor of 4 and for 2.6  for $e$
+  \item \wpj and \ttbar events are more efficiently rejected
+  \item Increase of single $e \& \mu$ control-sample up to 25\% (over all 10\%) 
+  \item No change visible for purity of control-sample
+  \item No strong gain in terms of sensitivity in the most sensitive bins for t1bbbb: reduction for t1tttt
+  \end{itemize}
+  \item Combination of $e \& \mu$ predictions
+  \begin{itemize}
+   \item Comparison of the case of using $e$ cs to predict lost $e$ background and $\mu$ to predict lost $\mu$ introduces a larger uncertainty (stat. only) than using both to predict both
+   \item Weighted averaging over the predictions decreases fluctuations in low stat bins
+  \end{itemize}
+
+ \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Backup
+ \end{block}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Sensitivity (numbers produced by Jack. Thank you!)}
+
+\small Baseline selection applied except lepton veto (including isolated track veto)
+ \Tiny
+ \begin{center}
+ \Tiny
+T1tttt (1500, 100) Preselection: $\BTags\geq2,\;\HT>1000,\;\NJets\geq9,\;\MHT>500$
+
+  \begin{tabular}{lcccc}
+    \hline
+    \hline
+    Cut & T1tttt ($m_{\gluino}=1500$ GeV, $m_{\lsp}=100$ GeV) & SM & $S/\sqrt{B}$ & $Z_{Bi}$ \\ \hline
+No lepton veto & $10.1 \pm 0.1$ & $2.5 \pm 0.4$ &  $6.3$ & $2.4$  \\\hline
+Old lepton veto & $6.1 \pm 0.1$ & $2.1 \pm 0.4$ &  $4.3$ & $1.6$  \\
+Mini isolation veto & $5.1 \pm 0.1$ & $1.9 \pm 0.4$ &  $3.7$ & $1.4$  \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{center}
+  
+  \begin{center}
+ \Tiny T1tttt (1200, 800) Preselection: $\BTags\geq2,\;\NJets\geq9$
+
+ \begin{tabular}{lcccc}
+    \hline
+    \hline
+    Cut & T1tttt ($m_{\gluino}=1200$ GeV, $m_{\lsp}=800$ GeV) & SM & $S/\sqrt{B}$ & $Z_{Bi}$ \\ \hline
+No lepton veto & $37.8 \pm 0.4$ & $110.7 \pm 4.0$ &  $3.6$ & $2.3$  \\\hline
+Old lepton veto & $24.3 \pm 0.3$ & $86.1 \pm 3.7$ &  $2.6$ & $1.7$  \\
+Mini isolation veto & $21.1 \pm 0.3$ & $80.4 \pm 3.6$ &  $2.4$ & $1.5$  \\
+    \hline
+    \hline
+  \end{tabular}
+   \end{center}
+   
+  \begin{center}
+ \Tiny T1bbbb (1500, 100) Preselection: $\BTags\geq2,\;\HT>1400,\;\MHT>500$
+
+ \begin{tabular}{lcccc}
+    \hline
+    \hline
+    Cut & T1bbbb ($m_{\gluino}=1500$ GeV, $m_{\lsp}=100$ GeV) & SM &  $S/\sqrt{B}$ & $Z_{Bi}$ \\ \hline
+No lepton veto & $14.4 \pm 0.1$ & $12.4 \pm 1.0$ &  $4.1$ & $2.2$  \\\hline
+Old lepton veto & $14.3 \pm 0.1$ & $9.7 \pm 0.9$ &  $4.6$ & $2.3$  \\
+Mini isolation veto & $14.2 \pm 0.1$ & $7.9 \pm 0.8$ &  $5.1$ & $2.4$  \\
+    \hline
+    \hline
+  \end{tabular}
+ \end{center}
+  \begin{center}
+ \Tiny T1bbbb (1000, 900) Preselection: $\BTags\geq2,\;\MHT>500$
+
+
+  \begin{tabular}{lcccc}
+    \hline
+    \hline
+    Cut & T1bbbb ($m_{\gluino}=1000$ GeV, $m_{\lsp}=900$ GeV) & SM & $S/\sqrt{B}$ & $Z_{Bi}$ \\ \hline
+No lepton veto & $34.8 \pm 0.7$ & $68.6 \pm 2.4$ &  $4.2$ & $2.6$  \\\hline
+Old lepton veto & $34.1 \pm 0.7$ & $56.5 \pm 2.2$ &  $4.5$ & $2.7$  \\
+Mini isolation veto & $33.7 \pm 0.7$ & $51.7 \pm 2.0$ &  $4.7$ & $2.8$  \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{center}
+  
+\end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Purity comparison}
+ 
+  \begin{columns}
+   \begin{column}{0.5\textwidth}
+   \begin{center}
+    Old Isolation \\
+ \begin{overpic}[width=0.75\textwidth]{figures/classicIso/control-sample/MuPurityClassicLepHT.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}\\
+  \begin{overpic}[width=0.75\textwidth]{figures/classicIso/control-sample/ElecPurityClassicLepHT.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+   \end{center}
+
+   \end{column}
+   \begin{column}{0.5\textwidth}
+    \begin{center}
+    Mini Isolation \\
+  \begin{overpic}[width=0.75\textwidth]{figures/miniIsolation/control-sample/MuPurityMiniIsoHT.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic} \\
+   \begin{overpic}[width=0.75\textwidth]{figures/miniIsolation/control-sample/ElecPurityMiniIsoHT.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+    \end{center}
+   \end{column}
+
+  \end{columns}
+  \begin{itemize}
+   \item No significant change observed
+  \end{itemize}
+
+\end{frame}
+
+
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{7}
+\setcounter{framenumber}{12}
 
 \end{document}
+
