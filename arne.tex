@@ -139,25 +139,38 @@
  \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
   \begin{columns}
 
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
      \begin{itemize}
-   \item $\mu$ Iso \ttbar \& \wpj eff.
+   \item $\mu$ Iso \ttbar \& \wpj eff. (truth info.)
   \end{itemize}
     \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoPTActivity.pdf}};
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoPTActivity_ttbarWPJ.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
     \end{scope}
    \end{tikzpicture}
    \end{column}
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ Iso DY eff. \\(truth info.)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoPTActivity_DY_noTagAndProbe.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
    \begin{itemize}
     \item $\mu$ Iso Tag \& Probe eff.
    \end{itemize}
 
     \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoTagProbe.pdf}};
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoTagAndProbePTActivity.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
@@ -189,25 +202,38 @@
  \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
   \begin{columns}
 
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
      \begin{itemize}
-   \item $\mu$ ID \ttbar \& \wpj eff.
+   \item $\mu$ ID \ttbar \& \wpj eff. (truth info.)
   \end{itemize}
     \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuRecoPTActivity.pdf}};
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuRecoPTActivity_ttbarWPJ.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
     \end{scope}
    \end{tikzpicture}
    \end{column}
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ ID DY eff.\\ (truth info.)
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuRecoPTActivity_DY_noTagAndProbe.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+        \begin{column}{0.33\textwidth}
    \begin{itemize}
     \item $\mu$ ID Tag \& Probe eff.
    \end{itemize}
 
     \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuRecoTagProbe.pdf}};
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuRecoTagAndProbePTActivity.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
@@ -223,48 +249,6 @@
 
 \end{frame}
 
-\section{Exclusive Search Bins \& CS Size}
-
-\begin{frame}
- \begin{block}{}
- \centering
- \Large Exclusive Search Bins \& Single Lep CS Size
- \end{block}
-\end{frame}
-
-
-\begin{frame}
- \begin{itemize}
-  \item Constrains on search bin definition (from lost-lepton):
-  \begin{itemize}
-   \item Sufficient single lepton CS in data desirable, stat. uncertainties same order expected systematic uncertainties
-   \item Acceptance efficiencies directly taking from MC, need reasonable statistics for eff map calculation
-  \end{itemize}
- \end{itemize}
-  \begin{columns}
-  \begin{column}{0.50\textwidth}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/ra2classic/ElecAccSearchBinEff.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
-\put(134,2){\rotatebox{-0}{\tiny $Bin$}}
-\put(10,84){\rotatebox{-0}{\small $\epsilon$}}
-    \end{scope}
-\end{tikzpicture}
-  \end{column}
- \begin{column}{0.50\textwidth}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/miniIsoJack/Closure_Step_By_Step_Elec__Bin__ElecCSMTWDiLepCorrected_vs_ElecCSMTWDiLepCorrectedWPJ+ElecCSMTWDiLepCorrectedTTbar+ElecCSMTWDiLepCorrectedQCD__Purity.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-\end{tikzpicture}
- \end{column}
- \end{columns}
-\end{frame}
-
 
 \begin{frame}
  \frametitle{Conclusion}
@@ -274,14 +258,9 @@
   \item Machinery up and running
   \item First try obtaining ID and Iso efficiencies from \Zll seem to be significant lower
   \item Try to achieve better agreement by selecting more similar kinematics
-  \end{itemize}
-    \item Exclusive Search Bin Definition
-  \begin{itemize}
-   \item Available MC statistics insufficient for acceptance eff calculation for each search bin
-   \item Expected single lepton CS for 4 fb below 1 in some bins (sensitive)
-  \end{itemize}
-
  \end{itemize}
+ \end{itemize}
+ 
 
 \end{frame}
 
@@ -296,25 +275,38 @@
  \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
   \begin{columns}
 
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
      \begin{itemize}
-   \item e Iso \ttbar \& \wpj eff.
+   \item e Iso \ttbar \& \wpj eff. (truth info.)
   \end{itemize}
     \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecIsoPTActivity.pdf}};
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecIsoPTActivity_ttbarWPJ.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
     \end{scope}
    \end{tikzpicture}
    \end{column}
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e Iso DY eff.\\ (truth info.)
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecIsoPTActivity_DY_noTagAndProbe.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+     \begin{column}{0.33\textwidth}
    \begin{itemize}
     \item e Iso Tag \& Probe eff.
    \end{itemize}
 
     \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecIsoTagProbe.pdf}};
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecIsoTagAndProbePTActivity.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
@@ -329,25 +321,38 @@
  \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
   \begin{columns}
 
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
      \begin{itemize}
-   \item e ID \ttbar \& \wpj eff.
+   \item e ID \ttbar \& \wpj eff. (truth info.)
   \end{itemize}
     \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecRecoPTActivity.pdf}};
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecRecoPTActivity_ttbarWPJ.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
     \end{scope}
    \end{tikzpicture}
    \end{column}
-   \begin{column}{0.50\textwidth}
+   \begin{column}{0.33\textwidth}
    \begin{itemize}
-    \item e ID Tag \& Probe eff.
+    \item e ID DY eff.\\ (truth info.)
    \end{itemize}
 
     \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecRecoTagProbe.pdf}};
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecRecoPTActivity_DY_noTagAndProbe.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+        \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e Iso Tag \& Probe eff.
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ElecRecoTagAndProbePTActivity.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
