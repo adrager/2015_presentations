@@ -39,7 +39,7 @@
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
-\date[March 17, 2015]{March 17, 2015
+\date[May 05, 2015]{May 05, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -65,7 +65,7 @@
 \begin{frame}
  \begin{block}{}
  \centering
- \Large Tag \& Probe Efficiencies (first try)
+ \Large Tag \& Probe Efficiencies for Lost-Lepton Background
  \end{block}
 \end{frame}
 \subsection{Lost-Lepton Method}
@@ -109,11 +109,14 @@
  \begin{itemize}
   \item Tag: Iso muon(Electron)
   \item Probe: slimmedMuons(slimmedElectrons) $\rightarrow$ Reco/ID muon(electron)
+  \item Improve probe: Use Superclusters photons (for electrons) but miniAOD stores only above  14 GeV
+  \item Improve probe: Could use tracks (for muons) but very high background
  \end{itemize}
   \item Iso:
  \begin{itemize}
   \item Tag: Iso muon(Electron)
   \item Probe: Reco/ID muon(electron) $\rightarrow$ Iso muon(electron)
+  
  \end{itemize}
 
  \end{itemize}
@@ -122,8 +125,15 @@
 \begin{frame}
  \frametitle{Tag \& Probe technicals}
  \begin{itemize}
- \item Apply $\HT>500$ \& $\NJets\geq4$ (similar kinematics to baseline region)
-  \item Select (randomly) tag lepton from iso collection
+  \item Test Several cuts to increase kinematical similarity to search region
+  \begin{itemize}
+   \item $\HT>500,400,200 \gev$
+   \item $\mindeltaphi >4.0, No Cut$ (Treat Tag leptons \pt as neutrino \pt $\rightarrow$ \MHT)
+   \item $\NJets\geq4$
+  \end{itemize}
+
+  \item Apply $\HT>500$ \& $\NJets\geq4$ (similar kinematics to baseline region)
+  \item Select (randomly) tag lepton from isolated lepton collection
   \item Select all probe leptons except matched to tag
   \item Compute for all invariant mass (Z mass)
   \item Check property (ID/iso criteria)
@@ -133,10 +143,10 @@
   \end{itemize}
 
  \end{itemize}
-
 \end{frame}
+
 \begin{frame}
- \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
+ \frametitle{Comparison \ttbar \& \wpj vs DY (truth) Efficiencies}
   \begin{columns}
 
    \begin{column}{0.33\textwidth}
@@ -166,11 +176,11 @@
    \end{column}
            \begin{column}{0.33\textwidth}
    \begin{itemize}
-    \item $\mu$ Iso Tag \& Probe eff.
+    \item $\mu$ iso radio
    \end{itemize}
 
     \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoTagAndProbePTActivity.pdf}};
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ttbarwpjToTruthDY/MuIsoPTActivity_ratio.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
@@ -179,11 +189,58 @@
    \end{column}
   \end{columns}
 \begin{itemize}
- \item Tag \& Probe efficiencies lower than \ttbar \& \wpj efficiencies.
- \item \ttbar \& \wpj eff. derived from baseline region (all cuts except lepton veto applied)
- \item \ttbar \& \wpj eff. \mindeltaphi applied changes kinematics rejects events with \MHT (neutrino) \& highest \pt jets allied
+ \item Efficiencies obtained via a Tag\&Probe method are significantly smaller than efficiencies obtained using truth information
 \end{itemize}
+\end{frame}
 
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe Efficiencies}
+   \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item $\mu$ Iso \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoPTActivity_ttbarWPJ.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ Iso DY eff. \\(Tag \& Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/MuIsoTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ iso radio
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobecompare/MuIsoPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+\begin{itemize}
+ \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement 
+ \item Lepton \pt and Activity are suffiantly topology independent to be transfered from DY to signal region!
+ \item Check agreement using a Tag\&Probe method
+\end{itemize}
 \end{frame}
 
 
