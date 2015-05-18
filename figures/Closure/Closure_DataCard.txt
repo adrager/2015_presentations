@@ -5,12 +5,12 @@ sample     = ElecPrMTWDiLep # name of the sample
 
 # bin1 is for Baseline, 
 channel = bin1; 
-ElecPrMTWDiLep_events =  2886.15
+ElecPrMTWDiLep_events =  1756.42
 # Uncertainties --> at least stat. and syst.
 # In absolute numbers
 nuisance = stat. uncert.; 
 ElecPrMTWDiLep_uncertaintyDistribution_1 = lnN
-ElecPrMTWDiLep_uncertainty_1 =   15.277
+ElecPrMTWDiLep_uncertainty_1 =  9.26698
 
 
 
@@ -22,12 +22,12 @@ sample     = MCEx # name of the sample
 
 # bin1 is for Baseline, 
 channel = bin1; 
-MCEx_events =  2976.73
+MCEx_events =  3619.36
 # Uncertainties --> at least stat. and syst.
 # In absolute numbers
 nuisance = stat. uncert.; 
 MCEx_uncertaintyDistribution_1 = lnN
-MCEx_uncertainty_1 =  16.2881
+MCEx_uncertainty_1 =  17.9948
 
 
 
@@ -39,12 +39,12 @@ sample     = MuPrMTWDiLep # name of the sample
 
 # bin1 is for Baseline, 
 channel = bin1; 
-MuPrMTWDiLep_events =  2883.44
+MuPrMTWDiLep_events =  1754.62
 # Uncertainties --> at least stat. and syst.
 # In absolute numbers
 nuisance = stat. uncert.; 
 MuPrMTWDiLep_uncertaintyDistribution_1 = lnN
-MuPrMTWDiLep_uncertainty_1 =  13.8761
+MuPrMTWDiLep_uncertainty_1 =  8.41608
 
 
 

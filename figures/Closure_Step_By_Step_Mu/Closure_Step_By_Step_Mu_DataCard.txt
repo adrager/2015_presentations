@@ -1,0 +1,34 @@
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCEx # name of the sample
+
+# bin1 is for Baseline_ElecAcc, 
+channel = bin1; 
+MCEx_events =   920.65
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCEx_uncertaintyDistribution_1 = lnN
+MCEx_uncertainty_1 =  9.00962
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MuCSMTWDiLepCorrected # name of the sample
+
+# bin1 is for Baseline_ElecAcc, 
+channel = bin1; 
+MuCSMTWDiLepCorrected_events =   907.49
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MuCSMTWDiLepCorrected_uncertaintyDistribution_1 = lnN
+MuCSMTWDiLepCorrected_uncertainty_1 =  4.04678
+
+
+
+
