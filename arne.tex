@@ -34,12 +34,12 @@
 
 % Title etc
 \vskip2cm
-\title[RA2/b Meeting]{Classical Lost-Lepton Background}
-\subtitle{Tag \& Probe Efficiencies (first try) \\ Exclusive Search Bin Definition}
+\title[RA2/b Meeting]{Classical Lost-Lepton (e/$\mu$) Background Estimation Method}
+\subtitle{Overview of Status and ToDo List}
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
-\date[May 05, 2015]{May 05, 2015
+\date[May 18, 2015]{May 18, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -65,27 +65,128 @@
 \begin{frame}
  \begin{block}{}
  \centering
- \Large Tag \& Probe Efficiencies for Lost-Lepton Background
+ \Large Lost-Lepton Background Concept
  \end{block}
 \end{frame}
-\subsection{Lost-Lepton Method}
-\begin{frame}
- \begin{center}
-\begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-        \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
-            \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % cordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-\end{tikzpicture}
 
- \end{center}
+\begin{frame}
+\frametitle{Outline}
+\normalsize
+\begin{itemize}
+ \item Reminder: The lost-lepton background is estimated selecting a single $\mu$/e control-sample and weighting each event according to the lepton efficiencies
+ \item The following slides illustrate the lost-lepton background composition and the full picture of the estimation method
  \begin{itemize}
-  \item Deriving reco \& iso efficiencies
- \end{itemize}
+ \item Slides 4,5: Simple case for only lost $\mu$ using a single $\mu$ control-sample
+ \item Slides 6,7: Adding the lost electrons, still using only the single $\mu$ control-sample
+ \item Slides 8: Same as slide 7 but using now the single electron control-sample
+  \end{itemize}
+  \item The final prediction of the lost-lepton method is a combination of the statistical uncorrelated predictions using the single electron and single muon control-sample
+\end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Lost-Lepton Background $\mu$ only}
+ \begin{center}
+ \begin{overpic}[width=1.0\textwidth]{figures/Sketches/LostLeptonSketch.pdf} \end{overpic}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lost-Lepton Background $\mu$ only}
+ \begin{center}
+ \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred.pdf} 
+ \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Lost-Lepton Background $\mu$ \& e}
+ \begin{center}
+ \begin{overpic}[width=0.9\textwidth]{figures/Sketches/LostLeptonSketch_ll.pdf} 
+%  \put(0,10){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Lost-Lepton Background $\mu$ \& e}
+ \begin{center}
+ \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf} 
+  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lost-Lepton Background $\mu$ \& e}
+ \begin{center}
+ \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_e_pred_full.pdf} 
+  \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single e control-sample (CS)}}
+ \end{overpic}
+
+ \end{center}
+\end{frame}
+
+\subsection{Lost-Lepton Closure}
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Lost-Lepton Closure Test: Status
+ \end{block}
+
+
+\end{frame}
+
+\begin{frame}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.57\textwidth]{figures/Closure/Baseline/Closure__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+%              \put(64,84){\rotatebox{-0}{\tiny Work in progress}}
+     \end{overpic}
+           \begin{overpic}[width=0.57\textwidth]{figures/Closure/Baseline/Closure__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+%            \put(64,84){\rotatebox{-0}{\tiny Work in progress}}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+           \begin{overpic}[width=0.57\textwidth]{figures/Closure/Baseline/Closure__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+%             \put(64,84){\rotatebox{-0}{\tiny Work in progress}}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+     \begin{overpic}[width=0.57\textwidth]{figures/Closure/Baseline/Closure__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+% \put(64,84){\rotatebox{-0}{\tiny Work in progress}}
+      \end{overpic}
+    \end{column}
+  \end{columns}
+   \begin{itemize}
+  \item Using full method combining electron and muon prediction. Applying correction for isoalated track veto.
+ \end{itemize}
+\end{frame}
+\begin{frame}
+\begin{center}
+  \begin{overpic}[width=0.80\textwidth]{figures/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+%              \put(64,84){\rotatebox{-0}{\tiny Work in progress}}
+     \end{overpic}
+\end{center}
+
+
+\end{frame}
+
+\subsection{Lost-Lepton Tag \& Probe}
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Lost-Lepton Tag \& Probe
+ \end{block}
+
+\end{frame}
 
 \section{Tag \& Probe}
 \subsection{Setup}
@@ -245,16 +346,16 @@
 
 
 
-\begin{frame}
- \frametitle{Resolve difference (idea)}
- \begin{itemize}
-  \item \ttbar \& \wpj: Assume main source of \MHT neutrino from W decay
-  \item \Zll: Assume tag lepton to be reasonable equivalent to neutrino from W decay
-  \begin{itemize}
-   \item Calculate \mindeltaphi for tag lepton \pt
-  \end{itemize}
- \end{itemize}
-\end{frame}
+% \begin{frame}
+%  \frametitle{Resolve difference (idea)}
+%  \begin{itemize}
+%   \item \ttbar \& \wpj: Assume main source of \MHT neutrino from W decay
+%   \item \Zll: Assume tag lepton to be reasonable equivalent to neutrino from W decay
+%   \begin{itemize}
+%    \item Calculate \mindeltaphi for tag lepton \pt
+%   \end{itemize}
+%  \end{itemize}
+% \end{frame}
 \begin{frame}
  \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
   \begin{columns}
@@ -308,16 +409,72 @@
 
 
 \begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Lost-Lepton ToDo List
+ \end{block}
+
+
+\end{frame}
+
+\subsection{Lost-Lepton Method}
+\begin{frame}
+ \begin{center}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+         \draw[yellow,ultra thick,rounded corners] (0.785,0.81) rectangle (0.955,1.01); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[yellow,ultra thick,rounded corners] (0.785,0.01) rectangle (0.955,.21); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[green,ultra thick,rounded corners] (0.785,0.7) rectangle (0.955,0.79); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[green,ultra thick,rounded corners] (0.785,0.555) rectangle (0.955,0.65); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[green,ultra thick,rounded corners] (0.785,0.36) rectangle (0.955,0.51); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+         \draw[black,ultra thick,rounded corners] (0.21,0.01) rectangle (0.365,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+
+ 
+ \begin{itemize}
+  \item Three major Efficiencies: Acc, Reco, Iso
+  \item Three minor Efficiencies: \mt cut, Di-Lep, Purity
+  \item Lepton Definition \& Isolated Tracks
+ \end{itemize}
+ \end{center}
+\end{frame}
+
+
+\begin{frame}
  \frametitle{Conclusion}
  \begin{itemize}
+  \item Acceptance Efficiencies
+  \begin{itemize}
+   \item Need to come directly from MC
+   \item Best: Take Acceptance Correction for each search bin $\rightarrow$ Specify `Final` search bins
+   \item Uncertainty: Statistics of Efficiencies (MC stats) \& PDF uncertainties
+  \end{itemize}
+  \item Reco, Iso Efficiencies
+  \begin{itemize}
+   \item Binning and Parametrization optimization (best for final search bins)
+   \item Could come from MC (validate using Tag \& Probe)
+   \item Best obtain directly from Data (Tag \& Probe)
+
   \item Tag \& Probe:
  \begin{itemize}
   \item Machinery up and running
   \item First try obtaining ID and Iso efficiencies from \Zll seem to be significant lower
-  \item Try to achieve better agreement by selecting more similar kinematics
  \end{itemize}
  \end{itemize}
- 
+ \item Other Efficiencies:
+ \begin{itemize}
+  \item Isolated Track Veto: (Merge into lepton definition?)
+  \item \mt cut: Derive uncertainty by varying JEC
+  \item Di-Lep: Rather low conservative uncertainty of 50\% negligible
+  \item Purity of CS Uncertainty from data?
+ \end{itemize}
+
+ \end{itemize}
 
 \end{frame}
 
@@ -423,7 +580,7 @@
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{14}
+\setcounter{framenumber}{20}
 
 \end{document}
 

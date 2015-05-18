@@ -1,0 +1,68 @@
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCExQCD # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+MCExQCD_events =   4808.9
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCExQCD_uncertaintyDistribution_1 = lnN
+MCExQCD_uncertainty_1 =  1035.66
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCExSingleTop # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+MCExSingleTop_events =  291.489
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCExSingleTop_uncertaintyDistribution_1 = lnN
+MCExSingleTop_uncertainty_1 =  5.58383
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCExTTbar # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+MCExTTbar_events =   3339.2
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCExTTbar_uncertaintyDistribution_1 = lnN
+MCExTTbar_uncertainty_1 =  20.5697
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCExWpj # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+MCExWpj_events =  2126.64
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCExWpj_uncertaintyDistribution_1 = lnN
+MCExWpj_uncertainty_1 =  7.92457
+
+
+
+
