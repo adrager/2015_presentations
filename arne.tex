@@ -92,7 +92,7 @@
   \item Current idea of including this reduction in method:
   \begin{itemize}
    \item Apply full classical lost-lepton method. At the very end correct for isolated track reduction of lost-lepton background ($C_{IsoTrack}$)
-   \item Problem: Mixture of (classical) lepton efficiencies and isolated track efficiencies. (note: correcting relative to single lep. control-sample)
+   \item Complication: Mixture of (classical) lepton efficiencies and isolated track efficiencies. (note: correcting relative to single lep. control-sample)
    \item Correction of lost-lepton background depends not only on isolated track efficiencies but also on lepton eff.
    \item $p_{full}(\epsilon_{ll},\epsilon_{IsoTrackRel}) = p_{ll}(\epsilon_{ll}) * (1-C_{IsoTrack}(\epsilon_{ll},\epsilon_{IsoTrackRel}))$
    \item $C_{IsoTrackRel}(\epsilon_{ll},\epsilon_{isotrack}) = \frac{(1-\epsilon_{ll}) * \epsilon_{IsoTrack}}{\epsilon_{ll}}$ %(1-\epsilon_{ll}) * \epsilon_{IsoTrack} / \epsilon_{ll}$
@@ -191,9 +191,9 @@
     \end{column}
   \end{columns}
   \begin{itemize}
-   \item 0 $\mu/e$ control-sample bins: prediction of 0 with upper uncertainty of 1.82 * average weight from MC in that particular bin
+   \item 0 $\mu/e$ control-sample bins: Pass average weight from MC in that particular bin to combine people for proper treatment
    \item Available MC statistics are not sufficient in some bins. Combine average weight in bins with similar prediction (integrate \BTags!?)
-   \item In addition: Weights in each bin vary (factor 2-3) sufficient stats desirable!
+   \item In addition: Weights in each bin vary factor 2-3. Stat uncertainty will take this into account
  \end{itemize}
 
 \end{frame}
@@ -224,7 +224,7 @@
     \end{enumerate}
     \end{itemize}
     \begin{enumerate}
-     \item Can be taken from MC
+     \item Take from MC
      \item Measure from Data
     \end{enumerate}
   \end{column}
@@ -289,7 +289,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Comparison Closure: $\BTags\ge3, 4\ge\NJets\ge6$ }
+\frametitle{Comparison Closure: $\BTags\ge3, 4\le\NJets\le6$ }
 \begin{columns}
 \centering
            \begin{column}{0.50\textwidth}
@@ -332,7 +332,7 @@
  \begin{column}{0.40\textwidth}
   \begin{itemize}
   \small
-   \item Shift in prediction of Boxes 4-5
+   \item Shift in prediction of boxes 4-5
    \item Box 6 under predicted with extrapolation
    \item Reduction of uncertainty factor 2-4 $\rightarrow$ factor 4-16 gain in stats.
   \end{itemize}
@@ -344,7 +344,7 @@
 
 
 \begin{frame}
-\frametitle{Comparison Closure: $\BTags\ge3, 7\ge\NJets\ge8$ }
+\frametitle{Comparison Closure: $\BTags\ge3, 7\le\NJets\le8$ }
 \begin{columns}
 \centering
            \begin{column}{0.50\textwidth}
@@ -396,7 +396,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Comparison Closure: $\BTags\ge3, 9\ge\NJets$ }
+\frametitle{Comparison Closure: $\BTags\ge3, \NJets\ge9$ }
 \begin{columns}
 \centering
            \begin{column}{0.50\textwidth}
@@ -439,7 +439,7 @@
  \begin{column}{0.40\textwidth}
   \begin{itemize}
   \small
-   \item Even at $\BTags\ge3, 9\ge\NJets, \HT>1200 \gev \& 200<\MHT<500$ have control-sample now!
+   \item Even at $\BTags\ge3,$\\ $\NJets \ge9$, $\HT > 1200 \gev$ \& $200 < \MHT < 500$ have control-sample now!
   \end{itemize}
 
  \end{column}
@@ -473,7 +473,7 @@
          \begin{itemize}
           \item $\mu$ acceptance [\HT,\MHT,\NJets]
           \item $\mu$ trigger, reco/ID, iso, efficiencies [\pt, activity]
-          \item $\mu$ from $\tau$ decays [$\mu$ \pt, HT, MHT, \NJets]
+          \item $\mu$ from $\tau$ decays [$\mu$ \pt$\rightarrow$ \HT, \MHT, \NJets]
           \item $\frac{BR(\wtohadtau)}{BR(\wtomu)}=0.64$
          \end{itemize}
 
@@ -545,9 +545,9 @@
  \begin{itemize}
   \item Take out the $\mu$ corrections:
   \begin{itemize}
-   \item $\mu$ acceptance [\HT,\MHT,\NJets]
-   \item $\mu$ trigger, reco/ID, iso, efficiencies [\pt, activity]
-   \item $\mu$ from $\tau$ decays [$\mu$ \pt, HT, MHT, \NJets]
+   \item $\mu$ acceptance 
+   \item $\mu$ trigger, reco/ID, iso, efficiencies
+   \item $\mu$ from $\tau$ decays
   \end{itemize}
   \item Check consistency of:
   \item \uline{Expectation} from MC truth:
@@ -614,7 +614,7 @@
   \begin{column}{0.33\textwidth}
   \begin{itemize}
    \item MinDeltaPhiN is least well modeled by the method
-   \item Move to simple deltaphi cuts?
+   \item Move back to $\Delta\phi (\MHT,j_{1,2,3})$ cut will help
   \end{itemize}
   \end{column}
   \begin{column}{0.33\textwidth}
@@ -683,77 +683,16 @@
 \end{frame}
 
 
-\begin{frame}
- \frametitle{Adding back in $\tau\rightarrow\mu$ events}
- \begin{columns}
-  \begin{column}{0.33\textwidth}
-  \begin{itemize}
-   \item Including now also $\tau\rightarrow\mu$ for the single $\mu$ control-sample
-   \item $\Delta\phi(\MHT,j_{1,2,3})$ cut used
-   \item Strong \HT dependency visible!
-  \end{itemize}
-  \end{column}
-  \begin{column}{0.33\textwidth}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_SimplifiedClosure3.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-   \end{tikzpicture}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_SimplifiedClosure3.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-   \end{tikzpicture}
-  \end{column}
-  \begin{column}{0.33\textwidth}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_SimplifiedClosure3.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-   \end{tikzpicture}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_SimplifiedClosure3.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-   \end{tikzpicture}
-  \end{column}
- \end{columns}
-\end{frame}
-
-\begin{frame}
- 
- \begin{columns}
-  \begin{column}{0.40\textwidth}
-   \begin{itemize}
-    \item Method aims at using direct \wtomu events.
-    \item Reality includes \wtotautomu events
-    \item Correcting as a function of $\mu$ \pt insufficient
-    \item Move to: 3D binning: \HT,\MHT\&\NJets
-   \end{itemize}
-
-  \end{column}
-  \begin{column}{0.60\textwidth}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/HadTau/FromKen/TauToMuCorrectionFunctionOfPT.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-   \end{tikzpicture}
-   \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/HadTau/FromKen/CorrectionForTauToMuDecays.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-   \end{tikzpicture}
-  \end{column}
- \end{columns}
-
-\end{frame}
 
 \begin{frame}
 %  \frametitle{Adding back in $\tau\rightarrow\mu$ events}
  \begin{columns}
   \begin{column}{0.33\textwidth}
   \begin{itemize}
-   \item Correcting for $\tau\rightarrow\mu$ as a function of  \HT,\MHT\&\NJets resolves \HT dependency
+%   \item Including $\Delta\phi (\MHT,j_{1,2,3})$ cut
+\item Including now also $\tau\rightarrow\mu$ decays in the $\mu$ conrol-sample
+   \item Correcting for $\tau\rightarrow\mu$ as a function of make\HT, \MHT \& \NJets
+   \item Gives reasonable closure
   \end{itemize}
   \end{column}
   \begin{column}{0.33\textwidth}
@@ -782,6 +721,15 @@
   \end{column}
  \end{columns}
 \end{frame}
+% \begin{frame}
+%  \frametitle{Seed Sample Statistics}
+%  \begin{itemize}
+%   \item Estimate if we expect lack of \hadtau prediction in search bins
+%  \end{itemize}
+% 
+%  
+% \end{frame}
+
 
 % \begin{frame}
 %  \frametitle{To Do List:}
@@ -823,7 +771,7 @@
   Iso\&Reco/Id $\mu$ & Yes & Yes& Yes \\
   Iso\&Reco/Id e & Yes & Yes & No \\
   \hline
-  Iso\&Reco/Id $\mu$ Track& Yes & Yes& Yes \\
+  Iso\&Reco/Id $\mu$ Track& Yes & Yes& No \\
   Iso\&Reco/Id e Track & Yes & Yes & No \\
   Iso\&Reco/Id $\pi$ Track & (Yes) & (Yes) & Yes \\  
   \hline
@@ -832,10 +780,10 @@
  \item The classical lost-lepton and \hadtau method are sharing the same binned efficiencies for reco/id \& iso of $\mu$
  \item Plan:
  \begin{itemize}
-  \item Use Tag\&Probe validation and Data/MC scale factors as much as possible
+  \item Use Tag\&Probe validation and Data/MC scale factors
   \item Efforts being conducted in deriving Tag\&Probe efficiencies by ourself (Arne\&Florent)
-  \item $\mu/e$ ID efficiencies tricky: Might use POG or combined SUSY effort Tag\&Probe efficiencies
-  \item Isolated track eff. need to be derived by us.
+  \item $\mu/e$ Reco efficiencies tricky: Might use POG or combined SUSY effort Tag\&Probe efficiencies
+  \item Isolated track eff. need to be obtained by us
  \end{itemize}
 \end{itemize}
 \end{frame}
@@ -887,7 +835,7 @@
   \end{columns}
 \begin{itemize}
  \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
- \item Lepton \pt and Activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
+ \item Lepton \pt and activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
  \item Overall the efficiencies from DY are slightly higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
 \end{itemize}
 \end{frame}
@@ -936,7 +884,7 @@
   \end{columns}
 \begin{itemize}
  \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
- \item Lepton \pt and Activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
+ \item Lepton \pt and activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
  \item Overall the efficiencies from DY are higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
 \end{itemize}
 \end{frame}
@@ -950,9 +898,9 @@
   \end{itemize}
   \item $\mu/e$ Reco efficiencies:
   \begin{itemize}
-   \item Choice of probe object problematic: Want to have most 'basic' object e.g. for electrons: Start with photons (miniAOD photons start at 14 GeV$\rightarrow$ use AOD)
+   \item Choice of probe object problematic: Want to have most 'basic' object e.g. for electrons: Start with photons (miniAOD photons start at $\pt>14 \gev\rightarrow$ use AOD)
    \item Most basic available $\mu$ object: Charged track (miniAOD) large/overwhelming background probably hopeless
-   \item Large effort needed. If necessary fall back to POG efficiencies for scaling factors!?
+   \item Large effort needed. If necessary fall back to POG efficiencies for scaling factors!
   \end{itemize}
  
 
@@ -961,7 +909,7 @@
 \end{frame}
 \subsection{Setup: Isolated Tracks(e/$\mu$)}
 \begin{frame}
- \frametitle{Isolated Track: Elec \& Muon Tracks}
+ \frametitle{Isolated Elec \& Muon Tracks}
  \begin{itemize}
  \item Muon, Electron Tracks:
  \begin{itemize}
@@ -975,7 +923,7 @@
  \begin{itemize}
   \item Desirable Probe: chargedPFCands $\rightarrow$ iso Mu/Elec Track (not possible too high background)
   \item Instead Probe: chargedPFCands with pdgID=11,13 (cant test for pdgID)
-  \item Still Small statistics due to deriving efficiencies of isolated tracks to failing isolated leptons (not applied yet)
+  \item Still small statistics due to deriving efficiencies of isolated tracks to failing isolated leptons (not applied yet)
   \item Problem: No $\mt<100 GeV$ applicable (maybe treat tag lepton as neutrino emulate \wtolnu)
  \end{itemize}
   \end{itemize}
@@ -1002,9 +950,9 @@
  \end{column}
 \end{columns}
 \begin{itemize}
- \item $\tau\rightarrow\Pi- + \nu(17\%)$ These should behave like $\mu/e$ tracks!? If so, give us rough idea on track eff. uncertainty
-   \item $\tau\rightarrow\pi- + 1/2\pi0 + \nu(53\%)$ Still only one charged track. Similar to $\tau\rightarrow\pi- + \nu$ ? If so same approach, inflated uncertainty.
-   \item What fraction of 3 prong $\tau$ get selected by isolated track? Rather small 10\% if so assign high uncertainty practical.
+ \item $\tau\rightarrow\pi^{-} + \nu (17\%)$ These should behave like $\mu/e$ tracks!? If so, give us rough idea on track eff. uncertainty
+   \item $\tau\rightarrow\pi^{-} + 1/2\pi0 + \nu (53\%)$ Still only one charged track. Similar to $\tau\rightarrow\pi^{-} + \nu$ ? If so same approach, inflated uncertainty.
+   \item What fraction of 3 prong $\tau$ get selected by isolated track? Rather small (10\%), if so, assigning high uncertainty would be practical.
 \end{itemize}
 \end{frame}
 \section{Conclusions}
@@ -1025,7 +973,7 @@
    \item Effective control sample for the previously empty 5 bins!
    \item How do we incorporate the isolated track veto?
    \item Implementation of systematic uncertainties needs to be done
-   \item \wpj needs to be added (if problematic stick to \ttbar enriched region ($2\ge\BTags$))
+   \item \wpj not studied. The focuse would be on $2\ge\BTags$
    \item Applicable to \hadtau?
    \item Need lepton/\met trigger. How low can we go? Need extension of classical lost-lepton method to $\MHT = 125 \gev$
    \item Implementation in combine
@@ -1037,17 +985,14 @@
  \begin{itemize}
   \item \hadtau Method (Ahmad, Ken, Hongxuan, Rishi, Keith)
   \begin{itemize}
-   \item Significant non-closure investigation on going
-   \item Move back to reco/iso lepton
-   \item Apply reco/iso $\mu$ efficiencies
-   \item Reapply acceptance correction to predict the whole \hadtau background
+   \item Earlier significant non-closure is better understood
    \item Merge Rishi effort of scanning entire template for each event for higher precision
    \item Include \wpj
    \item Include isolated track veto
   \end{itemize}
   \item Efficiencies (Arne, Florent, Simon):
   \begin{itemize}
-   \item Use MC efficiencies for predictions only
+   \item Use MC efficiencies for predictions
    \item Optimization of binning and parametrization ongoing (e.g. acceptance efficiencies)
    \item Use Tag\&Probe to validate MC eff. in data (derive uncertainties, possible scale factors)
    \item Tag\&Probe status:
@@ -1553,10 +1498,74 @@
 
 \end{frame}
 
+\begin{frame}
+ \frametitle{Adding back in $\tau\rightarrow\mu$ events}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item Including now also $\tau\rightarrow\mu$ for the single $\mu$ control-sample
+   \item $\Delta\phi(\MHT,j_{1,2,3})$ cut used
+   \item Strong \HT dependency visible!
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}
+ 
+ \begin{columns}
+  \begin{column}{0.40\textwidth}
+   \begin{itemize}
+    \item Method aims at using direct \wtomu events.
+    \item Reality includes \wtotautomu events
+    \item Correcting as a function of $\mu$ \pt insufficient
+    \item Move to: 3D binning: \HT, \MHT \& \NJets
+   \end{itemize}
+
+  \end{column}
+  \begin{column}{0.60\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/HadTau/FromKen/TauToMuCorrectionFunctionOfPT.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/HadTau/FromKen/CorrectionForTauToMuDecays.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+
+\end{frame}
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{33}
+\setcounter{framenumber}{32}
 
 \end{document}
 
