@@ -1,0 +1,51 @@
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = ElecPrMTWDiLep # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+ElecPrMTWDiLep_events =  1756.42
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+ElecPrMTWDiLep_uncertaintyDistribution_1 = lnN
+ElecPrMTWDiLep_uncertainty_1 =  9.26698
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCEx # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+MCEx_events =  3619.36
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCEx_uncertaintyDistribution_1 = lnN
+MCEx_uncertainty_1 =  17.9948
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 1 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MuPrMTWDiLep # name of the sample
+
+# bin1 is for Baseline, 
+channel = bin1; 
+MuPrMTWDiLep_events =  1754.62
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MuPrMTWDiLep_uncertaintyDistribution_1 = lnN
+MuPrMTWDiLep_uncertainty_1 =  8.41608
+
+
+
+

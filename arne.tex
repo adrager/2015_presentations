@@ -27,6 +27,7 @@
 \usepackage{marvosym}
 \usepackage{amssymb}
 \usepackage{xcolor}
+\usepackage[normalem]{ulem}
 \graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
 
 \input{definitions.tex}
@@ -39,7 +40,7 @@
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
-\date[June 04, 2015]{June 04, 2015
+\date[June 09, 2015]{June 09, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -61,28 +62,698 @@
 \begin{frame}
   \titlepage
 \end{frame}
-\section{Lost-Lepton Method}
+
+\section{Classical Lost-Lepton Method}
 \begin{frame}
  \begin{block}{}
  \centering
- \Large Tag \& Probe Efficiencies for Lost-Lepton Background
+ \Large Classical Lost-Lepton Method
  \end{block}
 \end{frame}
+\subsection{Concept}
 \begin{frame}
  \begin{center}
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-        \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-            \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+%             \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
     \end{scope}
 \end{tikzpicture}
-
+\subsection{Closure}
  \end{center}
- \begin{itemize}
-  \item Deriving reco \& iso Efficiencies via Tag\&Probe
+\end{frame}
+\begin{frame}
+\frametitle{Full closure-test of the classical lost-lepton method}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}%\put(100,60){\rotatebox{-90}{\scriptsize Old Parametrization Variables}}
+     \end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf} %\put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}    
+      \end{overpic}
+      \centering
+      \begin{overpic}[width=0.70\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+%  \frametitle{Closure test in each search bin}
+ \begin{center}
+  \begin{overpic}[width=0.55\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}      \put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{center}
+\begin{itemize}
+ \item Overall good closure observed in most search bins. Still room for improvement!
+ \item In extrem phase-space low statistics of control-sample!
+\end{itemize}
+
+
+\end{frame}
+\begin{frame}
+ \frametitle{Lost single $\mu/e$ Control-Sample Issue}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{itemize}
+  \item Many extrem phase-space bins suffer from no expected single $\mu/e$ control-sample. Very true for most sensitive search bins.
+   \item Approach to solve this for classical lost-lepton method:
+  \end{itemize}
+  
+    \end{column}
+  \begin{column}{0.5\textwidth}
+  
+  \begin{overpic}[width=1\textwidth]{figures/lost-lepton_classic/Simon/Mean_Prediction.pdf} %\put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}    
+      \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item 0 $\mu/e$ control-sample get a predictino of 0 with an upper uncertainty of 1.82 * avarge weight from MC in that particular bin
+   \item Even availabe MC statistics are not sufficient in some of thous bins. Combine avarge weight in bins with similar prediction (integrate over \BTags!?)
  \end{itemize}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extrapolation Lost-Lepton Method}
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large \MHT Extrapolation Method\\  \small Jack \& Owen
+ \end{block}
+\end{frame}
+
+\begin{frame}
+ \frametitle{The Idea}
+ \begin{itemize}
+  \item Use MC to build a \MHT PDF to take our data-driven BG estimation in the lowest \MHT bins (high CS statistics) extrapolate to higher \MHT bins (low CS statistics)
+ \end{itemize}
+  \begin{columns}
+  \begin{column}{0.45\textwidth}
+   \begin{itemize}
+    \item Neutrino spectrum depends on:
+    \begin{enumerate}
+     \item W angular decay distribution (known to high precision)
+     \item t/W-\pt spectrum, ISR, etc (tricky)
+    \end{enumerate}
+    \end{itemize}
+    \begin{enumerate}
+     \item can be taken from MC 
+     \item Measure from Data
+    \end{enumerate}
+  \end{column}
+  \begin{column}{0.55\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Sketches/MHTExtrapolation.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+   \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Sketches/Extrapolation_MHT_Equation.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+   \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+\begin{frame}
+ \frametitle{Concept of the Method}
+ \begin{itemize}
+  \item Create \MHT PDFs using all events in the SL CS with $\pt(\text{W})>200\gev$
+  \item For each SL data event we do:
+ \end{itemize}
+ \begin{overpic}[width=\textwidth]{figures/Sketches/Extrapolation_FullProcedure.png}
+   \put(25,40){\textcolor{white}{\large \bf MC}}
+ \end{overpic}
+ \begin{itemize}
+  \item Integrating over all events $\rightarrow$ full \MHT shape for a given \HT-\NJets bin
+  \item Apply classical lost-lepton method in lowest \MHT bin in each \HT-\MHT-\NJets-\BTags bin to obtain normalization
+ \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Extrapolation in \MHT from calssical estimation method}
+ \begin{itemize}
+  \item Extrapolation gives low-to-high \MHT ratios
+ \end{itemize}
+ \begin{columns}
+  \begin{column}{0.55\textwidth}
+   \begin{itemize}
+    \item Within a given \NJets \& \BTags bin Normalizations:
+    \begin{itemize}
+     \item Box 1+2 for Box 4
+     \item Box 3 for Box 5
+     \item Box 2+3 for Box 6
+    \end{itemize}
+    \item Extrapolation ratios binned \NJets \& \HT, not \BTags
+   \end{itemize}
+ \begin{overpic}[width=\textwidth]{figures/Extrapolation/Ratios.png}
+   \put(25,40){\textcolor{white}{\large \bf MC}}
+ \end{overpic}
+  \end{column}
+  \begin{column}{0.45\textwidth}
+   \begin{overpic}[width=\textwidth]{figures/Sketches/ExtrapolationFactorBoxes.png}
+   \put(25,40){\textcolor{white}{\large \bf MC}}
+   \end{overpic}
+  \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparison Closure: $\BTags\ge3, 4\ge\NJets\ge6$ }
+\begin{columns}
+\centering
+           \begin{column}{0.50\textwidth}
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/Extrapolation/Closure_Classical_b3NJets4-6.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+   
+%     \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+   
+           \begin{column}{0.50\textwidth}
+           \centering
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/Extrapolation/Closure_Extrapolation_b3NJets4-6.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+     \put(77.,128){\color{red}\line(0,-1){113}}
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+    \end{columns}
+\begin{columns}
+ \begin{column}{0.60\textwidth}
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Extrapolation/Table_b3NJets4-6.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%      \put(77.,128){\color{red}\line(0,-1){113}}
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+ \begin{column}{0.40\textwidth}
+  \begin{itemize}
+  \small
+   \item Shift in prediction of Boxes 4-5
+   \item Box 6 underpredicted with extrapolation
+   \item Reduction of uncertainty factor 2-4 $\rightarrow$ factor 4-16 gain in stats. 
+  \end{itemize}
+
+ \end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Comparison Closure: $\BTags\ge3, 7\ge\NJets\ge8$ }
+\begin{columns}
+\centering
+           \begin{column}{0.50\textwidth}
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/Extrapolation/Closure_Classical_b3NJets7-8.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+   
+%     \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+   
+           \begin{column}{0.50\textwidth}
+           \centering
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/Extrapolation/Closure_Extrapolation_b3NJets7-8.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+     \put(77.,128){\color{red}\line(0,-1){113}}
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+    \end{columns}
+\begin{columns}
+ \begin{column}{0.60\textwidth}
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Extrapolation/Table_b3NJets7-8.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%      \put(77.,128){\color{red}\line(0,-1){113}}
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+ \begin{column}{0.40\textwidth}
+  \begin{itemize}
+  \small
+   \item Achieve an effective control-sample in previously empty 2 bins!
+  \end{itemize}
+
+ \end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparison Closure: $\BTags\ge3, 9\ge\NJets$ }
+\begin{columns}
+\centering
+           \begin{column}{0.50\textwidth}
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/Extrapolation/Closure_Classical_b3NJets9+.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+   
+%     \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+   
+           \begin{column}{0.50\textwidth}
+           \centering
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/Extrapolation/Closure_Extrapolation_b3NJets9+.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+     \put(77.,128){\color{red}\line(0,-1){113}}
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+    \end{columns}
+\begin{columns}
+ \begin{column}{0.60\textwidth}
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Extrapolation/Table_b3NJets9+.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%      \put(77.,128){\color{red}\line(0,-1){113}}
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+ \begin{column}{0.40\textwidth}
+  \begin{itemize}
+  \small
+   \item Even at $\BTags\ge3, 9\ge\NJets, \HT>1200 \gev \& 200<\MHT<500$ have control-sample now!
+  \end{itemize}
+
+ \end{column}
+\end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Had-Tau Method}
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large The $\tau_{Had}$ Background
+ \end{block}
+\end{frame}
+
+\subsection{Concept}
+\begin{frame}
+ \frametitle{Basic Idea of the $\tau_{Had}$ Estimation Method}
+ 
+    \begin{columns}
+        \begin{column}{0.60\textwidth}
+        \begin{itemize}
+         \item Start with single $\mu$ control-sample
+         \item Replace muon $\pt$ by tau response template from MC
+         \item Recalculate \HT, \MHT, \NJets \& \met
+         \item Also \BTags are recomputed using mistag rate of \hadtau jets
+         \item Corections:
+         \begin{itemize}
+          \item $\mu$ acceptance [\HT,\MHT,\NJets]
+          \item $\mu$ trigger, reco/ID, iso, efficiencies [\pt, activity]
+          \item $\mu$ from $\tau$ decays [$\mu$ \pt, HT, MHT, \NJets]
+          \item $\frac{BR(\wtohadtau)}{BR(\wtomu)}=0.64$
+         \end{itemize}
+
+        \end{itemize}
+        Note: Isotrack veto not taken into account yet, need to correct predictino for isotrack efficiency.
+        
+
+        
+    
+   \end{column}
+           \begin{column}{0.40\textwidth}
+     \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Sketches/TauMethodSketchFenyman.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+       % \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+          %  \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+   \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Status}
+\begin{frame}
+ \frametitle{Closure Test as of May 17th}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item Some increasing non-closure were visible for \HT, \MHT \& \NJets
+   \item Conducted major investigation of source
+  \end{itemize}
+
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/Bins_FullClosure.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_FullClosure.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_FullClosure.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_FullClosure.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_FullClosure.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+
+\end{frame}
+\begin{frame}
+ \frametitle{Investigation of residual non-closure}
+ \begin{itemize}
+  \item Take out the $\mu$ corrections:
+  \begin{itemize}
+   \item $\mu$ acceptance [\HT,\MHT,\NJets]
+   \item $\mu$ trigger, reco/ID, iso, efficiencies [\pt, activity]
+   \item $\mu$ from $\tau$ decays [$\mu$ \pt, HT, MHT, \NJets]
+  \end{itemize}
+  \item Check consistency of:
+  \item \uline{Expectation} from MC truth:
+  \begin{itemize}
+   \item Consider \hadtau background events wih at least one $\tau$ within $\mu$ acceptance
+  \end{itemize}
+  \item \uline{Data-Driven Prediction:}
+  \begin{itemize}
+   \item Start with gen $\mu$ directly from W decay within accpetance
+   \item No $\mu$ corrections
+  \end{itemize}
+ \end{itemize}
+ \begin{block}{}
+ \centering
+ \Large Check $\mu\rightarrow\hadtau$ response for consistency
+ \end{block}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Simplified Closure}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item Applied cuts:
+   \begin{itemize}
+    \item $\HT>500\gev$
+    \item $\MHT>200\gev$
+    \item $\NJets\ge4$
+    \item No $\Delta\phi$ cuts
+   \end{itemize}
+   \item Still 7\% underprediction, but trend vs search variables improved
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Angular Variables Closure Test}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item MinDeltaPhiN is least well modeled by the method
+   \item Move to simple deltaphi cuts?
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MinDeltaPhiN_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/DeltaPhi2_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/DeltaPhi1_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/DeltaPhi3_SimplifiedClosure1.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Simplified Closure with $\Delta\phi(\MHT,j_{1,2,3})$}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item $\Delta\phi(\MHT,j_{1})>0.5$
+   \item $\Delta\phi(\MHT,j_{2})>0.5$
+   \item $\Delta\phi(\MHT,j_{3})>0.3$ 
+   \item Still 10\% non-closure, but closure is stable w.r.t. search variables
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_SimplifiedClosure2.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_SimplifiedClosure2.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_SimplifiedClosure2.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_SimplifiedClosure2.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Adding back in $\tau\rightarrow\mu$ events}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item Including now also $\tau\rightarrow\mu$ for the single $\mu$ control-sample
+   \item $\Delta\phi(\MHT,j_{1,2,3})$ cut used
+   \item Strong \HT dependency visible!
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_SimplifiedClosure3.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}
+ 
+ \begin{columns}
+  \begin{column}{0.40\textwidth}
+   \begin{itemize}
+    \item Metod aims at using direct \wtomu events. 
+    \item Reality includes \wtotautomu events
+    \item Correcting as a function of $\mu$ \pt insuffiant
+    \item Move to: 3D binning: \HT,\MHT\&\NJets
+   \end{itemize}
+
+  \end{column}
+  \begin{column}{0.60\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/HadTau/FromKen/TauToMuCorrectionFunctionOfPT.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.8\textwidth]{figures/HadTau/FromKen/CorrectionForTauToMuDecays.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+
+\end{frame}
+
+\begin{frame}
+%  \frametitle{Adding back in $\tau\rightarrow\mu$ events}
+ \begin{columns}
+  \begin{column}{0.33\textwidth}
+  \begin{itemize}
+   \item Correcting for $\tau\rightarrow\mu$ as a function of  \HT,\MHT\&\NJets resolves \HT dependency
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/HT_SimplifiedClosure4.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/NJets_SimplifiedClosure4.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+  \begin{column}{0.33\textwidth}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/MHT_SimplifiedClosure4.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+   \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/HadTau/FromKen/BTags_SimplifiedClosure4.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+   \end{tikzpicture}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{To Do List:}
+ \begin{itemize}
+  \item Reverting simplification steps, put in again:
+  \begin{itemize}
+   \item Lepton veto
+   \item Use reconstructed \& isolated $\mu$ control sample
+   \item Apply out of acceptance correction 
+  \end{itemize}
+  \item Merge effort by Rishi to scan entire template for each event to in crease precision  (bootstrap method)
+  \item Include \wpj
+  \item Include isolated track correction
+ \end{itemize}
+ 
+  \begin{block}{}
+ \centering
+ We will try to sort out most of these topics this week
+ \end{block}
+ 
+
+\end{frame}
+
+
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Backup
+ \end{block}
 \end{frame}
 
 \section{Tag \& Probe}
@@ -508,9 +1179,8 @@
  \end{itemize}
   \end{itemize}
  \end{itemize}
-
- 
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{IsoTrack Tag\&Probe}
 \begin{frame}
  \begin{block}{}
@@ -588,13 +1258,6 @@
  \end{itemize}
  
 
-\end{frame}
-
-\begin{frame}
- \begin{block}{}
- \centering
- \Large Backup
- \end{block}
 \end{frame}
 
 
