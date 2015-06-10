@@ -35,12 +35,12 @@
 
 % Title etc
 \vskip2cm
-\title[RA2/b Meeting]{Classical Lost-Lepton Background}
-\subtitle{Tag \& Probe Efficiencies (Update) \\ Isolated Tracks Implementation in Method}
+\title[RA2/b Meeting]{Status of the \wpj \& \ttbar Working Group}
+\subtitle{Classical Lost-Lepton Method\\ \MHT Extrapolation Approach\\ \hadtau Estimation Method\\ Lepton/Isolated Track Efficiencies}
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
-\date[June 09, 2015]{June 09, 2015
+\date[June 10, 2015]{June 10, 2015
   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
@@ -67,11 +67,12 @@
 \begin{frame}
  \begin{block}{}
  \centering
- \Large Classical Lost-Lepton Method
+ \Large Classical Lost-Lepton Method\\  \small Arne, Christian \& Simon
  \end{block}
 \end{frame}
 \subsection{Concept}
 \begin{frame}
+\frametitle{Classical Lost-Lepton Procedure}
  \begin{center}
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
@@ -81,11 +82,30 @@
 %             \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
     \end{scope}
 \end{tikzpicture}
-\subsection{Closure}
  \end{center}
 \end{frame}
+\subsection{IsoTrack Implementation}
 \begin{frame}
-\frametitle{Full closure-test of the classical lost-lepton method}
+ \frametitle{Classical Lost-Lepton Estimation with Isotrack Reduction}
+ \begin{itemize}
+  \item Isolated track (mainly pdgID=11,13) reduce lost-lepton background by 22\% in addition to the classical isolated $e/\mu$ veto (on baseline)
+  \item Current idea of including this reduction in method:
+  \begin{itemize}
+   \item Apply full classical lost-lepton method. At the very end correct for isolated track reduction of lost-lepton background ($C_{IsoTrack}$)
+   \item Problem: Mixture of (classical) lepton efficiencies and isolated track efficiencies. (note: correcting relative to single lep. control-sample)
+   \item Correction of lost-lepton background depends not only on isolated track efficiencies but also on lepton eff.
+   \item $p_{full}(\epsilon_{ll},\epsilon_{IsoTrackRel}) = p_{ll}(\epsilon_{ll}) * (1-C_{IsoTrack}(\epsilon_{ll},\epsilon_{IsoTrackRel}))$
+   \item $C_{IsoTrackRel}(\epsilon_{ll},\epsilon_{isotrack}) = \frac{(1-\epsilon_{ll}) * \epsilon_{IsoTrack}}{\epsilon_{ll}}$ %(1-\epsilon_{ll}) * \epsilon_{IsoTrack} / \epsilon_{ll}$
+   \item Sample to derive $C_{IsoTrackRel}$ consists of only failing (lost-lepton) events.
+   \item Deriving/estimating uncertainties complicated. Note: $\epsilon_{ll}(\epsilon_{e/\mu acc,reco,iso,\mt})$
+  \end{itemize}
+
+ \end{itemize}
+
+\end{frame}
+\subsection{Closure}
+\begin{frame}
+\frametitle{Full Closure-Test of the Classical Lost-Lepton Method}
   \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
@@ -106,36 +126,74 @@
 
 \begin{frame}
 %  \frametitle{Closure test in each search bin}
+\begin{columns}
+ \begin{column}{0.5\textwidth}
  \begin{center}
-  \begin{overpic}[width=0.55\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}      \put(18,36.2){\color{red}\line(1,0){75}}
-      \end{overpic}
+  Closure Test
  \end{center}
+
+  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{column}
+ \begin{column}{0.5\textwidth}
+ \begin{center}
+  Control-Sample vs Expectation
+ \end{center}
+  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/ControlSample/CS_VS_Expectation__Bin__MCExTotal_vs_MCMuCS+MCElecCS__Baseline_conflict-20150519-170144.pdf}      \put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{column}
+\end{columns}
 \begin{itemize}
- \item Overall good closure observed in most search bins. Still room for improvement!
- \item In extrem phase-space low statistics of control-sample!
+ \item Overall good closure observed in most search bins. Still room for improvement! E.g. solve trend bin 60-64 by re binning acc eff.
+ \item In extreme phase-space low statistics of control-sample!
 \end{itemize}
-
-
 \end{frame}
+
+\begin{frame}
+%  \frametitle{Closure test in each search bin}
+\begin{columns}
+ \begin{column}{0.5\textwidth}
+ \begin{center}
+  e out of acceptance closure
+ \end{center}
+
+  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/Closure/Closure_Step_By_Step_Elec__Bin__MCEx_vs_ElecCSMTWDiLepCorrected__Baseline_ElecAcc.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{column}
+ \begin{column}{0.5\textwidth}
+ \begin{center}
+  $\mu$ out of acceptance closure
+ \end{center}
+  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/Closure/Closure_Step_By_Step_Mu__Bin__MCEx_vs_MuCSMTWDiLepCorrected__Baseline_MuAcc.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{column}
+\end{columns}
+\begin{itemize}
+ \item Here we can chose the best suitable binning (limited only by MC statistics) to achieve best closure.
+ \item Here binning as: \MHT, \NJets (clear some trends at high \BTags visible) $\rightarrow$ try 3D binning \MHT, \NJets \& \BTags
+\end{itemize}
+\end{frame}
+
 \begin{frame}
  \frametitle{Lost single $\mu/e$ Control-Sample Issue}
   \begin{columns}
     \begin{column}{0.5\textwidth}
      \begin{itemize}
-  \item Many extrem phase-space bins suffer from no expected single $\mu/e$ control-sample. Very true for most sensitive search bins.
+  \item Many extreme phase-space bins will suffer from no expected single $\mu/e$ control-sample. Very true for most sensitive search bins.
    \item Approach to solve this for classical lost-lepton method:
   \end{itemize}
-  
+ 
     \end{column}
   \begin{column}{0.5\textwidth}
-  
+ 
   \begin{overpic}[width=1\textwidth]{figures/lost-lepton_classic/Simon/Mean_Prediction.pdf} %\put(100,60){\rotatebox{-90}{\scriptsize New Parametrization Variables}}    
       \end{overpic}
     \end{column}
   \end{columns}
   \begin{itemize}
-   \item 0 $\mu/e$ control-sample get a predictino of 0 with an upper uncertainty of 1.82 * avarge weight from MC in that particular bin
-   \item Even availabe MC statistics are not sufficient in some of thous bins. Combine avarge weight in bins with similar prediction (integrate over \BTags!?)
+   \item 0 $\mu/e$ control-sample bins: prediction of 0 with upper uncertainty of 1.82 * average weight from MC in that particular bin
+   \item Available MC statistics are not sufficient in some bins. Combine average weight in bins with similar prediction (integrate \BTags!?)
+   \item In addition: Weights in each bin vary (factor 2-3) sufficient stats desirable!
  \end{itemize}
 
 \end{frame}
@@ -166,7 +224,7 @@
     \end{enumerate}
     \end{itemize}
     \begin{enumerate}
-     \item can be taken from MC 
+     \item Can be taken from MC
      \item Measure from Data
     \end{enumerate}
   \end{column}
@@ -191,7 +249,7 @@
   \item For each SL data event we do:
  \end{itemize}
  \begin{overpic}[width=\textwidth]{figures/Sketches/Extrapolation_FullProcedure.png}
-   \put(25,40){\textcolor{white}{\large \bf MC}}
+%    \put(20,10){\textcolor{black}{\small \bf Arne}}
  \end{overpic}
  \begin{itemize}
   \item Integrating over all events $\rightarrow$ full \MHT shape for a given \HT-\NJets bin
@@ -202,7 +260,7 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{Extrapolation in \MHT from calssical estimation method}
+ \frametitle{Extrapolation in \MHT from classical estimation method}
  \begin{itemize}
   \item Extrapolation gives low-to-high \MHT ratios
  \end{itemize}
@@ -275,8 +333,8 @@
   \begin{itemize}
   \small
    \item Shift in prediction of Boxes 4-5
-   \item Box 6 underpredicted with extrapolation
-   \item Reduction of uncertainty factor 2-4 $\rightarrow$ factor 4-16 gain in stats. 
+   \item Box 6 under predicted with extrapolation
+   \item Reduction of uncertainty factor 2-4 $\rightarrow$ factor 4-16 gain in stats.
   \end{itemize}
 
  \end{column}
@@ -396,7 +454,7 @@
 \begin{frame}
  \begin{block}{}
  \centering
- \Large The $\tau_{Had}$ Background
+ \Large The $\tau_{Had}$ Background\\ \small Ahmad, Ken, Hongxuan, Rishi \& Keith
  \end{block}
 \end{frame}
 
@@ -411,7 +469,7 @@
          \item Replace muon $\pt$ by tau response template from MC
          \item Recalculate \HT, \MHT, \NJets \& \met
          \item Also \BTags are recomputed using mistag rate of \hadtau jets
-         \item Corections:
+         \item Corrections:
          \begin{itemize}
           \item $\mu$ acceptance [\HT,\MHT,\NJets]
           \item $\mu$ trigger, reco/ID, iso, efficiencies [\pt, activity]
@@ -420,7 +478,7 @@
          \end{itemize}
 
         \end{itemize}
-        Note: Isotrack veto not taken into account yet, need to correct predictino for isotrack efficiency.
+        Note: Isotrack veto not taken into account yet, need to correct prediction for isotrack efficiency.
         
 
         
@@ -494,11 +552,11 @@
   \item Check consistency of:
   \item \uline{Expectation} from MC truth:
   \begin{itemize}
-   \item Consider \hadtau background events wih at least one $\tau$ within $\mu$ acceptance
+   \item Consider \hadtau background events with at least one $\tau$ within $\mu$ acceptance
   \end{itemize}
   \item \uline{Data-Driven Prediction:}
   \begin{itemize}
-   \item Start with gen $\mu$ directly from W decay within accpetance
+   \item Start with gen $\mu$ directly from W decay within acceptance
    \item No $\mu$ corrections
   \end{itemize}
  \end{itemize}
@@ -520,7 +578,7 @@
     \item $\NJets\ge4$
     \item No $\Delta\phi$ cuts
    \end{itemize}
-   \item Still 7\% underprediction, but trend vs search variables improved
+   \item Still 7\% under prediction, but trend vs search variables improved
   \end{itemize}
   \end{column}
   \begin{column}{0.33\textwidth}
@@ -593,7 +651,7 @@
   \begin{itemize}
    \item $\Delta\phi(\MHT,j_{1})>0.5$
    \item $\Delta\phi(\MHT,j_{2})>0.5$
-   \item $\Delta\phi(\MHT,j_{3})>0.3$ 
+   \item $\Delta\phi(\MHT,j_{3})>0.3$
    \item Still 10\% non-closure, but closure is stable w.r.t. search variables
   \end{itemize}
   \end{column}
@@ -667,9 +725,9 @@
  \begin{columns}
   \begin{column}{0.40\textwidth}
    \begin{itemize}
-    \item Metod aims at using direct \wtomu events. 
+    \item Method aims at using direct \wtomu events.
     \item Reality includes \wtotautomu events
-    \item Correcting as a function of $\mu$ \pt insuffiant
+    \item Correcting as a function of $\mu$ \pt insufficient
     \item Move to: 3D binning: \HT,\MHT\&\NJets
    \end{itemize}
 
@@ -725,27 +783,287 @@
  \end{columns}
 \end{frame}
 
+% \begin{frame}
+%  \frametitle{To Do List:}
+%  \begin{itemize}
+%   \item Reverting simplification steps, put in again:
+%   \begin{itemize}
+%    \item Lepton veto
+%    \item Use reconstructed \& isolated $\mu$ control sample
+%    \item Apply out of acceptance correction
+%   \end{itemize}
+%   \item Merge effort by Rishi to scan entire template for each event to in crease precision  (bootstrap method)
+%   \item Include \wpj
+%   \item Include isolated track correction
+%  \end{itemize}
+%  
+%   \begin{block}{}
+%  \centering
+%  We will try to sort out most of these topics this week
+%  \end{block}
+% \end{frame}
+\section{Efficiencies}
 \begin{frame}
- \frametitle{To Do List:}
+ \begin{block}{}
+ \centering
+ \Large Lepton/Isolated Track Efficiencies
+ \end{block}
+\end{frame}
+
+\subsection{Setup: Leptons}
+\begin{frame}
  \begin{itemize}
-  \item Reverting simplification steps, put in again:
-  \begin{itemize}
-   \item Lepton veto
-   \item Use reconstructed \& isolated $\mu$ control sample
-   \item Apply out of acceptance correction 
-  \end{itemize}
-  \item Merge effort by Rishi to scan entire template for each event to in crease precision  (bootstrap method)
-  \item Include \wpj
-  \item Include isolated track correction
+  \item All \wpj \& \ttbar background estimation method rely on lepton efficiencies:
  \end{itemize}
  
-  \begin{block}{}
- \centering
- We will try to sort out most of these topics this week
- \end{block}
+\begin{tabular}{|r|l|l|l|}
+  \hline
+  Typ &Clas. Lost-Lepton & \MHT Extra.& \hadtau Method \\
+  \hline
+  Iso\&Reco/Id $\mu$ & Yes & Yes& Yes \\
+  Iso\&Reco/Id e & Yes & Yes & No \\
+  \hline
+  Iso\&Reco/Id $\mu$ Track& Yes & Yes& Yes \\
+  Iso\&Reco/Id e Track & Yes & Yes & No \\
+  Iso\&Reco/Id $\pi$ Track & (Yes) & (Yes) & Yes \\  
+  \hline
+\end{tabular}
+\begin{itemize}
+ \item The classical lost-lepton and \hadtau method are sharing the same binned efficiencies for reco/id \& iso of $\mu$
+ \item Plan:
+ \begin{itemize}
+  \item Use Tag\&Probe validation and Data/MC scale factors as much as possible
+  \item Efforts being conducted in deriving Tag\&Probe efficiencies by ourself (Arne\&Florent)
+  \item $\mu/e$ ID efficiencies tricky: Might use POG or combined SUSY effort Tag\&Probe efficiencies
+  \item Isolated track eff. need to be derived by us.
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Iso Efficiencies}
+
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe $\mu$ Iso Efficiencies}
+   \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item $\mu$ Iso \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/ttbarwpjTruth/MuIsoPTActivity.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ Iso DY eff. \\(Tag \& Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/MuIsoTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ iso radio
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/MuIsoPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+\begin{itemize}
+ \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
+ \item Lepton \pt and Activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
+ \item Overall the efficiencies from DY are slightly higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
+\end{itemize}
+\end{frame}
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe e Iso Efficiencies}
+   \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item e Iso \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/ttbarwpjTruth/ElecIsoPTActivity.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e Iso DY eff. \\(Tag \& Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/ElecIsoTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e iso radio
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/ElecIsoPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+\begin{itemize}
+ \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
+ \item Lepton \pt and Activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
+ \item Overall the efficiencies from DY are higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{ID/Reco Efficiency Confirmation Plans}
+ \begin{itemize}
+  \item $\mu/e$ ID efficiencies:
+  \begin{itemize}
+   \item Straight forward: Start with reconstructed lepton as probe
+  \end{itemize}
+  \item $\mu/e$ Reco efficiencies:
+  \begin{itemize}
+   \item Choice of probe object problematic: Want to have most 'basic' object e.g. for electrons: Start with photons (miniAOD photons start at 14 GeV$\rightarrow$ use AOD)
+   \item Most basic available $\mu$ object: Charged track (miniAOD) large/overwhelming background probably hopeless
+   \item Large effort needed. If necessary fall back to POG efficiencies for scaling factors!?
+  \end{itemize}
  
 
+ \end{itemize}
+
 \end{frame}
+\subsection{Setup: Isolated Tracks(e/$\mu$)}
+\begin{frame}
+ \frametitle{Isolated Track: Elec \& Muon Tracks}
+ \begin{itemize}
+ \item Muon, Electron Tracks:
+ \begin{itemize}
+  \item Charged PFCand, $\pt>5 GeV$, $\mt<100 GeV$ ask for pdgID=11,13
+  \item Iso: $\Sigma ( \pt\text(Tracks)\Delta R<0.3 )/(\pt Track) < 0.2$ (with $dz<0.05$)
+ \end{itemize}
+ \item Tag \& Probe:
+ \begin{itemize}
+  \item Tag: Isolated $\mu$/e (high purity RA2b definition)
+  \item Probe:
+ \begin{itemize}
+  \item Desirable Probe: chargedPFCands $\rightarrow$ iso Mu/Elec Track (not possible too high background)
+  \item Instead Probe: chargedPFCands with pdgID=11,13 (cant test for pdgID)
+  \item Still Small statistics due to deriving efficiencies of isolated tracks to failing isolated leptons (not applied yet)
+  \item Problem: No $\mt<100 GeV$ applicable (maybe treat tag lepton as neutrino emulate \wtolnu)
+ \end{itemize}
+  \end{itemize}
+ \end{itemize}
+\end{frame}
+\subsection{Isolated $\pi$ Tracks}
+\begin{frame}
+\begin{columns}
+ \begin{column}{0.65\textwidth}
+  \begin{itemize}
+   \item Tag\&Probe on chargedPFCands has too high bkg
+   \item Idea: Use similarities of isolated $\mu/e$ \& $\pi$ tracks (to be evaluated)
+  \end{itemize}
+
+ \end{column}
+ \begin{column}{0.35\textwidth}
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Sketches/TauDecays.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \end{column}
+\end{columns}
+\begin{itemize}
+ \item $\tau\rightarrow\Pi- + \nu(17\%)$ These should behave like $\mu/e$ tracks!? If so, give us rough idea on track eff. uncertainty
+   \item $\tau\rightarrow\pi- + 1/2\pi0 + \nu(53\%)$ Still only one charged track. Similar to $\tau\rightarrow\pi- + \nu$ ? If so same approach, inflated uncertainty.
+   \item What fraction of 3 prong $\tau$ get selected by isolated track? Rather small 10\% if so assign high uncertainty practical.
+\end{itemize}
+\end{frame}
+\section{Conclusions}
+\begin{frame}
+ \frametitle{Conclusions 1}
+ \begin{itemize}
+  \item Classical Lost-Lepton (Arne, Simon):
+  \begin{itemize}
+   \item All pieces (eg. isolated track veto) incorporated
+   \item Closure in good shape! Ongoing improvements
+   \item Systematic uncertainty calculations need to be included
+   \item Deriving average weight in empty bins
+  \end{itemize}
+  \item \MHT Extrapolation (Jack, Owen):
+  \begin{itemize}
+   \item Closes well (judgment limited by statistics) Define test region
+   \item Reduction by factor of 2-4 in respect to classical lost lepton method!
+   \item Effective control sample for the previously empty 5 bins!
+   \item How do we incorporate the isolated track veto?
+   \item Implementation of systematic uncertainties needs to be done
+   \item \wpj needs to be added (if problematic stick to \ttbar enriched region ($2\ge\BTags$))
+   \item Applicable to \hadtau?
+   \item Need lepton/\met trigger. How low can we go? Need extension of classical lost-lepton method to $\MHT = 125 \gev$
+   \item Implementation in combine
+  \end{itemize}
+ \end{itemize}
+\end{frame}
+\begin{frame}
+ \frametitle{Conclusions 2}
+ \begin{itemize}
+  \item \hadtau Method (Ahmad, Ken, Hongxuan, Rishi, Keith)
+  \begin{itemize}
+   \item Significant non-closure investigation on going
+   \item Move back to reco/iso lepton
+   \item Apply reco/iso $\mu$ efficiencies
+   \item Reapply acceptance correction to predict the whole \hadtau background
+   \item Merge Rishi effort of scanning entire template for each event for higher precision
+   \item Include \wpj
+   \item Include isolated track veto
+  \end{itemize}
+  \item Efficiencies (Arne, Florent, Simon):
+  \begin{itemize}
+   \item Use MC efficiencies for predictions only
+   \item Optimization of binning and parametrization ongoing (e.g. acceptance efficiencies)
+   \item Use Tag\&Probe to validate MC eff. in data (derive uncertainties, possible scale factors)
+   \item Tag\&Probe status:
+   \begin{itemize}
+    \item $\mu/e$ efficiencies in good shape
+    \item Reco/ID under study
+    \item Isolated tracks work in progress
+   \end{itemize}
+
+  \end{itemize}
+
+
+ \end{itemize}
+
+\end{frame}
+
 
 
 
@@ -1132,32 +1450,7 @@
 \end{itemize}
 \end{frame}
 
-\subsection{IsoTrack Implementation}
-\begin{frame}
- \begin{block}{}
- \centering
- \Large Isolated e/$\mu$ Tracks: Implementation in Lost-Lepton Method
- \end{block}
-\end{frame}
 
-\begin{frame}
- \frametitle{Classical Lost-Lepton Estimation with Isotrack Reduction}
- \begin{itemize}
-  \item Isolated track (mainly pdgID=11,13) reduce lost-lepton background even further 22\% reduction (on baseline)
-  \item Current idea of including this reduction in method:
-  \begin{itemize}
-   \item Apply full classical lost-lepton method. In the very end correct for isolated track reduction of lost-lepton background ($C_{IsoTrack}$)
-   \item Problem: Mixture of (classical) lepton efficiencies and isolated track efficiencies. (note: correcting relative to single lep. control-sample)
-   \item Correction of lost-lepton background depends not only on isolated track efficiencies but also on lepton eff.
-   \item $p_{full}(\epsilon_{ll},\epsilon_{IsoTrackRel}) = p_{ll}(\epsilon_{ll}) * (1-C_{IsoTrack}(\epsilon_{ll},\epsilon_{IsoTrackRel}))$
-   \item $C_{IsoTrackRel}(\epsilon_{ll},\epsilon_{isotrack}) = \frac{(1-\epsilon_{ll}) * \epsilon_{IsoTrack}}{\epsilon_{ll}} (1-\epsilon_{ll}) * \epsilon_{IsoTrack} / \epsilon_{ll}$
-   \item Sample to derive $C_{IsoTrackRel}$ consists of only failing (lost-lepton) events.
-   \item Deriving/estimating uncertainties complicated. Note: $\epsilon_{ll}(\epsilon_{e/\mu acc,reco,iso,\mt})$
-  \end{itemize}
-
- \end{itemize}
-
-\end{frame}
 \subsection{Setup: Isolated Tracks(e/$\mu$)}
 \begin{frame}
  \frametitle{Isolated Track: Elec \& Muon Tracks}
@@ -1263,7 +1556,7 @@
 
 % --------------------------------------------------
 
-\setcounter{framenumber}{18}
+\setcounter{framenumber}{33}
 
 \end{document}
 
