@@ -1,0 +1,869 @@
+\documentclass{beamer}
+%kdfj
+\usetheme[secheader]{Boadilla}
+\setbeamertemplate{footline} {
+  %\leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hspace*{2ex}\insertshortauthor~~(adraeger@cern.ch)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshorttitle,~
+    \insertshortdate{}\hspace*{1em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[percent]{overpic}
+\usepackage{tikz}
+%\usetikzlibrary{positioning,fit,shapes.arrows,shapes.geometric,shapes.misc,shapes.multipart,calc,shadows}
+\tikzstyle{every picture}+=[remember picture]
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{wasysym}
+\usepackage{marvosym}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
+
+\input{definitions.tex}
+\newcommand{\lib}[1]{\tiny #1}
+
+% Title etc
+\vskip2cm
+\title[RA2/b Meeting]{Status of the \wpj \& \ttbar Working Group}
+\subtitle{Classical Lost-Lepton Method\\ \MHT Extrapolation Approach\\ \hadtau Estimation Method\\ Lepton/Isolated Track Efficiencies}
+\author[Arne-Rasmus~Dr\"ager]{
+  Arne-Rasmus~Dr\"ager(Uni Hamburg)
+}
+\date[June 10, 2015]{June 10, 2015
+  \vskip1cm
+  \begin{center}
+    \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
+    \hskip8cm
+    \includegraphics[height=1.5cm]{CMSlogo.jpeg}
+  \end{center}
+}
+
+% pdflatex packages
+\hypersetup{bookmarks=true}
+\hypersetup{unicode=false}
+\hypersetup{pdftitle={Lost-Lepton}}
+\hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
+
+
+\begin{document}
+% ==================================================
+% --------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Classical Lost-Lepton Method}
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Classical Lost-Lepton Method\\  \small Arne, Christian \& Simon
+ \end{block}
+\end{frame}
+\subsection{Concept}
+\begin{frame}
+\frametitle{Classical Lost-Lepton Procedure}
+ \begin{center}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+%             \draw[blue,ultra thick,rounded corners] (0.40,0.01) rectangle (0.55,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+\end{tikzpicture}
+ \end{center}
+\end{frame}
+\begin{frame}
+ \frametitle{Efficiencies parametrization}
+ \begin{itemize}
+  \item Choice of Efficiencies parametrization is very crucial for the success not only of the classical lost-lepton method but also for extrapolation (verification) and \hadtau estimation method.
+  \item Isolation, reconstruction of electron \& muon and also isolated electron, muon \& pion tracks are parametrized in \pt and Activity
+  \item Activity has the beauty to be directly transferable from verification topology DY $\rightarrow$ \ttbar \& \wpj signal region (see isolation in backup)
+  \item Acceptance needs to come from MC parametrized in \MHT, \HT \& \NJets
+  \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+%  \frametitle{Closure test in each search bin}
+\begin{columns}
+ \begin{column}{0.5\textwidth}
+ \begin{center}
+  Closure Test
+ \end{center}
+
+  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{column}
+ \begin{column}{0.5\textwidth}
+ \begin{center}
+  Control-Sample vs Expectation
+ \end{center}
+  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/ControlSample/CS_VS_Expectation__Bin__MCExTotal_vs_MCMuCS+MCElecCS__Baseline_conflict-20150519-170144.pdf}      \put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+ \end{column}
+\end{columns}
+\begin{itemize}
+ \item Overall good closure observed in all search bins.
+ \item We expect about two single lepton control sample events for each lost lepton!
+ \item In extreme phase-space low statistics of control-sample expected for 10 \fb! Maybe mention here \MHT extrapolation method? If not leave it out or mention that we have an idea how to treat this (see backup to come from Simon). Note these plots will be updated with plots form Simon asap.
+ 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{To do for classical lost-lepton method}
+ \begin{itemize}
+  \item Lost-lepton method is in good shape. Classical lepton veto, and isolated track veto incorporated
+  \item Plan is: Use Efficiencies from MC for prediction. Use Tag and probe in MC and Data to obtain uncertainties and if necessary scale factors.
+  \item Muon and electron isolation Efficiencies in good shape (see backup) as well as ID check.
+  \item Reco under study but can be taken from POG see backup for non dependency on \HT,\MHT,\NJets,\BTags UPDATE ME
+  \item Isolated tracks: This is under heavy study right now. If i get some decent results we should show them if not make the statement: Tag and probe method shows first promising results enabling us direct validation in data using DY events. (Note details that we plan to do this probably only for iso e and mu tracks and will study similarities to pion tracks for indirect validation)
+ \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Studies \& Documentation of Progress
+ \end{block}
+\end{frame}
+
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Isolated Tracks: Total Eff. \\ disregarding if isolated lepton as well
+ \end{block}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: $\mu$ tracks}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj of all leptons ignoring if lepton was an isolated lepton as well this is not the reduction used in the prediction!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionMuIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionMuIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionMuIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionMuIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionMuIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionMuIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: e tracks}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj of all leptons ignoring if lepton was an isolated lepton as well this is not the reduction used in the prediction!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionElecIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionElecIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionElecIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionElecIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionElecIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionElecIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: $\pi$ tracks}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj of all leptons ignoring if lepton was an isolated lepton as well this is not the reduction used in the prediction!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionPionIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionPionIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionPionIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionPionIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionPionIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/TotalIsoTrackEffallLeptons/ExpectationReductionPionIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Isolated Tracks: Reduction of the lost-lepton background
+ \end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: Combined Reduction for any  \#1 track selection}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj only consider the reduction on top of isolated lepton veto!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+% \begin{itemize}
+%  \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+% \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: $\mu$ tracks}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj of all leptons ignoring if lepton was an isolated lepton as well this is not the reduction used in the prediction!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionMuIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionMuIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionMuIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionMuIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionMuIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionMuIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: e tracks}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj of all leptons ignoring if lepton was an isolated lepton as well this is not the reduction used in the prediction!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionElecIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionElecIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionElecIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionElecIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionElecIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionElecIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: $\pi$ tracks}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj of all leptons ignoring if lepton was an isolated lepton as well this is not the reduction used in the prediction!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionPionIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionPionIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionPionIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionPionIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionPionIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionAnyAmountOfTrackFound/ExpectationReductionPionIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Isolated Tracks: Exactly 1 Track Reduction
+ \end{block}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Isolated Track veto Performance: Combined Reduction for exactly 1 track selection}
+ \begin{itemize}
+  \item Efficiencies derived form \ttbar \& \wpj only consider the reduction on top of isolated lepton veto!
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionIfOnly1TrackFound/ExpectationReductionIsoTrackHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionIfOnly1TrackFound/ExpectationReductionIsoTrackMHTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionIfOnly1TrackFound/ExpectationReductionIsoTrackBTagEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionIfOnly1TrackFound/ExpectationReductionIsoTrackNJetsEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionIfOnly1TrackFound/ExpectationReductionIsoTrackPTEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.32\textwidth]{figures/workinprogress/IsoTrack/ReductionIfOnly1TrackFound/ExpectationReductionIsoTrackActivityEff.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+% \begin{itemize}
+%  \item Code: EffMaker replace Expectation==1 by genLeptons==1 
+% \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \begin{block}{}
+ \centering
+ \Large Backup
+ \end{block}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe $\mu$ Iso Efficiencies}
+   \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item $\mu$ Iso \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/ttbarwpjTruth/MuIsoPTActivity.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ Iso DY eff. \\(Tag \& Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/MuIsoTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ iso radio
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/MuIsoPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+\begin{itemize}
+ \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
+ \item Lepton \pt and activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
+ \item Overall the efficiencies from DY are slightly higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe e Iso Efficiencies}
+   \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item e Iso \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/ttbarwpjTruth/ElecIsoPTActivity.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e Iso DY eff. \\(Tag \& Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/ElecIsoTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e iso radio
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/ElecIsoPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+\begin{itemize}
+ \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
+ \item Lepton \pt and activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
+ \item Overall the efficiencies from DY are higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
+\end{itemize}
+\end{frame}
+
+\subsection{Setup: Isolated Tracks(e/$\mu$)}
+\begin{frame}
+ \frametitle{Isolated Elec \& Muon Tracks}
+ \begin{itemize}
+ \item Muon, Electron Tracks:
+ \begin{itemize}
+  \item Charged PFCand, $\pt>5 GeV$, $\mt<100 GeV$ ask for pdgID=11,13
+  \item Iso: $\Sigma ( \pt\text(Tracks)\Delta R<0.3 )/(\pt Track) < 0.2$ (with $dz<0.05$)
+ \end{itemize}
+ \item Tag \& Probe:
+ \begin{itemize}
+  \item Tag: Isolated $\mu$/e (high purity RA2b definition)
+  \item Probe:
+ \begin{itemize}
+  \item Desirable Probe: chargedPFCands $\rightarrow$ iso Mu/Elec Track (not possible too high background)
+  \item Instead Probe: chargedPFCands with pdgID=11,13 (cant test for pdgID)
+  \item Still small statistics due to deriving efficiencies of isolated tracks to failing isolated leptons (not applied yet)
+  \item Problem: No $\mt<100 GeV$ applicable (maybe treat tag lepton as neutrino emulate \wtolnu)
+ \end{itemize}
+  \end{itemize}
+ \end{itemize}
+\end{frame}
+\subsection{Isolated $\pi$ Tracks}
+\begin{frame}
+\begin{columns}
+ \begin{column}{0.65\textwidth}
+  \begin{itemize}
+   \item Tag\&Probe on chargedPFCands has too high bkg
+   \item Idea: Use similarities of isolated $\mu/e$ \& $\pi$ tracks (to be evaluated)
+  \end{itemize}
+
+ \end{column}
+ \begin{column}{0.35\textwidth}
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Sketches/TauDecays.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+ \end{column}
+\end{columns}
+\begin{itemize}
+ \item $\tau\rightarrow\pi^{-} + \nu (17\%)$ These should behave like $\mu/e$ tracks!? If so, give us rough idea on track eff. uncertainty
+   \item $\tau\rightarrow\pi^{-} + 1/2\pi0 + \nu (53\%)$ Still only one charged track. Similar to $\tau\rightarrow\pi^{-} + \nu$ ? If so same approach, inflated uncertainty.
+   \item What fraction of 3 prong $\tau$ get selected by isolated track? Rather small (10\%), if so, assigning high uncertainty would be practical.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Can we use POG reco/ID efficiencies instead?}
+ \begin{itemize}
+  \item POG will provide efficiencies not as a funcion of Activity and \pt
+  \item Can we still use theirs for validation? Any intrinsic dependency when going to our extrem search regions?
+  \item Check if reco/id eff. stable vs. \HT 
+ \end{itemize}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoHT1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoHT1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Electron and muon reconstruction and ID efficiencies are stable vs \HT
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Can we use POG reco/ID efficiencies instead?}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoMHT1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoMHT1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Electron and muon reconstruction and ID efficiencies are stable vs \MHT
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Can we use POG reco/ID efficiencies instead?}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoNJets1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoNJets1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Electron and muon reconstruction and ID efficiencies are stable vs \NJets
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Can we use POG reco/ID efficiencies instead?}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoBTag1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoBTag1D.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+\begin{itemize}
+ \item Electron and muon reconstruction and ID efficiencies are rather stable vs \BTags
+\end{itemize}
+
+\end{frame}
+
+
+% --------------------------------------------------
+
+\setcounter{framenumber}{32}
+
+\end{document}
+
