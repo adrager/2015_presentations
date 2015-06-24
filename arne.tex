@@ -34,12 +34,12 @@
  \vskip4cm
 % \title[RA2/b Meeting]{Absch\"atzung des $W$ und \ttbar Untergrundes f\"ur die Suche nach neuer Physik im Endzustand mit Jets und fehlender Transversalenergie bei CMS}
 %  \subtitle{Studien mit 13TeV MC}
-\title[DPG Meeting Wuppertal]{Measurment of lost-leptons from \ttbar and \wpj events at a search for physics beyond the SM at CMS detector}
+\title[Workgroup Meeting]{Measurment of lost-leptons from \ttbar and \wpj events at a search for physics beyond the SM at CMS detector}
 \subtitle{Studies performed on 13 TeV MC}
 \author[Arne-Rasmus~Dr\"ager]{
-  \underline{Arne-Rasmus~Dr\"ager}, Christian Sander \\(Uni Hamburg)
+  Arne-Rasmus~Dr\"ager
 }
-\date[March 05, 2015]{March 05, 2015\\ DPG Fr\"uhjahrstagung Wuppertal
+\date[June 25, 2015]{June 25, 2015\\ Uni-HH Workgroup Meeting
    \vskip0.7cm
   \begin{center}
     \includegraphics[height=1.5cm]{UHH-Logo_2010_1000px_WhiteBackground.png}
@@ -171,7 +171,7 @@
  \end{center}
  \begin{itemize}
   \item Select control-sample (CS) exactly one well isolated $e/\mu$ within acceptance cuts
-  \item Weight each CS event according to efficiencies for each identification step
+  \item Weight each CS event according to efficiencies for each identification step \& correct for isolated track reduction
  \end{itemize}
 
 \end{frame}
@@ -221,7 +221,16 @@
  \end{center}
 \end{frame}
 
+\begin{frame}
+\centering
+ \frametitle{Predicting lost $e/\mu$ using single $\mu$ CS isolated track reduction}
+ \begin{center}
+ \begin{overpic}[width=0.80\textwidth]{figures/Sketches/LostLeptonSketch_Prediction_IsoTrackReduction.pdf}
+%   \put(0,-3){\rotatebox{-0}{\normalsize Expectation \& Prediction using single $\mu$ control-sample (CS)}}
+ \end{overpic}
 
+ \end{center}
+\end{frame}
 
 
 
@@ -324,17 +333,17 @@
   \begin{columns}
     \begin{column}{0.5\textwidth}
      \centering
-      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure__HT__MCEx_vs_MuPrMTWDiLepIsoTrackReduced+ElecPrMTWDiLepIsoTrackReduced__Baseline.pdf}
      \end{overpic}
-           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure__MHT__MCEx_vs_MuPrMTWDiLepIsoTrackReduced+ElecPrMTWDiLepIsoTrackReduced__Baseline.pdf}
      \end{overpic}
     \end{column}
     \begin{column}{0.5\textwidth}
       \centering
-            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure__NJets__MCEx_vs_MuPrMTWDiLepIsoTrackReduced+ElecPrMTWDiLepIsoTrackReduced__Baseline.pdf}
      %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
      \end{overpic}
-     \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure_Combined__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton-closure/Closure__BTags__MCEx_vs_MuPrMTWDiLepIsoTrackReduced+ElecPrMTWDiLepIsoTrackReduced__Baseline.pdf}
 %       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
       \end{overpic}
     \end{column}
@@ -352,11 +361,11 @@
   \item Adaptation and improvements of a method to estimate lost $e/\mu$ which has been used in 7 \& 8 TeV analysis has been performed:
   \begin{itemize}
    \item Exploiting now also the single e CS
+   \item Including isoalted $\mu$, e $\pi$ track veto on top of isoalted $\mu$, e veto
    \item Extension to exclusive \BTags regions $\rightarrow$ 4 dimension search regions
-   \item Already good performance visible for wide range of phase space
-   \item The efficiency parametrization and binning has been studied in great detail (work ongoing)
+   \item The efficiency parametrization and binning has been studied in great detail
   \end{itemize}
-
+  \item Currently preparing for Tag\&Probe efficiency validation in data
   \end{itemize}
 %
 %   \item The lost-lepton method has been used for 7 \& 8 TeV analysis in a similar way
@@ -414,18 +423,16 @@
 \begin{frame}
  \frametitle{Pred. vs Exp. for all 72 exclusive search bins}
   \begin{center}
- \begin{overpic}[width=0.50\textwidth]{figures/lost-lepton-closure/Closure_SearchBins_Separated__Bin__MCEx_vs_Pred__Search_Bins.pdf}
+ \begin{overpic}[width=0.50\textwidth]{figures/lost-lepton-closure/Closure__Bin__MCEx_vs_MuPrMTWDiLepIsoTrackReduced+ElecPrMTWDiLepIsoTrackReduced__Baseline.pdf}
      %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
      \end{overpic}
  \end{center}
  \begin{itemize}
   \item Overall good agreement for most of the search bins
-  \item Low \BTags region needs further improvement (first 18 bins)
-  \item Investigate fluctuations in regions of low control-sample statistics
  \end{itemize}
 \end{frame}
 % --------------------------------------------------
 
-\setcounter{framenumber}{12}
+\setcounter{framenumber}{13}
 
 \end{document}
