@@ -27,6 +27,7 @@
 \usepackage{marvosym}
 \usepackage{amssymb}
 \usepackage{xcolor}
+\usepackage{tabularx}
 \usepackage[normalem]{ulem}
 \graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
 
@@ -35,8 +36,8 @@
 
 % Title etc
 \vskip2cm
-\title[RA2/b Meeting]{Status of the \wpj \& \ttbar Working Group}
-\subtitle{Classical Lost-Lepton Method\\ \MHT Extrapolation Approach\\ \hadtau Estimation Method\\ Lepton/Isolated Track Efficiencies}
+\title[RA2/b Meeting]{Update On Validation of Lepton Efficiencies Using a Tag\&Probe Method}
+\subtitle{Lepton Isolation\\ Lepton ID/Reconstruction\\ Isolated Tracks}
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager(Uni Hamburg)
 }
@@ -67,7 +68,7 @@
 \begin{frame}
  \begin{block}{}
  \centering
- \Large Classical Lost-Lepton Method\\  \small Arne, Christian \& Simon
+ \Large Tack\&Probe on Isolated $e,\mu,\pi$ Tracks
  \end{block}
 \end{frame}
 \subsection{Concept}
@@ -75,7 +76,7 @@
 \frametitle{Classical Lost-Lepton Procedure}
  \begin{center}
 \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_Prediction_IsoTrackReduction.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
 %         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
@@ -85,56 +86,175 @@
  \end{center}
 \end{frame}
 \begin{frame}
- \frametitle{Efficiencies parametrization}
+ \frametitle{Where do we apply the isolated Track veto?}
  \begin{itemize}
-  \item Choice of Efficiencies parametrization is very crucial for the success not only of the classical lost-lepton method but also for extrapolation (verification) and \hadtau estimation method.
-  \item Isolation, reconstruction of electron \& muon and also isolated electron, muon \& pion tracks are parametrized in \pt and Activity
-  \item Activity has the beauty to be directly transferable from verification topology DY $\rightarrow$ \ttbar \& \wpj signal region (see isolation in backup)
-  \item Acceptance needs to come from MC parametrized in \MHT, \HT \& \NJets
+  \item Isolated track veto is applied on top of isolated lepton veto
+  \begin{itemize}
+   \item We are interested in the fraction of lost isolated electron and muon events which are selected by the isolated track veto
   \end{itemize}
-
-\end{frame}
-
-
-
-\begin{frame}
-%  \frametitle{Closure test in each search bin}
-\begin{columns}
- \begin{column}{0.5\textwidth}
- \begin{center}
-  Closure Test
- \end{center}
-
-  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
-      \end{overpic}
- \end{column}
- \begin{column}{0.5\textwidth}
- \begin{center}
-  Control-Sample vs Expectation
- \end{center}
-  \begin{overpic}[width=.97\textwidth]{figures/lost-lepton_classic/ControlSample/CS_VS_Expectation__Bin__MCExTotal_vs_MCMuCS+MCElecCS__Baseline_conflict-20150519-170144.pdf}      \put(18,36.2){\color{red}\line(1,0){75}}
-      \end{overpic}
- \end{column}
-\end{columns}
-\begin{itemize}
- \item Overall good closure observed in all search bins.
- \item We expect about two single lepton control sample events for each lost lepton!
- \item In extreme phase-space low statistics of control-sample expected for 10 \fb! Maybe mention here \MHT extrapolation method? If not leave it out or mention that we have an idea how to treat this (see backup to come from Simon). Note these plots will be updated with plots form Simon asap.
- 
-\end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{To do for classical lost-lepton method}
- \begin{itemize}
-  \item Lost-lepton method is in good shape. Classical lepton veto, and isolated track veto incorporated
-  \item Plan is: Use Efficiencies from MC for prediction. Use Tag and probe in MC and Data to obtain uncertainties and if necessary scale factors.
-  \item Muon and electron isolation Efficiencies in good shape (see backup) as well as ID check.
-  \item Reco under study but can be taken from POG see backup for non dependency on \HT,\MHT,\NJets,\BTags UPDATE ME
-  \item Isolated tracks: This is under heavy study right now. If i get some decent results we should show them if not make the statement: Tag and probe method shows first promising results enabling us direct validation in data using DY events. (Note details that we plan to do this probably only for iso e and mu tracks and will study similarities to pion tracks for indirect validation)
+  \item Rejection efficiency derived on simulated \ttbar \& \wpj events applied to data
+  \item Need to validate in data using Tag\&Probe
  \end{itemize}
+ \begin{center}
+ MC truth vs Tag\&Probe efficiencies technic
+ \end{center}
+ \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+ \hline
+  Use gen information to select objects & Select object by fitting signal \& bkg (e.g. Z mass peak) \\ \hline
+  Eff.: Start with non detector object gen particle & Eff.: Start with detector object. (most basic desirable) BUT need to have reasonable ratio signal/bkg for mass peak fit\\
+  \hline
+ \end{tabular}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Isolated Track Definition}
+\begin{itemize}
+ \item Muon, Electron Tracks:
+ \begin{itemize}
+  \item Charged PFCand, $\pt>5 \gev, |\eta|<2.5$, $\mt<100 \gev$, ask for pdgID=11,13
+  \item Iso: $\Sigma ( \pt\text(Tracks)\Delta R<0.3 )/(\pt Track) < 0.2$ (with $dz<0.1$)
+ \end{itemize}
+ \item Pion Tracks:
+ \begin{itemize}
+  \item Charged PFCand, $\pt>10 \gev, |\eta|<2.5$, $\mt<100 \gev$, ask for pdgID=211
+  \item Iso: $\Sigma ( \pt\text(Tracks)\Delta R<0.3 )/(\pt Track) < 0.1$ (with $dz<0.1$)
+ \end{itemize}
+ \end{itemize}
+\end{frame}
+\begin{frame}
+ \frametitle{Transfer from \wpj \& \ttbar to DY events}
+ \begin{itemize}
+  \item Need to account for kinematic differences in efficiencies parametrization: Use \pt Activity around tracks
+  \begin{itemize}
+   \item Problem: $\mu \& e$ tracks defined $\pt>5 \gev$ $\mu \& e$ CS only defined $\pt>10 \gev$
+  \end{itemize}
+  \item Isolated tracks selection: $\mt<100 \gev$ Not defined in \Zll
+  \begin{itemize}
+   \item Subtract tag lepton \pt from MET to emulate $\nu$
+  \end{itemize}
+ \end{itemize}
+\begin{center}
+\begin{overpic}[width=.40\textwidth]{figures/efficiencies/tagandprobe/TagAndProbe__MTW__MuIso_vs_MuIsoMTWClean__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic}
+\begin{overpic}[width=.40\textwidth]{figures/efficiencies/tagandprobe/TagAndProbe__MTW__ElecIso_vs_ElecIsoMTWClean__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+      \end{overpic} 
+\end{center}
+
 
 \end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
+  \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item $\mu$ track \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ttbar-wpj/MuIsoTrackGenMuReductionPTActivity.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item $\mu$ track DY eff. \\(Tag\&Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobe/MuTrackTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item Ratio: \ttbar \& \wpj / Tag\&Probe
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobe/MuIsoTrackGenMuPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}
+ \frametitle{Comparison \ttbar \& \wpj vs Tag \& Probe Efficiencies}
+  \begin{columns}
+
+   \begin{column}{0.33\textwidth}
+     \begin{itemize}
+   \item e track \ttbar \& \wpj eff. (truth info.)
+  \end{itemize}
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/ttbar-wpj/ElecIsoTrackGenElecReductionPTActivity.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item e track DY eff. \\(Tag\&Probe)
+   \end{itemize}
+
+    \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobe/ElecTrackTagAndProbeMC.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+           \begin{column}{0.33\textwidth}
+   \begin{itemize}
+    \item Ratio: \ttbar \& \wpj / Tag\&Probe
+   \end{itemize}
+
+    \begin{tikzpicture}
+     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobe/ElecIsoTrackGenElecPTActivity_ratio.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % cordinates unten links(x,y) oben rechts(x,y)
+    \end{scope}
+   \end{tikzpicture}
+   \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+
+
+% \begin{frame}
+%  \frametitle{Iso track reduction by component 1}
+%  \begin{overpic}[width=.40\textwidth]{figures/efficiencies/ttbar-wpj/IsoTrackReductionPTActivity.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+%       \end{overpic}\\
+%  \begin{overpic}[width=.32\textwidth]{figures/efficiencies/ttbar-wpj/MuIsoTrackReductionPTActivity.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+%       \end{overpic}
+%  \begin{overpic}[width=.32\textwidth]{figures/efficiencies/ttbar-wpj/ElecIsoTrackReductionPTActivity.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+%       \end{overpic}
+%  \begin{overpic}[width=.32\textwidth]{figures/efficiencies/ttbar-wpj/PionIsoTrackReductionPTActivity.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
+%       \end{overpic}
+% \end{frame}
+
+
 
 \begin{frame}
  \begin{block}{}
@@ -144,251 +264,7 @@
 \end{frame}
 
 
-\begin{frame}
- \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe $\mu$ Iso Efficiencies}
-   \begin{columns}
 
-   \begin{column}{0.33\textwidth}
-     \begin{itemize}
-   \item $\mu$ Iso \ttbar \& \wpj eff. (truth info.)
-  \end{itemize}
-    \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/ttbarwpjTruth/MuIsoPTActivity.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-   \end{column}
-   \begin{column}{0.33\textwidth}
-   \begin{itemize}
-    \item $\mu$ Iso DY eff. \\(Tag \& Probe)
-   \end{itemize}
-
-    \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/MuIsoTagAndProbeMC.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-   \end{column}
-           \begin{column}{0.33\textwidth}
-   \begin{itemize}
-    \item $\mu$ iso radio
-   \end{itemize}
-
-    \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/MuIsoPTActivity_ratio.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-   \end{column}
-  \end{columns}
-\begin{itemize}
- \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
- \item Lepton \pt and activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
- \item Overall the efficiencies from DY are slightly higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
-\end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{Comparison \ttbar \& \wpj vs DY Tag \& Probe e Iso Efficiencies}
-   \begin{columns}
-
-   \begin{column}{0.33\textwidth}
-     \begin{itemize}
-   \item e Iso \ttbar \& \wpj eff. (truth info.)
-  \end{itemize}
-    \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/ttbarwpjTruth/ElecIsoPTActivity.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-   \end{column}
-   \begin{column}{0.33\textwidth}
-   \begin{itemize}
-    \item e Iso DY eff. \\(Tag \& Probe)
-   \end{itemize}
-
-    \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/ElecIsoTagAndProbeMC.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-   \end{column}
-           \begin{column}{0.33\textwidth}
-   \begin{itemize}
-    \item e iso radio
-   \end{itemize}
-
-    \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Efficiencies/oldJEC/tagAndProbe/ElecIsoPTActivity_ratio.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-   \end{column}
-  \end{columns}
-\begin{itemize}
- \item Efficiencies obtained (using truth information) from \ttbar \& \wpj and DY are in good agreement
- \item Lepton \pt and activity are sufficient topology independent to be transfered from DY to signal region! (Confirm Florent)
- \item Overall the efficiencies from DY are higher. (No cuts applied to DY \ttbar \& \wpj baseline applied)
-\end{itemize}
-\end{frame}
-
-\subsection{Setup: Isolated Tracks(e/$\mu$)}
-\begin{frame}
- \frametitle{Isolated Elec \& Muon Tracks}
- \begin{itemize}
- \item Muon, Electron Tracks:
- \begin{itemize}
-  \item Charged PFCand, $\pt>5 GeV$, $\mt<100 GeV$ ask for pdgID=11,13
-  \item Iso: $\Sigma ( \pt\text(Tracks)\Delta R<0.3 )/(\pt Track) < 0.2$ (with $dz<0.05$)
- \end{itemize}
- \item Tag \& Probe:
- \begin{itemize}
-  \item Tag: Isolated $\mu$/e (high purity RA2b definition)
-  \item Probe:
- \begin{itemize}
-  \item Desirable Probe: chargedPFCands $\rightarrow$ iso Mu/Elec Track (not possible too high background)
-  \item Instead Probe: chargedPFCands with pdgID=11,13 (cant test for pdgID)
-  \item Still small statistics due to deriving efficiencies of isolated tracks to failing isolated leptons (not applied yet)
-  \item Problem: No $\mt<100 GeV$ applicable (maybe treat tag lepton as neutrino emulate \wtolnu)
- \end{itemize}
-  \end{itemize}
- \end{itemize}
-\end{frame}
-\subsection{Isolated $\pi$ Tracks}
-\begin{frame}
-\begin{columns}
- \begin{column}{0.65\textwidth}
-  \begin{itemize}
-   \item Tag\&Probe on chargedPFCands has too high bkg
-   \item Idea: Use similarities of isolated $\mu/e$ \& $\pi$ tracks (to be evaluated)
-  \end{itemize}
-
- \end{column}
- \begin{column}{0.35\textwidth}
-    \begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/Sketches/TauDecays.png}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
- \end{column}
-\end{columns}
-\begin{itemize}
- \item $\tau\rightarrow\pi^{-} + \nu (17\%)$ These should behave like $\mu/e$ tracks!? If so, give us rough idea on track eff. uncertainty
-   \item $\tau\rightarrow\pi^{-} + 1/2\pi0 + \nu (53\%)$ Still only one charged track. Similar to $\tau\rightarrow\pi^{-} + \nu$ ? If so same approach, inflated uncertainty.
-   \item What fraction of 3 prong $\tau$ get selected by isolated track? Rather small (10\%), if so, assigning high uncertainty would be practical.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{Can we use POG reco/ID efficiencies instead?}
- \begin{itemize}
-  \item POG will provide efficiencies not as a funcion of Activity and \pt
-  \item Can we still use theirs for validation? Any intrinsic dependency when going to our extrem search regions?
-  \item Check if reco/id eff. stable vs. \HT 
- \end{itemize}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoHT1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoHT1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{itemize}
- \item Electron and muon reconstruction and ID efficiencies are stable vs \HT
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
- \frametitle{Can we use POG reco/ID efficiencies instead?}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoMHT1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoMHT1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{itemize}
- \item Electron and muon reconstruction and ID efficiencies are stable vs \MHT
-\end{itemize}
-
-\end{frame}
-
-
-
-\begin{frame}
- \frametitle{Can we use POG reco/ID efficiencies instead?}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoNJets1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoNJets1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{itemize}
- \item Electron and muon reconstruction and ID efficiencies are stable vs \NJets
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
- \frametitle{Can we use POG reco/ID efficiencies instead?}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/MuRecoBTag1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{tikzpicture}
-     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.49\textwidth]{figures/efficiencies/ttbar_wpj/ElecRecoBTag1D.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-%         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-%         \draw[red,ultra thick,rounded corners] (0.60,0.01) rectangle (0.75,0.99); % coordinates unten links(x,y) oben rechts(x,y)
-    \end{scope}
-   \end{tikzpicture}
-\begin{itemize}
- \item Electron and muon reconstruction and ID efficiencies are rather stable vs \BTags
-\end{itemize}
-
-\end{frame}
 
 
 % --------------------------------------------------
