@@ -39,10 +39,10 @@
 \title[RA2/b Meeting]{Update On Validation of Lepton Efficiencies Using a Tag\&Probe Method}
 \subtitle{Lepton Isolation\\ Lepton ID/Reconstruction\\ Isolated Tracks}
 \author[Arne-Rasmus~Dr\"ager]{
-  Arne-Rasmus~Dr\"ager(Uni Hamburg)
+  Arne-Rasmus~Dr\"ager\\(University of Hamburg)
 }
-\date[July 06, 2015]{July 06, 2015
-  \vskip1cm
+\date[July 07, 2015]{July 07, 2015
+%   \vskip1cm
   \begin{center}
     \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
     \hskip8cm
@@ -68,18 +68,18 @@
 \begin{frame}
  \frametitle{Outline}
  \begin{itemize}
-  \item Classical Lost-Lepton Method: 
+  \item Classical Lost-Lepton Method:
   \begin{itemize}
    \item Isolated track prediction upgrade
   \end{itemize}
   \item Validation of Lepton Efficiencies:
   \begin{itemize}
    \item Electron and muon Tag\&Probe: Iso/Reco validation
-   \item Isoalted tracks:
+   \item Isolated tracks:
    \begin{itemize}
     \item Isolated e
     \item Isolated $\mu$
-    \item Isoalted $\pi$ from $\tau_{had}$
+    \item Isolated $\pi$ from $\tau_{had}$
    \end{itemize}
   \end{itemize}
  \end{itemize}
@@ -108,7 +108,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Classical Lost-Lepton Prediciton of Lost Isolated $e,\mu$ events}
+\frametitle{Classical Lost-Lepton Prediction of Lost Isolated $e,\mu$ events}
  \begin{center}
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
@@ -127,7 +127,7 @@
  \begin{columns}  
  \begin{column}{0.50\textwidth}
 \begin{itemize}
- \item The isoalted track veto is an ADDITIONAL reduction of the \ttbar \& \wpj bkg on top of the isolated e,$\mu$ veto!
+ \item The isolated track veto is an ADDITIONAL reduction of the \ttbar \& \wpj bkg on top of the isolated e,$\mu$ veto!
  \item Combination:
  \begin{itemize}
   \item Apply first iso e,$\mu$ veto. Do full lost-lepton prediction (disregard iso track)
@@ -149,7 +149,7 @@
     \end{scope}
 \end{tikzpicture}
  \end{center}
- \end{column} 
+ \end{column}
  \end{columns}
  \begin{itemize}
   \item Correction of isolated track reduction is split up in: e, $\mu$ \& $\pi$ tracks
@@ -180,7 +180,7 @@
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCEx_vs_MuPrMTWDiLepIsoTrackReduced+ElecPrMTWDiLepIsoTrackReduced__Baseline.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
     \end{scope}
-\end{tikzpicture} 
+\end{tikzpicture}
  \end{column}
 \end{columns}
 \begin{itemize}
@@ -189,31 +189,23 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{Closer look at rejected events}
-\begin{columns}
- \begin{column}{0.50\textwidth}
- \begin{itemize}
-  \item w/o iso track veto
- \end{itemize}
-
-\begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/lost-lepton_classic/Composition/Baseline_NoIsoTrack/Composition__Bin__MuIso+MuReco+MuAcc+ElecIso+ElecReco+ElecAcc__Baseline_NoIsoTrack.pdf}};
+ \frametitle{Closure Tests Using Gen Information}
+ \begin{center}
+  
+ \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.47\textwidth]{figures/lost-lepton_classic/Baseline_Truth/Closure__Bin__MCExIsoTrack_vs_MuPrMTWDiLepIsoTrackReduction+ElecPrMTWDiLepIsoTrackReduction__Baseline_Truth.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
     \end{scope}
 \end{tikzpicture}
- \end{column}
- \begin{column}{0.50\textwidth}
-  \begin{itemize}
-  \item With iso track veto
- \end{itemize}
-\begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/lost-lepton_classic/Composition/Baseline/Composition__Bin__MuIso+MuReco+MuAcc+ElecIso+ElecReco+ElecAcc__Baseline.pdf}};
-    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-    \end{scope}
-\end{tikzpicture} 
- \end{column}
-\end{columns}
+ \end{center}
+
+\begin{itemize}
+ \item Applying the correction factor on truth events (study correction w/o lost-lepton method) 
+ \item Efficiencies are binned in \BTags \& \NJets (under study)
+\end{itemize}
 \end{frame}
+
+
 
 
 \begin{frame}
@@ -230,7 +222,7 @@
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.65\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCExElecIsoTrack_vs_MuPrMTWDiLepIsoElecTrackReduction+ElecPrMTWDiLepIsoElecTrackReduction__Baseline.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
     \end{scope}
-\end{tikzpicture} 
+\end{tikzpicture}
  \end{center}
  \end{column}
  \begin{column}{0.50\textwidth}
@@ -239,36 +231,59 @@
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.65\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCExMuIsoTrack_vs_MuPrMTWDiLepIsoMuTrackReduction+ElecPrMTWDiLepIsoMuTrackReduction__Baseline.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
     \end{scope}
-\end{tikzpicture} 
+\end{tikzpicture}
 
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.65\textwidth]{figures/lost-lepton_classic/Closure/Baseline/Closure__Bin__MCExPionIsoTrack_vs_MuPrMTWDiLepIsoPionTrackReduction+ElecPrMTWDiLepIsoPionTrackReduction__Baseline.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
     \end{scope}
-\end{tikzpicture} 
+\end{tikzpicture}
  \end{center}
  \end{column}
 \end{columns}
 \end{frame}
-  
-
-
+ 
 \begin{frame}
- \frametitle{Efficiencies Parametrization}
-
- \underline{Muon \& Electron Eff.:}
+ \frametitle{Veto of Additional Tracks in CS selection}
+ \begin{columns}
+ \begin{column}{0.50\textwidth}
+ \begin{center}
  \begin{itemize}
-  \item Acc.: \HT, \MHT ,\& \NJets
-  \item Reco.: \pt, Activity
-  \item Iso.: \pt, Activity
-  \item \mt: \NJets
-  \item Di. lep. CS contribution: \NJets
-  \item Di. lep. eff.: \NJets
-  \item Iso. $e$ track red.: \MHT, \NJets
-  \item Iso. $\mu$ track red.: \MHT, \NJets
-  \item Iso. $\pi$ track red.: \MHT, \NJets
- \end{itemize} 
+  \item W/o track Veto
+ \end{itemize}
+
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.65\textwidth]{figures/lost-lepton_classic/CS_VS_Expectation/Baseline/CS_VS_Expectation__Bin__MCExTotal_vs_MCMuCS+MCElecCS__Baseline.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}
+ \end{center}
+ \end{column}
+ \begin{column}{0.50\textwidth}
+ \begin{center}
+  \begin{itemize}
+  \item With track Veto
+ \end{itemize}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.65\textwidth]{figures/lost-lepton_classic/CS_VS_Expectation_TrackRejection/Baseline/CS_VS_Expectation_TrackRejection__Bin__MCExTotal_vs_MCMuCS+MCElecCS__Baseline.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}
+ \end{center}
+ \end{column}
+\end{columns}
+ 
+ \begin{itemize}
+  \item Up to now: No veto on additional tracks in single $\mu,e$ control-sample
+  \item Veto will remove: Di-lepton events more efficient \& possible signal contamination (CS reduction 6\%)
+   \item Note: We select isolated tracks if $\mt<100\gev$, this assumes single lepton decay from W with $\nu$ only \met source good for keeping signal, bad for rejecting di-lep \ttbar
+ \end{itemize}
+
 \end{frame}
+
+
+
+
 
 
 \begin{frame}
@@ -279,7 +294,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Isolateion \& Reconstruction/ID Efficiency Studies}
+\frametitle{Isolation \& Reconstruction/ID Efficiency Studies}
  \begin{center}
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figures/Sketches/LostLeptonSketch_mu_pred_full.pdf}};
@@ -298,7 +313,7 @@
   \item Very established method to study (lepton) efficiencies in Data
   \item Need it to obtain/validate our MC efficiencies in Data
   \end{itemize}
-  
+ 
   \begin{columns}
  \begin{column}{0.50\textwidth}
  
@@ -306,11 +321,11 @@
 
   \item Tag\&Probe Concept:
   \begin{itemize}
-   \item Select a well understood topology e.g. \Zll evnts
+   \item Select a well understood topology e.g. \Zll events
    \item Achieve good ratio of \Zll to other events!
    \item Select Tag object: E.g. well isolated $\mu,e$
    \item Select to be tested object (Probe): Lose defined $\mu,e$. Apply to be tested criteria e.g. isolation to probe object
-   \item Compute for passing(p)/failing(f) events invariant mass of di-lepton system (Z mass). 
+   \item Compute for passing(p)/failing(f) events invariant mass of di-lepton system (Z mass).
   \end{itemize}
 
  \end{itemize}
@@ -374,7 +389,7 @@
    \end{column}
   \end{columns}
 \begin{itemize}
- \item Good agreement between \ttbar \& \wpj \& Tag\&Probe $\mu$ isolation efficiencies! 
+ \item Good agreement between \ttbar \& \wpj \& Tag\&Probe $\mu$ isolation efficiencies!
  \item Tag\&Probe are always slightly above \ttbar \& \wpj eff.
 \end{itemize}
 
@@ -425,7 +440,7 @@
    \end{column}
   \end{columns}
 \begin{itemize}
- \item Good agreement between \ttbar \& \wpj \& Tag\&Probe e isolation efficiencies! 
+ \item Good agreement between \ttbar \& \wpj \& Tag\&Probe e isolation efficiencies!
  \item Tag\&Probe are always slightly above \ttbar \& \wpj eff.
 \end{itemize}
 
@@ -442,13 +457,13 @@
   \begin{itemize}
    \item Reco/ID Eff.: Select events with prompt lepton $\rightarrow$ Ask for $\pt>10\gev$ \& $|\eta|<2.5(2.4)$ (on gen) $\rightarrow$ try to match well reconstructed and ID lepton (on reco level) $eff.=p/(p+f)$
   \end{itemize}
-  \item Tag\&Probe Difficultiy: 
+  \item Tag\&Probe Difficulty:
   \item No gen info available. Test object selected on reco level. Most basic object desirable (avoid gab see above).
   \end{itemize}
  \end{column}
   \begin{column}{0.50\textwidth}
 \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobe/MuIso_Example_TagAndProbe_Fit.pdf}};
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/efficiencies/tagandprobe/MuRecoPFCandProbeNoFailPeak.pdf}};
     \begin{scope}[x={(image.south east)},y={(image.north west)}]
 %         \draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
     \end{scope}
@@ -573,6 +588,8 @@
 \end{frame}
 
 
+
+
 \begin{frame}
  \begin{block}{}
  \centering
@@ -652,7 +669,7 @@
 \begin{overpic}[width=.40\textwidth]{figures/efficiencies/tagandprobe/TagAndProbe__MTW__MuIso_vs_MuIsoMTWClean__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
       \end{overpic}
 \begin{overpic}[width=.40\textwidth]{figures/efficiencies/tagandprobe/TagAndProbe__MTW__ElecIso_vs_ElecIsoMTWClean__Baseline.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
-      \end{overpic} 
+      \end{overpic}
 \end{center}
 
 
@@ -764,7 +781,31 @@
 
 
 
+\begin{frame}
+ \frametitle{Conclusion}
+ 
+ \begin{itemize}
+  \item Classical Lost-Lepton Method:
+  \begin{itemize}
+   \item Separate estimation of $e,\mu,\pi$ tracks have been implemented.
+   \item Reasonable closure (binning of efficiencies under study)
+  \end{itemize}
+  \item Lepton Efficiency Validation:
+  \begin{itemize}
+   \item Electron and muon isolation efficiencies can be validated with Tag\&Probe on DY events parametrized in $\pt$ \& Activity (directly comparable)
+   \item Reco/ID efficiencies are tested for ID only for $\mu$ and partially for reco for e (breaks down at high Activity regions) Never the less Gab will remain! Fall back on POG efficiency advisable
+   \item Isolated $e,\mu$ tracks have been studied for the isolation part. Good results have been obtained!
+   \item Isolated $e,\mu$ tracks reconstruction/ID can not be tested with Tag\&Probe
+   \item \mt cut efficiencies can be studied on DY events (can not account for di-leptonic outliers)
+  \end{itemize}
+  \item To Do:
+  \begin{itemize}
+   \item Optimize binning
+   \item Study similarity of $\pi$ tracks from $\tau_{had}$ and $e,\mu$ tracks
+  \end{itemize}
+ \end{itemize}
 
+\end{frame}
 % \begin{frame}
 %  \frametitle{Iso track reduction by component 1}
 %  \begin{overpic}[width=.40\textwidth]{figures/efficiencies/ttbar-wpj/IsoTrackReductionPTActivity.pdf}      %\put(18,36.2){\color{red}\line(1,0){75}}
@@ -786,13 +827,90 @@
  \end{block}
 \end{frame}
 
+\begin{frame}
+ \frametitle{Closer look at rejected events}
+\begin{columns}
+ \begin{column}{0.50\textwidth}
+ \begin{itemize}
+  \item w/o iso track veto
+ \end{itemize}
+
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/lost-lepton_classic/Composition/Baseline_NoIsoTrack/Composition__Bin__MuIso+MuReco+MuAcc+ElecIso+ElecReco+ElecAcc__Baseline_NoIsoTrack.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+ \begin{column}{0.50\textwidth}
+  \begin{itemize}
+  \item With iso track veto
+ \end{itemize}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=1.\textwidth]{figures/lost-lepton_classic/Composition/Baseline/Composition__Bin__MuIso+MuReco+MuAcc+ElecIso+ElecReco+ElecAcc__Baseline.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+\end{columns}
+\end{frame}
 
 
+\begin{frame}
+ \frametitle{Iso Track Efficiencies}
+\begin{columns}
+ \begin{column}{0.50\textwidth}
+ \begin{itemize}
+  \item w/o iso track veto
+ \end{itemize}
 
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/efficiencies/ttbar-wpj/IsoTrackReductionBTagNJets.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/efficiencies/ttbar-wpj/ElecIsoTrackReductionBTagNJets.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+ \begin{column}{0.50\textwidth}
+  \begin{itemize}
+  \item With iso track veto
+ \end{itemize}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/efficiencies/ttbar-wpj/MuIsoTrackReductionBTagNJets.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.7\textwidth]{figures/efficiencies/ttbar-wpj/PionIsoTrackReductionBTagNJets.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \end{scope}
+\end{tikzpicture}
+ \end{column}
+\end{columns}
+\end{frame}
 
+\begin{frame}
+ \frametitle{Efficiencies Parametrization}
+
+ \underline{Muon \& Electron Eff.:}
+ \begin{itemize}
+  \item Acc.: \HT, \MHT ,\& \NJets
+  \item Reco.: \pt, Activity
+  \item Iso.: \pt, Activity
+  \item \mt: \NJets
+  \item Di. lep. CS contribution: \NJets
+  \item Di. lep. eff.: \NJets
+  \item Iso. $e$ track red.: \BTags, \NJets
+  \item Iso. $\mu$ track red.: \BTags, \NJets
+  \item Iso. $\pi$ track red.: \BTags, \NJets
+ \end{itemize}
+\end{frame}
 % --------------------------------------------------
 
-\setcounter{framenumber}{26}
+\setcounter{framenumber}{27}
 
 \end{document}
 
