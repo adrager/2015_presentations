@@ -1,0 +1,85 @@
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 6 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCElecCS # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuCS, bin3 is for Baseline_ElecCS, bin4 is for Baseline_MuCS_Signal, bin5 is for Baseline_ElecCS_Signal, bin6 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; bin5; bin6; 
+MCElecCS_events =  13322.8 13322.8 3279.95 13322.8 13322.8 3279.95
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCElecCS_uncertaintyDistribution_1 = lnN
+MCElecCS_uncertainty_1 =   35.009  35.009  17.339  35.009  35.009  17.339
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 6 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCExTotal # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuCS, bin3 is for Baseline_ElecCS, bin4 is for Baseline_MuCS_Signal, bin5 is for Baseline_ElecCS_Signal, bin6 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; bin5; bin6; 
+MCExTotal_events =  1674.12 13322.8 13322.8 13322.8 13322.8 1674.12
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCExTotal_uncertaintyDistribution_1 = lnN
+MCExTotal_uncertainty_1 =  11.9906  35.009  35.009  35.009  35.009 11.9906
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 6 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCMuCS # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuCS, bin3 is for Baseline_ElecCS, bin4 is for Baseline_MuCS_Signal, bin5 is for Baseline_ElecCS_Signal, bin6 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; bin5; bin6; 
+MCMuCS_events =  13322.8 3544.48 13322.8 13322.8 13322.8 3544.48
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCMuCS_uncertaintyDistribution_1 = lnN
+MCMuCS_uncertainty_1 =   35.009 17.9552  35.009  35.009  35.009 17.9552
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 6 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = T1tttt1500elec # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuCS, bin3 is for Baseline_ElecCS, bin4 is for Baseline_MuCS_Signal, bin5 is for Baseline_ElecCS_Signal, bin6 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; bin5; bin6; 
+T1tttt1500elec_events =  396.091 396.091 396.091 396.091 76.0762 76.0762
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+T1tttt1500elec_uncertaintyDistribution_1 = lnN
+T1tttt1500elec_uncertainty_1 =  1.45858 1.45858 1.45858 1.458580.6392280.639228
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 6 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = T1tttt1500mu # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuCS, bin3 is for Baseline_ElecCS, bin4 is for Baseline_MuCS_Signal, bin5 is for Baseline_ElecCS_Signal, bin6 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; bin5; bin6; 
+T1tttt1500mu_events =  396.091 396.091 396.091  84.439 396.091  84.439
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+T1tttt1500mu_uncertaintyDistribution_1 = lnN
+T1tttt1500mu_uncertainty_1 =  1.45858 1.45858 1.458580.673446 1.458580.673446
+
+
+
+

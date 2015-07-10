@@ -1,0 +1,34 @@
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 3 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = ElecCSMTWDiLepCorrected # name of the sample
+
+# bin1 is for temp2, bin2 is for temp, bin3 is for Baseline_ElecIso, 
+channel = bin1; bin2; bin3; 
+ElecCSMTWDiLepCorrected_events =  541.661 248.349 248.349
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+ElecCSMTWDiLepCorrected_uncertaintyDistribution_1 = lnN
+ElecCSMTWDiLepCorrected_uncertainty_1 =  3.04526 2.21268 2.21268
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 3 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCEx # name of the sample
+
+# bin1 is for temp2, bin2 is for temp, bin3 is for Baseline_ElecIso, 
+channel = bin1; bin2; bin3; 
+MCEx_events =  233.338 13322.8 233.338
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCEx_uncertaintyDistribution_1 = lnN
+MCEx_uncertainty_1 =  4.78643  35.009 4.78643
+
+
+
+

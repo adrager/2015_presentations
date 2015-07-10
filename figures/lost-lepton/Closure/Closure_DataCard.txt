@@ -1,0 +1,51 @@
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 4 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = ElecPrMTWDiLepIsoElecTrackReduction # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuPr, bin3 is for Baseline_ElecPr, bin4 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; 
+ElecPrMTWDiLepIsoElecTrackReduction_events =  1208.96 1208.96 258.506 258.506
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+ElecPrMTWDiLepIsoElecTrackReduction_uncertaintyDistribution_1 = lnN
+ElecPrMTWDiLepIsoElecTrackReduction_uncertainty_1 =  3.36211 3.36211 1.65768 1.65768
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 4 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MCExElecIsoTrack # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuPr, bin3 is for Baseline_ElecPr, bin4 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; 
+MCExElecIsoTrack_events =   580.15 13322.8 13322.8  580.15
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MCExElecIsoTrack_uncertaintyDistribution_1 = lnN
+MCExElecIsoTrack_uncertainty_1 =  7.30195  35.009  35.009 7.30195
+
+
+
+
+# General information:
+luminosity = 4000 # given in pb-1
+channels   = 4 # total number of channels / bins. Counting ordering, MHT, HT and nJets.
+sample     = MuPrMTWDiLepIsoElecTrackReduction # name of the sample
+
+# bin1 is for Baseline_Ex, bin2 is for Baseline_MuPr, bin3 is for Baseline_ElecPr, bin4 is for Baseline, 
+channel = bin1; bin2; bin3; bin4; 
+MuPrMTWDiLepIsoElecTrackReduction_events =  1208.96 257.901 1208.96 257.901
+# Uncertainties --> at least stat. and syst.
+# In absolute numbers
+nuisance = stat. uncert.; 
+MuPrMTWDiLepIsoElecTrackReduction_uncertaintyDistribution_1 = lnN
+MuPrMTWDiLepIsoElecTrackReduction_uncertainty_1 =  3.36211 1.49478 3.36211 1.49478
+
+
+
+
